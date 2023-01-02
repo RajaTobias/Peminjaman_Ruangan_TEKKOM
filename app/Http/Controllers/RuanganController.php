@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
-class AdminController extends Controller
+class RuanganController extends Controller
 {
     public function create() {
-        return view('admin.add');
+        return view('ruangan.add');
         }
         public function store(Request $request) {
         $request->validate([
-        'Role' => 'required',
+        
+        'Nama_ruangan' => 'required',
+        'Jenis_ruangan' => 'required',
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         // DB::insert('INSERT INTO ruangans(id_admin,
@@ -30,39 +29,41 @@ class AdminController extends Controller
         // ]
         // );
                 // Menggunakan laravel eloquent
-        Admin::create([
-            'Role' => $request->Role,
+        Ruangan::create([
+            'Nama_ruangan' => $request->Nama_ruangan,
+            'Jenis_ruangan' => $request->Jenis_ruangan,
         ]);
-        return redirect()->route('admin.index')->with('success', 'Data admin berhasil disimpan');
+        return redirect()->route('ruangan.index')->with('success', 'Data ruangan berhasil disimpan');
         }
 
     public function delete($id){
-        Admin::where('id_admin', $id)->delete();
-        return redirect()->route('admin.index')->with('success', 'Data admin berhasil dihapus');
+        Ruangan::where('id_ruangan', $id)->delete();
+        return redirect()->route('ruangan.index')->with('success', 'Data ruangan berhasil dihapus');
     }
 
     public function index() {
-        $datas = DB::select('select * from admin');
-        return view('admin.index')
+        $datas = DB::select('select * from ruangan');
+        return view('ruangan.index')
         
         ->with('datas', $datas);
     }
-
     public function edit($id) {
-        $data = DB::table('admin')->where('id_admin',
+        $data = DB::table('ruangan')->where('id_ruangan',
         $id)->first();
-        return view('admin.edit')->with('data', $data);
+        return view('ruangan.edit')->with('data', $data);
         }
         public function update($id, Request $request) {
         $request->validate([
-        'Role' => 'required',
+            'Nama_ruangan' => 'required',
+            'Jenis_ruangan' => 'required',
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        Admin::update(
+        Ruangan::update(
          [
-            'Role' => $request->Role,
+            'Nama_ruangan' => $request->Nama_ruangan,
+            'Jenis_ruangan' => $request->Jenis_ruangan,
          ]
         );
-         return redirect()->route('admin.index')->with('success', 'Data admin berhasil diubah');
+         return redirect()->route('ruangan.index')->with('success', 'Data ruangan berhasil diubah');
      }
 }
