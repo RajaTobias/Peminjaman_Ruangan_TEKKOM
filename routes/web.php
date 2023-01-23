@@ -47,11 +47,11 @@ Route::get('User/edit/{id}', [UserController::class, 'edit'])->name('user.edit')
 Route::post('User/update/{id}', [UserController::class, 'update'])->name('user.update');
 Route::post('User/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
 
-Route::get('PeminjamanRuangan/add', [PeminjamanRuanganController::class, 'create'])->name('peminjamanruangan.create');
-Route::post('PeminjamanRuangan/store', [PeminjamanRuanganController::class, 'store'])->name('peminjamanruangan.store');
-Route::get('PeminjamanRuangan/edit/{id}', [PeminjamanRuanganController::class, 'edit'])->name('peminjamanruangan.edit');
-Route::post('PeminjamanRuangan/update/{id}', [PeminjamanRuanganController::class, 'update'])->name('peminjamanruangan.update');
-Route::post('PeminjamanRuangan/delete/{id}', [PeminjamanRuanganController::class, 'delete'])->name('peminjamanruangan.delete');
+// Route::get('PeminjamanRuangan/add', [PeminjamanRuanganController::class, 'create'])->name('peminjamanruangan.create');
+// Route::post('PeminjamanRuangan/store', [PeminjamanRuanganController::class, 'store'])->name('peminjamanruangan.store');
+// Route::get('PeminjamanRuangan/edit/{id}', [PeminjamanRuanganController::class, 'edit'])->name('peminjamanruangan.edit');
+// Route::post('PeminjamanRuangan/update/{id}', [PeminjamanRuanganController::class, 'update'])->name('peminjamanruangan.update');
+// Route::post('PeminjamanRuangan/delete/{id}', [PeminjamanRuanganController::class, 'delete'])->name('peminjamanruangan.delete');
 
 Route::get('User/add', [UserController::class, 'create'])->name('user.create');
 Route::post('User/store', [UserController::class, 'store'])->name('user.store');
