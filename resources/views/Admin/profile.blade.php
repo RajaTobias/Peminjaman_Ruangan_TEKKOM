@@ -112,12 +112,12 @@
           <div class="portfolio">
             <div class="row1">
                   
-                <img src="assets/img/Vector (5).png" alt="..." allign="middle">
+                <img src="/assets/img/Vector (5).png" alt="..." allign="middle">
                 <div class="containerp">
                     <p class="teksp">Profile Setting</p>
                     <form class="pprofile">
                         <div class="profile-pic">
-                            <img src="assets/img/Rectangle 4036.png" id="fotop">
+                            <img src="/assets/img/Rectangle 4036.png" id="fotop">
                             <input type="file" id="file">
                             <label for="file" id="upBtn">Choose Photo</label>
                         </div>

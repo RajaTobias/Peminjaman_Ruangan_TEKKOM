@@ -107,7 +107,7 @@
 
     <section class="home">
         <div class="panel-header panel-header-lg">
-            <img src="assets/img/contact.png" alt="..." allign="right">
+            <img src="/assets/img/contact.png" alt="..." allign="right">
             <p class="tekscontact">CONTACT</p>
             <p class="teksus">US</p>
             <p class="teksemail">   <i class="bx bx-envelope icon"></i>tekkom@undip.ac.id</p>

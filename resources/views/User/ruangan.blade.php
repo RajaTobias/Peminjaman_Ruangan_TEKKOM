@@ -110,7 +110,7 @@
           <div class="portfolio">
             <div class="row1">
                   
-                <img src="assets/img/Vector (5).png" alt="..." allign="middle">
+                <img src="/assets/img/Vector (5).png" alt="..." allign="middle">
                 <div class="container1">
                     <p class="teksx">Ruang Kelas</p>
                     <p class="teksy">Ruang Laboratorium</p>
@@ -119,7 +119,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"></div>
                             </div>
-                            <img src="assets/img/Rectangle 4008.png" alt="..." />
+                            <img src="/assets/img/Rectangle 4008.png" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas">Ruang 101</span>
                         </a>
@@ -129,7 +129,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="assets/img/Rectangle 4008.png" alt="..." />
+                            <img src="/assets/img/Rectangle 4008.png" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Ruang 102</span>
                         </a>
@@ -139,7 +139,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="assets/img/Rectangle 4008.png" alt="..." />
+                            <img src="/assets/img/Rectangle 4008.png" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas3">Ruang 201</span>
                         </a>
@@ -149,7 +149,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="assets/img/Rectangle 4008.png" alt="..." />
+                            <img src="/assets/img/Rectangle 4008.png" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas">Lab. Mulmed</span>
                         </a>
@@ -160,7 +160,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="assets/img/Rectangle 4008.png" alt="..." />
+                            <img src="/assets/img/Rectangle 4008.png" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Lab. RPL</span>
                         </a>
@@ -171,7 +171,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="assets/img/Rectangle 4008.png" alt="..." />
+                            <img src="/assets/img/Rectangle 4008.png" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas3">Lab. Jarkom</span>
                         </a>
@@ -182,7 +182,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="assets/img/Rectangle 4008.png" alt="..." />
+                            <img src="/assets/img/Rectangle 4008.png" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Lab. Embedded</span>
                         </a>

@@ -104,20 +104,20 @@
     </section>
 
     <section class="home">
-        <img src="assets/img/Vector (5).png" alt="..." allign="middle">
+        <img src="/assets/img/Vector (5).png" alt="..." allign="middle">
         <div class="panel-header panel-header-lg">
-            <img src="assets/img/6header-panel.jpg" alt="..." allign="middle">
+            <img src="/assets/img/6header-panel.jpg" alt="..." allign="middle">
             <p class="tekssatu">Peminjaman Ruangan</p>
             <p class="teksdua">Jurusan Teknik Komputer</p>
             <p class="tekstiga">Universitas Diponegoro</p>
           </div> 
         <div class="row">
-            <img src="assets/img/Vector (4).png" alt="..." allign="middle">
+            <img src="/assets/img/Vector (4).png" alt="..." allign="middle">
             <div class="container">
                 <div class="card">
                   <div class="box">
                     <div class="content">
-                      <img src="assets/img/vector.png" alt="">
+                      <img src="/assets/img/vector.png" alt="">
                       <h3>Ruangan</h3>
                       <a href="ruangan.html">Lebih Banyak <i class="bx bx-right-arrow-alt icon"></i></a> 
                     </div>
@@ -127,7 +127,7 @@
                 <div class="card1">
                   <div class="box">
                     <div class="content">
-                        <img src="assets/img/vector2.png" alt="">
+                        <img src="/assets/img/vector2.png" alt="">
                       <h3>Peminjaman</h3>
                       <a href="jadwal.html">Lebih Banyak <i class="bx bx-right-arrow-alt icon"></i></a>
                     </div>
@@ -137,7 +137,7 @@
                 <div class="card2">
                   <div class="box">
                     <div class="content">
-                        <img src="assets/img/vector3.png" alt="">
+                        <img src="/assets/img/vector3.png" alt="">
                       <h3>Permohonan</h3>
                       <a href="AdminPemohon.html">Lebih Banyak <i class="bx bx-right-arrow-alt icon"></i></a>
                     </div>
