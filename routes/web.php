@@ -10,6 +10,7 @@ use App\Http\Controllers\Userontroller;
 use App\Http\Controllers\PeminjamanRuanganController;
 use Illuminate\Support\Facades\Auth;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,42 +22,87 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('Admin/add', [AdminController::class, 'create'])->name('admin.create');
-Route::post('Admin/store', [AdminController::class, 'store'])->name('admin.store');
-Route::get('Admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
-Route::post('Admin/update/{id}', [AdminController::class, 'update'])->name('admin.update');
-Route::post('Admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
 
-Route::get('Jadwal/add', [JadwalController::class, 'create'])->name('jadwal.create');
-Route::post('Jadwal/store', [JadwalController::class, 'store'])->name('jadwal.store');
-Route::get('Jadwal/edit/{id}', [JadwalController::class, 'edit'])->name('jadwal.edit');
-Route::post('Jadwal/update/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
-Route::post('Jadwal/delete/{id}', [JadwalController::class, 'delete'])->name('jadwal.delete');
+Route::prefix('admin')->group(function () {
 
-Route::get('Ruangan/add', [RuanganController::class, 'create'])->name('ruangan.create');
-Route::post('Ruangan/store', [RuanganController::class, 'store'])->name('ruangan.store');
-Route::get('Ruangan/edit/{id}', [RuanganController::class, 'edit'])->name('ruangan.edit');
-Route::post('Ruangan/update/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
-Route::post('Ruangan/delete/{id}', [RuanganController::class, 'delete'])->name('ruangan.delete');
+    Route::get('/jadwal', function () {
+        return view ('Admin.jadwal');
+    })->middleware('is_admin')->name('Admin.jadwal');
 
-Route::get('User/add', [UserController::class, 'create'])->name('user.create');
-Route::post('User/store', [UserController::class, 'store'])->name('user.store');
-Route::get('User/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
-Route::post('User/update/{id}', [UserController::class, 'update'])->name('user.update');
-Route::post('User/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
+    Route::get('/pemohon', [PeminjamanRuanganController::class, 'index'])->middleware('is_admin')->name('Admin.pemohon');
 
-// Route::get('PeminjamanRuangan/add', [PeminjamanRuanganController::class, 'create'])->name('peminjamanruangan.create');
-// Route::post('PeminjamanRuangan/store', [PeminjamanRuanganController::class, 'store'])->name('peminjamanruangan.store');
-// Route::get('PeminjamanRuangan/edit/{id}', [PeminjamanRuanganController::class, 'edit'])->name('peminjamanruangan.edit');
-// Route::post('PeminjamanRuangan/update/{id}', [PeminjamanRuanganController::class, 'update'])->name('peminjamanruangan.update');
-// Route::post('PeminjamanRuangan/delete/{id}', [PeminjamanRuanganController::class, 'delete'])->name('peminjamanruangan.delete');
+    Route::get('/ruangan', function () {
+        return view ('Admin.ruangan');
+    })->middleware('is_admin')->name('Admin.ruangan');
 
-Route::get('User/add', [UserController::class, 'create'])->name('user.create');
-Route::post('User/store', [UserController::class, 'store'])->name('user.store');
+    Route::get('/profile', function () {
+        return view ('Admin.profile');
+    })->middleware('is_admin')->name('Admin.profile');
 
+    Route::view('/dashboard','Admin.dashboard')->middleware('is_admin')->name('Admin.dashboard');
 
+    Route::view('/contact','Admin.contact')->middleware('is_admin')->name('Admin.contact');
+
+});
+
+Route::prefix('user')->group(function(){
+
+    Route::get('/ruangan/A101', function () {
+        return view ('User.A101');
+    })->middleware('auth')->name('User.A101');
+
+    Route::get('/ruangan/A102', function () {
+        return view ('User.A102');
+    })->middleware('auth')->name('User.A102');
+
+    Route::get('/ruangan/A201', function () {
+        return view ('User.A201');
+    })->middleware('auth')->name('User.A201');
+
+    Route::get('/ruangan/lab-embedded', function () {
+        return view ('User.labembedded');
+    })->middleware('auth')->name('User.labembedded');
+
+    Route::get('/ruangan/lab-jarkom', function () {
+        return view ('User.labjarkom');
+    })->middleware('auth')->name('User.labjarkom');
+
+    Route::get('/ruangan/lab-rpl', function () {
+        return view ('User.labrpl');
+    })->middleware('auth')->name('User.labrpl');
+
+    Route::get('/ruangan/lab-mulmed', function () {
+        return view ('User.labmulmed');
+    })->middleware('auth')->name('User.labmulmed');
+
+    Route::get('/jadwal', function () {
+        return view ('User.jadwal');
+    })->middleware('auth')->name('User.jadwal');
+
+    Route::get('/ruangan', function () {
+        return view ('User.ruangan');
+    })->middleware('auth')->name('User.ruangan');
+
+    Route::get('/profile', function () {
+        return view ('User.profile');
+    })->middleware('auth')->name('User.profile');
+
+    Route::view('/dashboard','User.dashboard')->middleware('auth')->name('User.dashboard');
+
+    Route::view('/contact','User.contact')->middleware('auth')->name('User.contact');
+
+});
+
+Route::get('/', [HomeController::class, 'index'])->name('welcome')->middleware('auth');;
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');;
+// Route::get('Admin/add', [AdminController::class, 'create'])->name('admin.create');
+// Route::post('Admin/store', [AdminController::class, 'store'])->name('admin.store');
+// Route::get('Admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
+// Route::post('Admin/update/{id}', [AdminController::class, 'update'])->name('admin.update');
+// Route::post('Admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
+
+// Route::get('User/add', [UserController::class, 'create'])->name('user.create');
+// Route::post('User/store', [UserController::class, 'store'])->name('user.store');
 
 Auth::routes();
 // Route::get('login', [LoginController::class, 'login'])->name('login');

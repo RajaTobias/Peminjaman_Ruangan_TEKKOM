@@ -31,29 +31,29 @@
             <div class="menu">
 
                 <ul class="menu-links">
-                    <li class="active">
-                        <a href="AdminDashboard.html">
+                     <li class="active">
+                        <a href="{{ route('Admin.dashboard') }}">
                             <i class='bx bx-category-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="AdminRuangan.html">
+                        <a href="{{ route('Admin.ruangan') }}">
                             <i class='bx bx-buildings icon' ></i>
                             <span class="text nav-text">Ruangan</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="AdminJadwal.html">
+                        <a href="{{ route('Admin.jadwal') }}">
                             <i class='bx bx-calendar icon'></i>
                             <span class="text nav-text">Jadwal</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="AdminPemohon.html">
+                        <a href="{{route('Admin.pemohon')}}">
                             <i class='bx bx-user-check icon'></i>
                             <span class="text nav-text">Pemohon</span>
                         </a>
@@ -63,13 +63,13 @@
 
             <div class="bottom-content">
                 <li class="nav-link">
-                    <a href="AdminProfile.html">
+                    <a href="{{ route('Admin.profile') }}">
                         <i class='bx bx-user-circle icon'></i>
                         <span class="text nav-text">Profile</span>
                     </a>
                 </li>
                 <li class="">
-                    <a href="AdminContact.html">
+                    <a href="{{ route('Admin.contact') }}">
                         <i class='bx bx-chat icon' ></i>
                         <span class="text nav-text">Contact Us</span>
                     </a>

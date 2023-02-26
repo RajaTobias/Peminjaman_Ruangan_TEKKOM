@@ -44,14 +44,14 @@
 
                 <ul class="menu-links">
                     <li class="active">
-                        <a href="AdminDashboard.html">
+                        <a href="{{ route('Admin.dashboard') }}">
                             <i class='bx bx-category-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="AdminRuangan.html">
+                        <a href="{{ route('Admin.ruangan') }}">
                             <i class='bx bx-buildings icon' ></i>
                             <span class="text nav-text">Ruangan</span>
                         </a>

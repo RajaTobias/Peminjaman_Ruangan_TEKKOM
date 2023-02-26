@@ -9,7 +9,8 @@
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-  
+    <link rel="stylesheet" href="{{ asset('assets/css/dropdown.css') }}">
+
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
@@ -32,21 +33,21 @@
 
                 <ul class="menu-links">
                     <li class="active">
-                        <a href="dashboard.html">
+                        <a href="{{ route('User.dashboard') }}">
                             <i class='bx bx-category-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="ruangan.html">
+                        <a href="{{route ('User.ruangan')}}">
                             <i class='bx bx-buildings icon' ></i>
                             <span class="text nav-text">Ruangan</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="jadwal.html">
+                        <a href="{{route ('User.jadwal')}}">
                             <i class='bx bx-calendar icon'></i>
                             <span class="text nav-text">Jadwal</span>
                         </a>
@@ -57,13 +58,13 @@
 
             <div class="bottom-content">
                 <li class="nav-link">
-                    <a href="profile.html">
+                    <a href="{{route ('User.profile')}}">
                         <i class='bx bx-user-circle icon'></i>
                         <span class="text nav-text">Profile</span>
                     </a>
                 </li>
                 <li class="">
-                    <a href="contact.html">
+                    <a href="{{route ('User.contact')}}">
                         <i class='bx bx-chat icon' ></i>
                         <span class="text nav-text">Contact Us</span>
                     </a>
@@ -88,15 +89,19 @@
                     <li class="" href="#" role="button">
                             <i class='bx bx-bell icon' ></i>
                     </li>  
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-user icon"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Settings</a></li>
-                            <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li class="w3-dropdown-click">
+                        <a class="w3-button w3-black" id="navbarDropdown" href="#" role="button" onclick="myFunction()"><i class="bx bx-user icon"></i></a>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a href="{{ route('logout') }}" class="w3-bar-item w3-button" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                          </div>
                         </ul>
                     </li>
+                    
                 </ul>
             </nav>
     </section>
@@ -117,7 +122,7 @@
                     <div class="content">
                       <img src="/assets/img/vector.png" alt="">
                       <h3>Ruangan</h3>
-                      <a href="ruangan.html">Lebih Banyak <i class="bx bx-right-arrow-alt icon"></i></a> 
+                      <a href="{{route('User.ruangan')}}">Lebih Banyak <i class="bx bx-right-arrow-alt icon"></i></a> 
                     </div>
                   </div>
                 </div>
@@ -127,7 +132,7 @@
                     <div class="content">
                         <img src="/assets/img/vector2.png" alt="">
                       <h3>Peminjaman</h3>
-                      <a href="jadwal.html">Lebih Banyak <i class="bx bx-right-arrow-alt icon"></i></a>
+                      <a href="{{route('User.jadwal')}}">Lebih Banyak <i class="bx bx-right-arrow-alt icon"></i></a>
                     </div>
                   </div>
                 </div>

@@ -16,14 +16,13 @@ return new class extends Migration
         Schema::create('peminjaman_ruangans', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('Status');
-            $table->string('id_user');
-            $table->string('id_ruangan');
-            $table->string('Keterangan');
+            $table->string('Nama');
+            $table->string('NIM');
+            $table->string('Keperluan');
+            $table->string('Ruangan');
+            $table->dateTime('Tanggal');
             $table->time('Jam_mulai');
             $table->time('Jam_selesai');
-            $table->dateTime('Tanggal');
-            $table->string('Kegiatan');
         });
     }
 

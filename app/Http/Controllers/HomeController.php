@@ -23,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       
+        if(auth()->user()->is_admin){
+            return view('Admin.dashboard');
+        }
+        else{
+            return view('User.dashboard');
+        }
+
     }
 }

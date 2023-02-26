@@ -130,28 +130,32 @@
                         </thead>
                         <tbody>
                             <!-- ini cuma contoh ntar isinya dipanggil dari database -->
+                            @foreach ($datas as $data)
                             <tr>
-                                <td>1</td>
-                                <td>Yoga Ganteng</td>
-                                <td>21120120120005</td>
-                                <td>Seminar</td>
-                                <td>4 Maret 2023</td>
-                                <td>13.00 - 15.00</td>
+                                <td>{{ $data->id }}</td>
+                                <td>{{ $data->Nama }}</td>
+                                <td>{{ $data->NIM }}</td>
+                                <td>{{ $data->Keperluan }}</td>
+                                <td>{{ $data->Ruangan }}</td>
+                                <td>{{ $data->Tanggal }}</td>
                                 <td>
                                     <div class="pemohonBtn">
-                                        <a href="{{ route('toko.edit', $data->id_kucing) }}" type="button" class="btn btn-success rounded-3">
+                                        <a href="" type="button" class="btn btn-success rounded-3">
                                             <i class="bx bx-check-circle icon"></i>Terima
                                         </a>
                                     </div>
 
                                     <div class="pemohon2Btn">
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusModal{{ $data->id_kucing }}">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal">
                                             <i class="bx bx-minus-circle icon"></i>Tolak
                                         </button>
                                     </div>
                  
                                 </td>
+                                
                             </tr>
+                            @endforeach
+                            
                         </tbody>
                     </table>                    
 

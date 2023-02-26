@@ -32,28 +32,28 @@
 
                 <ul class="menu-links">
                     <li class="active">
-                        <a href="AdminDashboard.html">
+                        <a href="{{ route('Admin.dashboard') }}">
                             <i class='bx bx-category-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="AdminRuangan.html">
+                        <a href="{{ route('Admin.ruangan') }}">
                             <i class='bx bx-buildings icon' ></i>
                             <span class="text nav-text">Ruangan</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="AdminJadwal.html">
+                        <a href="{{ route('Admin.jadwal') }}">
                             <i class='bx bx-calendar icon'></i>
                             <span class="text nav-text">Jadwal</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="AdminPemohon.html">
+                        <a href="{{ route('Admin.pemohon') }}">
                             <i class='bx bx-user-check icon'></i>
                             <span class="text nav-text">Pemohon</span>
                         </a>
@@ -63,13 +63,13 @@
 
             <div class="bottom-content">
                 <li class="nav-link">
-                    <a href="AdminProfile.html">
+                    <a href="{{ route('Admin.profile') }}">
                         <i class='bx bx-user-circle icon'></i>
                         <span class="text nav-text">Profile</span>
                     </a>
                 </li>
                 <li class="">
-                    <a href="AdminContact.html">
+                    <a href="{{ route('Admin.contact') }}">
                         <i class='bx bx-chat icon' ></i>
                         <span class="text nav-text">Contact Us</span>
                     </a>
@@ -90,16 +90,24 @@
                 </form> -->
                 <!-- Navbar-->
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-user icon"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Settings</a></li>
-                            <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li class="" href="#" role="button">
+                            <i class='bx bx-bell icon' ></i>
+                    </li>  
+                    <li class="w3-dropdown-click">
+                        <a class="w3-button w3-black" id="navbarDropdown" href="#" role="button" onclick="myFunction()"><i class="bx bx-user icon"></i></a>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a href="{{ route('logout') }}" class="w3-bar-item w3-button" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                          </div>
                         </ul>
                     </li>
+                    
                 </ul>
+                
             </nav>
     </section>
 
