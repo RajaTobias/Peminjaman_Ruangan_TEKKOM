@@ -25,15 +25,55 @@ use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->group(function () {
 
+    Route::get('/ruangan/deskripsiA101', function () {
+        return view ('Admin.deskripsiA101');
+    })->middleware('auth')->name('Admin.deskripsiA101');
+
+    Route::get('/ruangan/deskripsiA102', function () {
+        return view ('Admin.deskripsiA102');
+    })->middleware('auth')->name('Admin.deskripsiA102');
+
+    Route::get('/ruangan/deskripsiA201', function () {
+        return view ('Admin.deskripsiA201');
+    })->middleware('auth')->name('Admin.deskripsiA201');
+    
+    Route::get('/ruangan/deskripsiLabEMB', function () {
+        return view ('Admin.deskripsiLabEMB');
+    })->middleware('auth')->name('Admin.deskripsiLabEMB');
+
+    Route::get('/ruangan/deskripsiLabJKM', function () {
+        return view ('Admin.deskripsiLabJKM');
+    })->middleware('auth')->name('Admin.deskripsiLabJKM');
+
+    Route::get('/ruangan/deskripsiLabMLD', function () {
+        return view ('Admin.deskripsiLabMLD');
+    })->middleware('auth')->name('Admin.deskripsiLabMLD');
+
+    Route::get('/ruangan/deskripsiLabRPL', function () {
+        return view ('Admin.deskripsiLabRPL');
+    })->middleware('auth')->name('Admin.deskripsiLabRPL');
+
     Route::get('/jadwal', function () {
         return view ('Admin.jadwal');
     })->middleware('is_admin')->name('Admin.jadwal');
+
+    Route::get('/editjadwal', function () {
+        return view ('Admin.editjadwal');
+    })->middleware('is_admin')->name('Admin.editjadwal');
 
     Route::get('/pemohon', [PeminjamanRuanganController::class, 'index'])->middleware('is_admin')->name('Admin.pemohon');
 
     Route::get('/ruangan', function () {
         return view ('Admin.ruangan');
     })->middleware('is_admin')->name('Admin.ruangan');
+
+    Route::get('/tambahruangan', function () {
+        return view ('Admin.tambahruangan');
+    })->middleware('is_admin')->name('Admin.tambahruangan');
+
+    Route::get('/peminjaman', function () {
+        return view ('Admin.peminjaman');
+    })->middleware('is_admin')->name('Admin.peminjaman');
 
     Route::get('/profile', function () {
         return view ('Admin.profile');
@@ -47,27 +87,55 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('user')->group(function(){
 
-    Route::get('/ruangan/A101', function () {
+    Route::get('/ruangan/deskripsiA101', function () {
+        return view ('User.deskripsiA101');
+    })->middleware('auth')->name('User.deskripsiA101');
+
+    Route::get('/ruangan/deskripsiA102', function () {
+        return view ('User.deskripsiA102');
+    })->middleware('auth')->name('User.deskripsiA102');
+
+    Route::get('/ruangan/deskripsiA201', function () {
+        return view ('User.deskripsiA201');
+    })->middleware('auth')->name('User.deskripsiA201');
+    
+    Route::get('/ruangan/deskripsiLabEMB', function () {
+        return view ('User.deskripsiLabEMB');
+    })->middleware('auth')->name('User.deskripsiLabEMB');
+
+    Route::get('/ruangan/deskripsiLabJKM', function () {
+        return view ('User.deskripsiLabJKM');
+    })->middleware('auth')->name('User.deskripsiLabJKM');
+
+    Route::get('/ruangan/deskripsiLabMLD', function () {
+        return view ('User.deskripsiLabMLD');
+    })->middleware('auth')->name('User.deskripsiLabMLD');
+
+    Route::get('/ruangan/deskripsiLabRPL', function () {
+        return view ('User.deskripsiLabRPL');
+    })->middleware('auth')->name('User.deskripsiLabRPL');
+
+    Route::get('/deskripsiA101/A101', function () {
         return view ('User.A101');
     })->middleware('auth')->name('User.A101');
 
-    Route::get('/ruangan/A102', function () {
+    Route::get('/deskripsi/A102', function () {
         return view ('User.A102');
     })->middleware('auth')->name('User.A102');
 
-    Route::get('/ruangan/A201', function () {
+    Route::get('/deskripsi/A201', function () {
         return view ('User.A201');
     })->middleware('auth')->name('User.A201');
 
-    Route::get('/ruangan/lab-embedded', function () {
+    Route::get('/deskripsi/lab-embedded', function () {
         return view ('User.labembedded');
     })->middleware('auth')->name('User.labembedded');
 
-    Route::get('/ruangan/lab-jarkom', function () {
+    Route::get('/deskripsi/lab-jarkom', function () {
         return view ('User.labjarkom');
     })->middleware('auth')->name('User.labjarkom');
 
-    Route::get('/ruangan/lab-rpl', function () {
+    Route::get('/deskripsi/lab-rpl', function () {
         return view ('User.labrpl');
     })->middleware('auth')->name('User.labrpl');
 
@@ -86,6 +154,14 @@ Route::prefix('user')->group(function(){
     Route::get('/profile', function () {
         return view ('User.profile');
     })->middleware('auth')->name('User.profile');
+
+    Route::get('/peminjaman', function () {
+        return view ('User.peminjaman');
+    })->middleware('auth')->name('User.peminjaman');
+
+    Route::get('/statuspinjam', function () {
+        return view ('User.statuspinjam');
+    })->middleware('auth')->name('User.statuspinjam');
 
     Route::view('/dashboard','User.dashboard')->middleware('auth')->name('User.dashboard');
 

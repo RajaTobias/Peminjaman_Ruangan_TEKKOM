@@ -3,7 +3,6 @@
     padding-bottom: $navbar-padding-base;
     min-height: 53px;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 
     a{
         vertical-align: middle;
@@ -44,7 +43,7 @@
       .form-group-addon,
       .input-group-prepend .input-group-text,
       .input-group-append .input-group-text{
-        color: $white-color;
+        color: $default-color;
 
         i {
           opacity: 1;
@@ -53,10 +52,10 @@
 
       &.no-border{
         .form-control{
-          color: $white-color;
+          color: $default-color;
 
           @include placeholder(){
-            color: $white-color;
+            color: $default-color;
           };
         }
       }
@@ -139,12 +138,12 @@
             margin-right: 3px;
 
             i.fa + p,
-            i.now-ui-icons + p{
+            i.nc-icon + p{
                 margin-left: 3px;
             }
 
             i.fa,
-            i.now-ui-icons{
+            i.nc-icon{
                 font-size: 18px;
                 position: relative;
                 top: 3px;
@@ -152,7 +151,7 @@
                 width: 21px;
             }
 
-            i.now-ui-icons{
+            i.nc-icon{
                 top: 4px;
                 font-size: 16px;
             }
@@ -174,9 +173,8 @@
         .nav-item .nav-link:not(.btn):focus,
         .nav-item .nav-link:not(.btn):hover,
         .nav-item .nav-link:not(.btn):active{
-            background-color: $opacity-2;
             border-radius: $border-radius-small;
-            color: $white-color;
+            color: $default-color;
         }
     }
 
@@ -190,8 +188,8 @@
     }
 
     .navbar-brand{
-        text-transform: uppercase;
-        font-size: $font-size-small;
+        text-transform: capitalize;
+        font-size: $font-size-large-navbar;
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;
@@ -219,12 +217,36 @@
     }
 
     &.navbar-transparent{
-        background-color: $transparent-bg !important;
-        box-shadow: none;
-        color: $white-color;
+      background-color: $transparent-bg !important;
+      box-shadow: none;
+      border-bottom: 1px solid #ddd;
+
+      a:not(.dropdown-item):not(.btn){
+        color: $default-color;
+
+        &.disabled{
+          opacity: .5;
+          color: $default-color;
+         }
+       }
+
+       .button-bar{
+           background: $default-color;
+       }
+
+      .nav-item .nav-link:not(.btn){
+        color: $default-color;
+      }
+      .nav-item.active .nav-link:not(.btn),
+      .nav-item .nav-link:not(.btn):focus,
+      .nav-item .nav-link:not(.btn):hover,
+      .nav-item .nav-link:not(.btn):focus:hover,
+      .nav-item .nav-link:not(.btn):active {
+        color: $primary-color;
+      }
     }
 
-    &.bg-white:not(.navbar-transparent){
+    &.bg-white {
         a:not(.dropdown-item):not(.btn){
             color: $default-color;
 
@@ -242,13 +264,20 @@
         .nav-item .nav-link:not(.btn):focus,
         .nav-item .nav-link:not(.btn):hover,
         .nav-item .nav-link:not(.btn):active{
-            background-color: $opacity-gray-8;
-            color: $default-color;
+            color: $info-color;
         }
 
         .logo-container{
             border: 1px solid $default-color;
         }
+    }
+
+    .navbar-collapse {
+      .nav-item {
+        a {
+          font-size: $font-size-base;
+        }
+      }
     }
 }
 

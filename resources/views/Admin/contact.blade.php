@@ -1,11 +1,6 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
+@extends('layouts.layout')
+
+@section('customcss')      
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}">
@@ -13,98 +8,9 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Peminjaman Ruangan Teknik Komputer</title> 
-</head>
-<body>
-    <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <i class='bx bx-dots-horizontal-rounded icon'></i>
-                <div class="text logo-text">
-                    <span class="name">Teknik</span>
-                    <span class="profession">Komputer</span>
-                </div>
-            </div>
-            <i class='bx bx-chevron-right toggle'></i>
-        </header>
-        <div class="menu-bar">
-            <div class="menu">
+    @endsection
 
-                <ul class="menu-links">
-                     <li class="active">
-                        <a href="{{ route('Admin.dashboard') }}">
-                            <i class='bx bx-category-alt icon' ></i>
-                            <span class="text nav-text">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="{{ route('Admin.ruangan') }}">
-                            <i class='bx bx-buildings icon' ></i>
-                            <span class="text nav-text">Ruangan</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="{{ route('Admin.jadwal') }}">
-                            <i class='bx bx-calendar icon'></i>
-                            <span class="text nav-text">Jadwal</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="{{route('Admin.pemohon')}}">
-                            <i class='bx bx-user-check icon'></i>
-                            <span class="text nav-text">Pemohon</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="bottom-content">
-                <li class="nav-link">
-                    <a href="{{ route('Admin.profile') }}">
-                        <i class='bx bx-user-circle icon'></i>
-                        <span class="text nav-text">Profile</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{{ route('Admin.contact') }}">
-                        <i class='bx bx-chat icon' ></i>
-                        <span class="text nav-text">Contact Us</span>
-                    </a>
-                </li>  
-
-                </ul>
-            </div>
-
-    </nav>
-
-    <section class="sb-nav-fixed">
-            <nav class="sb-topnav navbar navbar-expand navbar-dark bg-transparent">
-                
-                <!-- Navbar Search-->
-                <!-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                        <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="bx bx-search icon"></i></button>
-                    </div>
-                </form> -->
-                <!-- Navbar-->
-                <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-user icon"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Settings</a></li>
-                            <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-    </section>
-
+@section('content')
     <section class="home">
         <div class="panel-header panel-header-lg">
             <img src="/assets/img/contact.png" alt="..." allign="right">
@@ -123,8 +29,5 @@
     
 
     </section>
+    @endsection
 
-    <script src="/assets/js/sidebar.js"></script>
-
-</body>
-</html>
