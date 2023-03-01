@@ -29,7 +29,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"></div>
                             </div>
-                            <img src="{{ asset('assets/img/Rectangle 4008.png') }}" alt="..." />
+                            <img src="{{ asset('assets/img/101a.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas">Ruang 101</span>
                         </a>
@@ -39,7 +39,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="{{ asset('assets/img/Rectangle 4008.png') }}" alt="..." />
+                            <img src="{{ asset('assets/img/102d.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Ruang 102</span>
                         </a>
@@ -49,7 +49,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="{{ asset('assets/img/Rectangle 4008.png')}}" alt="..." />
+                            <img src="{{ asset('assets/img/201d.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas3">Ruang 201</span>
                         </a>
@@ -70,7 +70,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="{{ asset('assets/img/Rectangle 4008.png')}}" alt="..." />
+                            <img src="{{ asset('assets/img/rplc.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Lab. RPL</span>
                         </a>

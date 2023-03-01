@@ -103,7 +103,7 @@
     <section class="home">
         <div class="panel-header panel-header-lg">
             <p class="teks">Peminjaman Ruangan</p>
-            <img src="/assets/img/Rectangle 21.png" alt="..." allign="middle">
+            <img src="{{ asset('assets/img/rplc.jpg') }}" alt="..." allign="middle">
           </div> 
 
         <div class="row6">

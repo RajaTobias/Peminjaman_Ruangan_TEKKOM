@@ -288,7 +288,7 @@ figure {
   margin: 0 0 1rem;
 }
 
-img {
+/* img {
   height: 50%;
   width: 50%;
   position: absolute;
@@ -297,7 +297,7 @@ img {
   float: right;
   margin-top: 800px;
   margin-left: -30px;
-}
+} */
 
 .profile-pic {
   height: 300px;
@@ -332,9 +332,9 @@ img {
     cursor: pointer;
 }
 
-img,p{
+/* img,p{
   position: absolute;
-}
+} */
 
 .teksf1{
   position: absolute;
@@ -926,12 +926,7 @@ button,
 [type=submit] {
   -webkit-appearance: button;
 }
-button:not(:disabled),
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled) {
-  cursor: pointer;
-}
+
 
 ::-moz-focus-inner {
   padding: 0;
@@ -12345,4 +12340,22 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
+}
+
+.carousel-item img{
+  opacity: 0.6;
+}
+.nav-icon{
+  background: #1b1b1b;
+  width: 3.8rem;
+  height:  3.8rem;
+  border-radius: 50%;
+  border: 0;
+  opacity: 0.7;
+  text-shadow: none;
+  color: #fff;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

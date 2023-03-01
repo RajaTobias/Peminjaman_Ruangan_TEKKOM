@@ -4,7 +4,10 @@
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/deskripsi.css') }}">
-  
+    <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+
+
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
@@ -46,10 +49,27 @@
                     </form>
             </div>
     
-            <div class="containerp">   
-                    <img src="{{ asset('assets/img/Rectangle 21.png') }}" alt="...">
         
-        </div>
+            <div class="slider">
+
+    <div>
+        <a href="#">
+            <img src="{{ asset('assets/img/rplc.jpg') }}" alt="Image 1">
+        </a>            
+    </div>
+    <div>
+        <a href="#">
+            <img src="{{ asset('assets/img/rpld.jpg') }}" alt="Image 2">
+        </a>
+    </div>
+    <div>
+        <a href="#">
+            <img src="{{ asset('assets/img/rple.jpg') }}" alt="Image 3">
+        </a>            
+    </div>
+
+</div>
+     
     
 
     </section>
@@ -59,4 +79,15 @@
 
 <script src="{{ asset('assets/js/select.js') }}"></script>
 <script src="{{ asset('assets/js/profile.js') }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+    console.log('Im ready');
+    $('.slider').slick({
+      autoplay: true,
+      autoplaySpeed: 2500,
+    });
+  });
+</script>
     @endsection

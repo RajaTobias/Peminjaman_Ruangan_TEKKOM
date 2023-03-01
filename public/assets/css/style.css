@@ -420,6 +420,10 @@ body .container {
     margin-top: 50px;
   }
 
+  .cardx img {
+border-radius: 10px;
+  }
+
   .containerp{
     width: 800px;
     margin: auto;
