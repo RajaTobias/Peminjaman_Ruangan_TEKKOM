@@ -10,7 +10,7 @@ class PeminjamanRuanganController extends Controller
 {
         public function store(Request $request) {
         $request->validate([
-        'Nama' => 'A201',
+        'Nama' => 'required',
         'NIM' => 'required',
         'Keperluan' => 'required',
         'Ruangan' => 'required',
@@ -19,29 +19,31 @@ class PeminjamanRuanganController extends Controller
         'Jam_selesai' => 'required',
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        // DB::insert('INSERT INTO ruangans(id_admin,
-        // nama_admin, alamat, username, password) VALUES
-        // (:id_admin, :nama_admin, :alamat, :username,
-        // :password)',
-        // [
-        // 'id_admin' => $request->id_admin,
-        // 'nama_admin' => $request->nama_admin,
-        // 'alamat' => $request->alamat,
-        // 'username' => $request->username,
-        // 'password' => Hash::make($request->password),
-        // ]
-        // );
+        DB::insert('INSERT INTO peminjaman_ruangans(Nama,
+        NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai) VALUES
+        (:Nama, :NIM, :Keperluan, :Ruangan,
+        :Tanggal, :Jam_mulai, :Jam_selesai)',
+        [
+        'Nama' => $request->Nama,
+        'NIM' => $request->NIM,
+        'Keperluan' => $request->Keperluan,
+        'Ruangan' => $request->Ruangan,
+        'Tanggal' => $request->Tanggal,
+        'Jam_mulai' => $request->Jam_mulai,
+        'Jam_selesai' => $request->Jam_selesai
+        ]
+        );
         // Menggunakan laravel eloquent
-        PeminjamanRuangan::create([
-            'Nama' => $request->Nama,
-            'NIM' => $request->NIM,
-            'Keperluan' => $request->Keperluan,
-            'Ruangan' => $request->Ruangan,
-            'Tanggal' => $request->Tanggal,
-            'Jam_mulai' => $request->Jam_mulai,
-            'Jam_selesai' => $request->Jam_selesai,
-        ]);
-        return redirect()->route('peminjamanruangan.index')->with('success', 'Peminjaman Berhasil');
+        // PeminjamanRuangan::create([
+        //     'Nama' => $request->Nama,
+        //     'NIM' => $request->NIM,
+        //     'Keperluan' => $request->Keperluan,
+        //     'Ruangan' => $request->Ruangan,
+        //     'Tanggal' => $request->Tanggal,
+        //     'Jam_mulai' => $request->Jam_mulai,
+        //     'Jam_selesai' => $request->Jam_selesai,
+        // ]);
+        return redirect()->route('Admin.pemohon')->with('success', 'Peminjaman Berhasil');
         }
 
     public function delete($id){

@@ -31,6 +31,7 @@
                                 <th>Nama</th>
                                 <th>NIM</th>
                                 <th>Keperluan</th>
+                                <th>Ruangan</th>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
                                 <th>Persetujuan</th>
@@ -46,6 +47,7 @@
                                 <td>{{ $data->Keperluan }}</td>
                                 <td>{{ $data->Ruangan }}</td>
                                 <td>{{ $data->Tanggal }}</td>
+                                <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
                                 <td>
                                     <div class="pemohonBtn">
                                         <a href="" type="button" class="btn btn-success rounded-3">
