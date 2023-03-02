@@ -33,7 +33,7 @@
                                 <th>Keperluan</th>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
-                                <th>Persetujuan</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,20 +46,7 @@
                                 <td>{{ $data->Keperluan }}</td>
                                 <td>{{ $data->Ruangan }}</td>
                                 <td>{{ $data->Tanggal }}</td>
-                                <td>
-                                    <div class="pemohonBtn">
-                                        <a href="" type="button" class="btn btn-success rounded-3">
-                                            <i class="bx bx-check-circle icon"></i>Terima
-                                        </a>
-                                    </div>
-
-                                    <div class="pemohon2Btn">
-                                        <button type="button" class="btn btn-danger" data-toggle="modal">
-                                            <i class="bx bx-minus-circle icon"></i>Tolak
-                                        </button>
-                                    </div>
-                 
-                                </td>
+                                <td>{{ $data->Status }}</td>
                                 
                             </tr>
                             @endforeach
