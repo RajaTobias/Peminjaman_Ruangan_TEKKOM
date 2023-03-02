@@ -23,7 +23,7 @@ class PeminjamanRuanganController extends Controller
         NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai) VALUES
         (:Nama, :NIM, :Keperluan, :Ruangan,
         :Tanggal, :Jam_mulai, :Jam_selesai)',
-        [
+        [ 
         'Nama' => $request->Nama,
         'NIM' => $request->NIM,
         'Keperluan' => $request->Keperluan,

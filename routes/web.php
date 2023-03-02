@@ -84,6 +84,10 @@ Route::prefix('admin')->group(function () {
 
     Route::get('role/ubah/{id}', [AdminController::class, 'role'])->middleware('is_admin')->name('Admin.ubahrole');
 
+    Route::get('pemohon/terima/{id}', [AdminController::class, 'accept'])->middleware('is_admin')->name('Admin.accept');
+
+    Route::get('pemohon/tolak/{id}', [AdminController::class, 'decline'])->middleware('is_admin')->name('Admin.decline');
+
     Route::post('peminjaman/store', [PeminjamanRuanganController::class, 'store'])->name('pinjam.store');
 
     Route::view('/dashboard','Admin.dashboard')->middleware('is_admin')->name('Admin.dashboard');

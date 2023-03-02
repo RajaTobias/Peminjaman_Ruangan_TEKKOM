@@ -21,7 +21,7 @@
             <form class="login" method="post" action="{{ route('pinjam.store') }}">
                 @csrf
                 <div class="input-text">
-                    <input type="text" id="Nama" name="Nama" placeholder="Nama Lengkap" required/>
+                    <input type="text" id="Nama" name="Nama" placeholder="Nama Lengkap" value = "{{ auth()->user()->name }}" readonly/>
                 </div>
                 
                 <div class="input-text">

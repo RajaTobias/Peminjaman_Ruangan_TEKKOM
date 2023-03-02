@@ -39,7 +39,7 @@
                             <tr>
                                 <td>{{ $data->id }}</td>
                                 <td>{{ $data->name }}</td>
-                                <td>{{ $data->is_admin }}</td>
+                                <td>{{ $data->is_admin == 1 ? 'Admin' : 'User' }}</td>
                                 <td>
                                     <div class="pemohon3Btn">
                                         <a href="{{ route('Admin.ubahrole', $data->id) }}" type="button" class="btn btn-success rounded-3">
