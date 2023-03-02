@@ -403,6 +403,26 @@ body .container {
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
   }
 
+  .containerpm2{
+    width: 1200px;
+    height: 540;
+    margin: auto;
+}
+
+  body .containerpm2{
+  
+    justify-content: center;
+
+    width: 60%;
+    height: 550px;
+    margin-top: 11rem;
+    margin-left: 21rem;
+    margin-right: 20rem;
+    background-color: #FFF;
+        -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+  }
+
   .container1{
     width: 800px;
     margin: auto;
@@ -1218,7 +1238,11 @@ table tr:hover td {
   margin-right: 0.5rem;
   float: right;
   transform: translateY(-50%);
+}
 
+.pemohon3Btn {
+  cursor: pointer;
+  font-size: 15px;
 }
 
 select {
