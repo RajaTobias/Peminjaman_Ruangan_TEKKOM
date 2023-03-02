@@ -35,10 +35,17 @@
                 <!-- <div>
                     <button class="border" input type="submit">Submit</button>
                 </div> -->
-
-                <div class="input-text">
-                    <input type="text" id="Ruangan" name="Ruangan" placeholder="Ruangan" required/>
-                </div>
+                <select name="Ruangan" id="Ruangan">
+                        <label for="lang">JenisR</label>
+                        <option value="">Pilih Ruangan</option>
+                        <option value="A101">Ruang 101</option>
+                        <option value="A102">Ruang 102</option>
+                        <option value="A201">Ruang 201</option>
+                        <option value="Lab. Embedded">Lab. Embedded</option>
+                        <option value="Lab. RPL">Lab. RPL</option>
+                        <option value="Lab. Mulmed">Lab. Mulmed</option>
+                        <option value="Lab. Jarkom">Lab. Jarkom</option>
+                      </select>
                 
                 <div class="input-text">
                     <input type="date" id="Tanggal" name="Tanggal" placeholder="Tanggal" required/>

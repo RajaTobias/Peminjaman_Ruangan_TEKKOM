@@ -20,18 +20,18 @@
           <div class="portfolio">
     
             <div class="row1">
-                <p class="tekspemohon">Pemohon</p>
+                <p class="tekspemohon">Edit Pengguna</p>
 
                   
-                <div class="containerpm">
+                <div class="containerpm2">
                     <table>
                         <thead>
                             <tr>
-                                <th style="width:5% !important;">No</th>
-                                <th style="width:17% !important;">Nama</th>
-                                <th style="width:15% !important;">Role</th>
+                                <th style="width:3% !important;">No</th>
+                                <th style="width:15% !important;">Nama</th>
+                                <th style="width:10% !important;">Role</th>
                                 <th style="width:10% !important;">Action</th>
-\                            </tr>
+                            </tr>
                         </thead>
                         <tbody>
                             <!-- ini cuma contoh ntar isinya dipanggil dari database -->
@@ -42,8 +42,8 @@
                                 <td>{{ $data->is_admin }}</td>
                                 <td>
                                     <div class="pemohon3Btn">
-                                        <a href="{{ route('Admin.ubahrole', $data->id) }}" type="button" class="btn btn-success rounded-3">
-                                            <i class="bx bx-edit-alt icon"></i>Ubah Role
+                                        <a href="{{ route('Admin.ubahrole', $data->id) }}" type="button" class="btn btn-light rounded-3">
+                                            <i class="bx bx-edit-alt icon" ></i>  Ubah Role
                                         </a>
                                     </div>
                                 </td>

@@ -3445,13 +3445,13 @@ textarea.form-control-lg {
 
 .btn-warning {
   color: #000;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: transparent;
+  border-color: transparent;
 }
 .btn-warning:hover {
   color: #000;
-  background-color: #ffca2c;
-  border-color: #ffc720;
+  background-color: #D9D9D9;;
+  border-color: #D9D9D9;;
 }
 .btn-check:focus + .btn-warning, .btn-warning:focus {
   color: #000;
@@ -3505,24 +3505,26 @@ textarea.form-control-lg {
 
 .btn-light {
   color: #000;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  background-color: rgba(255, 241, 220, 1);
+  border-color: rgba(255, 241, 220, 1);
+  font-size: 14px;
+  width: 60%;
 }
 .btn-light:hover {
   color: #000;
-  background-color: #f9fafb;
-  border-color: #f9fafb;
+  background-color: rgb(219, 207, 189);
+  border-color: rgb(219, 207, 189);
 }
 .btn-check:focus + .btn-light, .btn-light:focus {
   color: #000;
-  background-color: #f9fafb;
-  border-color: #f9fafb;
+  background-color: rgb(226, 216, 202);
+  border-color: rgb(226, 216, 202);
   box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
 }
 .btn-check:checked + .btn-light, .btn-check:active + .btn-light, .btn-light:active, .btn-light.active, .show > .btn-light.dropdown-toggle {
   color: #000;
-  background-color: #f9fafb;
-  border-color: #f9fafb;
+  background-color: rgb(226, 216, 202);
+  border-color: rgb(226, 216, 202);
 }
 .btn-check:checked + .btn-light:focus, .btn-check:active + .btn-light:focus, .btn-light:active:focus, .btn-light.active:focus, .show > .btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
@@ -3801,6 +3803,11 @@ textarea.form-control-lg {
 
 .collapse:not(.show) {
   display: none;
+}
+
+.pemohon3Btn {
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .collapsing {
