@@ -20,9 +20,9 @@ class PeminjamanRuanganController extends Controller
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO peminjaman_ruangans(Nama,
-        NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai) VALUES
+        NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai, user_id) VALUES
         (:Nama, :NIM, :Keperluan, :Ruangan,
-        :Tanggal, :Jam_mulai, :Jam_selesai)',
+        :Tanggal, :Jam_mulai, :Jam_selesai, :user_id)',
         [ 
         'Nama' => $request->Nama,
         'NIM' => $request->NIM,
@@ -30,7 +30,8 @@ class PeminjamanRuanganController extends Controller
         'Ruangan' => $request->Ruangan,
         'Tanggal' => $request->Tanggal,
         'Jam_mulai' => $request->Jam_mulai,
-        'Jam_selesai' => $request->Jam_selesai
+        'Jam_selesai' => $request->Jam_selesai,
+        'user_id' => auth()->user()->id
         ]
         );
         // Menggunakan laravel eloquent

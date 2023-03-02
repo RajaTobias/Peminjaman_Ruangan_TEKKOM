@@ -170,7 +170,7 @@ Route::prefix('user')->group(function(){
         return view ('User.peminjaman');
     })->middleware('auth')->name('User.peminjaman');
 
-    Route::get('/peminjaman/add', [UserPeminjamanController::class, 'store'])->middleware('auth')->name('User.store');
+    Route::post('/peminjaman/add', [UserPeminjamanController::class, 'store'])->middleware('auth')->name('User.store');
 
     Route::get('/statuspinjam', [UserPeminjamanController::class, 'index'])->middleware('auth')->name('User.statuspinjam');
 
