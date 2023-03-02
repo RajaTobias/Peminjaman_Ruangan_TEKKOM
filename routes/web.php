@@ -79,6 +79,10 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.profile');
     })->middleware('is_admin')->name('Admin.profile');
 
+    Route::get('/ubahuser', function () {
+        return view ('Admin.ubahuser');
+    })->middleware('is_admin')->name('Admin.ubahuser');
+
     Route::post('peminjaman/store', [PeminjamanRuanganController::class, 'store'])->name('pinjam.store');
 
     Route::view('/dashboard','Admin.dashboard')->middleware('is_admin')->name('Admin.dashboard');

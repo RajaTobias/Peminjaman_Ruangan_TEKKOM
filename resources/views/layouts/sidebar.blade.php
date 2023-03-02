@@ -53,11 +53,18 @@
                             <span class="text nav-text">Peminjaman</span>
                         </a>
                     </li>
+          
                 </ul>
             </div>
    
 
             <div class="bottom-content">
+            <li class="nav-link">
+                        <a href="{{ route('Admin.ubahuser') }}">
+                            <i class='bx bx-edit-alt icon'></i>
+                            <span class="text nav-text">Role</span>
+                        </a>
+                    </li>
                 <li class="nav-link">
                     <a href="{{ route('Admin.profile') }}">
                         <i class='bx bx-user-circle icon'></i>

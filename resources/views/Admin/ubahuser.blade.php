@@ -29,13 +29,9 @@
                             <tr>
                                 <th style="width:5% !important;">No</th>
                                 <th style="width:17% !important;">Nama</th>
-                                <th style="width:15% !important;">NIM</th>
-                                <th style="width:10% !important;">Keperluan</th>
-                                <th style="width:10% !important;">Ruangan</th>
-                                <th style="width:12% !important;">Tanggal</th>
-                                <th style="width:12% !important;">Waktu</th>
-                                <th style="width:16% !important;">Persetujuan</th>
-                            </tr>
+                                <th style="width:15% !important;">Role</th>
+                                <th style="width:10% !important;">Action</th>
+\                            </tr>
                         </thead>
                         <tbody>
                             <!-- ini cuma contoh ntar isinya dipanggil dari database -->
@@ -43,24 +39,14 @@
                             <tr>
                                 <td>{{ $data->id }}</td>
                                 <td>{{ $data->Nama }}</td>
-                                <td>{{ $data->NIM }}</td>
-                                <td>{{ $data->Keperluan }}</td>
-                                <td>{{ $data->Ruangan }}</td>
-                                <td>{{ $data->Tanggal }}</td>
-                                <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
+                                <td>{{ $data->Role }}</td>
+                                <td>{{ $data->Action }}</td>
                                 <td>
-                                    <div class="pemohonBtn">
+                                    <div class="pemohon3Btn">
                                         <a href="" type="button" class="btn btn-success rounded-3">
-                                            <i class="bx bx-check-circle icon"></i>Terima
+                                            <i class="bx bx-edit-alt icon"></i>Ubah Role
                                         </a>
                                     </div>
-
-                                    <div class="pemohon2Btn">
-                                        <a href="" type="button" class="btn btn-danger" data-toggle="modal">
-                                            <i class="bx bx-minus-circle icon"></i>Tolak
-                                        </a>
-                                    </div>
-                 
                                 </td>
                                 
                             </tr>

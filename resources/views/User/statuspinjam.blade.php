@@ -24,16 +24,17 @@
 
                   
                 <div class="containerpm">
-                    <table cellspacing='0'>
+                    <table>
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>NIM</th>
-                                <th>Keperluan</th>
-                                <th>Tanggal</th>
-                                <th>Waktu</th>
-                                <th>Persetujuan</th>
+                                <th style="width:5% !important;">No</th>
+                                <th style="width:17% !important;">Nama</th>
+                                <th style="width:15% !important;">NIM</th>
+                                <th style="width:10% !important;">Keperluan</th>
+                                <th style="width:10% !important;">Ruangan</th>
+                                <th style="width:12% !important;">Tanggal</th>
+                                <th style="width:12% !important;">Waktu</th>
+                                <th style="width:16% !important;">Persetujuan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +47,7 @@
                                 <td>{{ $data->Keperluan }}</td>
                                 <td>{{ $data->Ruangan }}</td>
                                 <td>{{ $data->Tanggal }}</td>
+                                <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
                                 <td>
                                     <div class="pemohonBtn">
                                         <a href="" type="button" class="btn btn-success rounded-3">
@@ -54,9 +56,9 @@
                                     </div>
 
                                     <div class="pemohon2Btn">
-                                        <button type="button" class="btn btn-danger" data-toggle="modal">
+                                        <a href="" type="button" class="btn btn-danger" data-toggle="modal">
                                             <i class="bx bx-minus-circle icon"></i>Tolak
-                                        </button>
+                                        </a>
                                     </div>
                  
                                 </td>

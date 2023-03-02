@@ -390,17 +390,14 @@ body .container {
 }
 
   body .containerpm {
-    display: flex;
+  
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 1100px;
+
+    width: 95%;
     height: 550px;
-    left: 128px;
-    top: 94px;
-    margin-top: 160px;
-    margin-left: 220px;
-    margin-right: 200px;
+    margin-top: 11rem;
+    margin-left: 21rem;
+    margin-right: 20rem;
     background-color: #FFF;
         -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
@@ -1145,7 +1142,6 @@ top: 12px;
 } */
 
 table {
-  width: 900px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(0, 0, 0);
   background: #ffffff;
@@ -1156,7 +1152,6 @@ table {
 }
  
 table th {
-  padding: 15px 35px;
   border-left:1px solid #000000;
   border-bottom: 1px solid #000000;
   background: #ffffff;
@@ -1173,20 +1168,20 @@ table tr {
 }
  
 table td:first-child {
-  text-align: left;
-  padding-left: 20px;
   border-left: 0;
 }
  
+table tr th .th1 {
+}
+
 table td {
-  padding: 15px 35px;
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
   border-left: 1px solid #000000;
   background: #ffffff;
   background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
   text-align: center;
-
+  height: 50px;
 }
  
 table tr:last-child td {
@@ -1214,14 +1209,14 @@ table tr:hover td {
 
 .pemohonBtn {
   cursor: pointer;
-  margin-left: -85px;
+  margin-left: -89px;
   transform: translateY(50%);
 }
 
 .pemohon2Btn {
   cursor: pointer;
-  margin-left: 25px;
-  margin-right: -60px;
+  margin-right: 0.5rem;
+  float: right;
   transform: translateY(-50%);
 
 }

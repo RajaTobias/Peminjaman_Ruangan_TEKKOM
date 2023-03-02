@@ -987,7 +987,7 @@ progress {
     flex-wrap: wrap;
     margin-top: 250px;
     margin-right: calc(-0.5 * var(--bs-gutter-x));
-    margin-left: 10px;
+    margin-left: -650px;
     position: absolute;
     z-index: 4;
   }
