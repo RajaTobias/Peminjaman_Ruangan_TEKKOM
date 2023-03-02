@@ -38,12 +38,11 @@
                             @foreach ($datas as $data)
                             <tr>
                                 <td>{{ $data->id }}</td>
-                                <td>{{ $data->Nama }}</td>
-                                <td>{{ $data->Role }}</td>
-                                <td>{{ $data->Action }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->is_admin }}</td>
                                 <td>
                                     <div class="pemohon3Btn">
-                                        <a href="" type="button" class="btn btn-success rounded-3">
+                                        <a href="{{ route('Admin.ubahrole', $data->id) }}" type="button" class="btn btn-success rounded-3">
                                             <i class="bx bx-edit-alt icon"></i>Ubah Role
                                         </a>
                                     </div>

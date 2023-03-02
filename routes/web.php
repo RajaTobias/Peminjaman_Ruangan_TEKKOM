@@ -80,9 +80,9 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.profile');
     })->middleware('is_admin')->name('Admin.profile');
 
-    Route::get('/ubahuser', function () {
-        return view ('Admin.ubahuser');
-    })->middleware('is_admin')->name('Admin.ubahuser');
+    Route::get('role', [AdminController::class, 'index'])->middleware('is_admin')->name('Admin.ubahuser');
+
+    Route::get('role/ubah/{id}', [AdminController::class, 'role'])->middleware('is_admin')->name('Admin.ubahrole');
 
     Route::post('peminjaman/store', [PeminjamanRuanganController::class, 'store'])->name('pinjam.store');
 
@@ -166,7 +166,7 @@ Route::prefix('user')->group(function(){
         return view ('User.peminjaman');
     })->middleware('auth')->name('User.peminjaman');
 
-    Route::get('/peminjaman/add', [UserPeminjamanController::class, 'store'])->middleware('auth')->name('User.statuspinjam');
+    Route::get('/peminjaman/add', [UserPeminjamanController::class, 'store'])->middleware('auth')->name('User.store');
 
     Route::get('/statuspinjam', [UserPeminjamanController::class, 'index'])->middleware('auth')->name('User.statuspinjam');
 
