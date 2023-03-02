@@ -901,7 +901,7 @@ body .container .cardx {
   }
   
   .input-text input {
-    width: 100%;
+    width: 55%;
     height: 36px;
     background: #D9D9D9;
     border-radius: 3px;
@@ -910,6 +910,7 @@ body .container .cardx {
     border: none;
     outline: transparent;
     text-indent: 18px;
+    margin-left: 12.3rem;
   }
   
   .input-text input::-webkit-input-placeholder {
@@ -930,8 +931,9 @@ body .container .cardx {
   .border {
     margin-top: 20px;
     transform: translateX(5%);
-    width: 90%;
-    padding: 13px;
+    width: 50%;
+    height: 30px;
+    text-align: center;
     background: #E7F6FF;
      border-radius: 10px;
      border: 1px solid #000000;
@@ -939,6 +941,7 @@ body .container .cardx {
     border: none;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 6.5rem;
   }
 
   .borderdr {

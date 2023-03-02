@@ -21,23 +21,19 @@
             <form class="login" method="post" action="{{ route('pinjam.store') }}">
                 @csrf
                 <div class="input-text">
-                    <input type="text" id="Nama" name="Nama" placeholder="Nama Lengkap" value = "{{ auth()->user()->name }}" readonly/>
+                    <p class="tekspinjam">Nama Lengkap</p><input type="text" id="Nama" name="Nama" required/>
                 </div>
                 
                 <div class="input-text">
-                    <input type="text" id="NIM" name="NIM" placeholder="NIM" required/>
+                    <p class="tekspinjam">NIM</p><input type="text" id="NIM" name="NIM" required/>
                 </div>
 
                 <div class="input-text">
-                    <input type="text" id="Keperluan" name="Keperluan" placeholder="Keperluan" required/>
+                    <p class="tekspinjam">Keperluan</p><input type="text" id="Keperluan" name="Keperluan" required/>
                 </div>
 
-                <!-- <div>
-                    <button class="border" input type="submit">Submit</button>
-                </div> -->
-                <select name="Ruangan" id="Ruangan">
+                <p class="tekspinjam">Pilih Ruangan</p><select name="Ruangan" id="Ruangan">
                         <label for="lang">JenisR</label>
-                        <option value="">Pilih Ruangan</option>
                         <option value="A101">Ruang 101</option>
                         <option value="A102">Ruang 102</option>
                         <option value="A201">Ruang 201</option>
@@ -48,15 +44,15 @@
                       </select>
                 
                 <div class="input-text">
-                    <input type="date" id="Tanggal" name="Tanggal" placeholder="Tanggal" required/>
+                     <p class="tekspinjam">Tanggal</p><input type="date" id="Tanggal" name="Tanggal" required/>
                 </div>
 
                 <div class="input-text">
-                    <input type="time" id="Jam_mulai" name="Jam_mulai" placeholder="Mulai" required/>
+                     <p class="tekspinjam">Jam Mulai</p><input type="time" id="Jam_mulai" name="Jam_mulai" required/>
                 </div>
 
                 <div class="input-text">
-                    <input type="time" id="Jam_selesai" name="Jam_selesai" placeholder="selesai" required/>
+                    <p class="tekspinjam">Jam Selesai</p><input type="time" id="Jam_selesai" name="Jam_selesai" required/>
                 </div>
 
                 <div>

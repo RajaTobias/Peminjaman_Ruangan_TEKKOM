@@ -655,13 +655,24 @@ select {
   cursor: pointer;
 }
 
+.tekspinjam {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 2rem;
+  margin-top: 0.4rem;
+}
+
 select {
   word-wrap: normal;
-  width: 277px;
+  margin-left: 12.3rem;
+  width: 260px;
   font-size: 16px;
   background-color: #D9D9D9;
   margin-bottom: 20px;
+  height: 36px;
 }
+
 select:disabled {
   opacity: 1;
 }
@@ -989,7 +1000,7 @@ progress {
     flex-wrap: wrap;
     margin-top: 250px;
     margin-right: calc(-0.5 * var(--bs-gutter-x));
-    margin-left: -650px;
+    margin-left: -400px;
     position: absolute;
     z-index: 4;
   }
@@ -1002,6 +1013,10 @@ progress {
     padding-right: calc(var(--bs-gutter-x) * 0.5);
     padding-left: calc(var(--bs-gutter-x) * 0.5);
     z-index: 2;
+  }
+
+  .row6 .login {
+    width: 500px;
   }
 
 .row4 {

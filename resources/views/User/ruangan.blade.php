@@ -81,7 +81,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="{{ asset('assets/img/Rectangle 4008.png')}}" alt="..." />
+                            <img src="{{ asset('assets/img/jarkoma.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas3">Lab. Jarkom</span>
                         </a>
