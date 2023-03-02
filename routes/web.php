@@ -8,6 +8,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\Userontroller;
 use App\Http\Controllers\PeminjamanRuanganController;
+use App\Http\Controllers\UserPeminjamanController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -165,9 +166,9 @@ Route::prefix('user')->group(function(){
         return view ('User.peminjaman');
     })->middleware('auth')->name('User.peminjaman');
 
-    Route::get('/statuspinjam', function () {
-        return view ('User.statuspinjam');
-    })->middleware('auth')->name('User.statuspinjam');
+    Route::get('/peminjaman/add', [UserPeminjamanController::class, 'store'])->middleware('auth')->name('User.statuspinjam');
+
+    Route::get('/statuspinjam', [UserPeminjamanController::class, 'index'])->middleware('auth')->name('User.statuspinjam');
 
     Route::view('/dashboard','User.dashboard')->middleware('auth')->name('User.dashboard');
 
