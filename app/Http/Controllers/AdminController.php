@@ -21,16 +21,16 @@ class AdminController extends Controller
         return redirect()->route('Admin.ubahuser')->with('success', 'Role berhasil diganti');
     }
 
-    public function accept()
+    public function accept($id)
     {
-        DB::update('UPDATE peminjaman_ruangans SET is_accept = 1 WHERE id = :id', ['id' => $id]);
+        DB::update('UPDATE peminjaman_ruangans SET is_accept = 1, is_decline = 0 WHERE id = :id', ['id' => $id]);
 
         return redirect()->route('Admin.pemohon')->with('success', 'Peminjaman diterima');
     }
 
-    public function decline()
+    public function decline($id)
     {
-        DB::update('UPDATE peminjaman_ruangans SET is_decline = 0 WHERE id = :id', ['id' => $id]);
+        DB::update('UPDATE peminjaman_ruangans SET is_decline = 1, is_accept = 0  WHERE id = :id', ['id' => $id]);
 
         return redirect()->route('Admin.pemohon')->with('success', 'Peminjaman ditolak');
     }

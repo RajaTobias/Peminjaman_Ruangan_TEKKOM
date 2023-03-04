@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class UserPeminjamanController extends Controller
 {
     public function index() {
-        $datas = DB::select('select * from peminjaman_ruangans');
+        $datas = DB::select('select * from peminjaman_ruangans where user_id = :user_id',['user_id' => auth()->user()->id
+
+        ]);
         return view('User.statuspinjam')
         
         ->with('datas', $datas);
