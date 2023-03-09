@@ -51,7 +51,7 @@
 
                                 <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
                                 <td>{{ ($data->is_accept == 1 && $data->is_decline == 0 )? 'diterima' :  
-                                    (($data->is_accept == 0 && $data->is_decline == 1) ? 'dtiolak' : 'menunggu')}}</td>
+                                    (($data->is_accept == 0 && $data->is_decline == 1) ? 'ditolak' : 'menunggu')}}</td>
                                 <!-- <td>
                                     <div class="pemohonBtn">
                                         <a href="" type="button" class="btn btn-success rounded-3">

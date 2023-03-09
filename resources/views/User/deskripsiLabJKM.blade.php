@@ -44,7 +44,7 @@
 
                    
                                 <div class="cardy">
-                                    <a href="{{ route('User.labembedded') }}" class="borderdr">Pinjam Ruangan <i class='bx bx-chevron-right icon'> </i> </a>
+                                    <a href="{{ route('User.labjarkom') }}" class="borderdr">Pinjam Ruangan <i class='bx bx-chevron-right icon'> </i> </a>
                                 </div>
                     </form>
             </div>
@@ -54,22 +54,27 @@
 
     <div>
         <a href="#">
-            <img src="{{ asset('assets/img/emba.jpg') }}" alt="Image 1">
+            <img src="{{ asset('assets/img/jarkoma.jpg') }}" alt="Image 1">
         </a>
     </div>
     <div>
         <a href="#">
-            <img src="{{ asset('assets/img/embb.jpg') }}" alt="Image 2">
+            <img src="{{ asset('assets/img/jarkomb.jpg') }}" alt="Image 2">
         </a>            
     </div>
     <div>
         <a href="#">
-            <img src="{{ asset('assets/img/embc.jpg') }}" alt="Image 3">
+            <img src="{{ asset('assets/img/jarkomc.jpg') }}" alt="Image 3">
         </a>            
     </div>
     <div>
         <a href="#">
-            <img src="{{ asset('assets/img/embd.jpg') }}" alt="Image 4">
+            <img src="{{ asset('assets/img/jarkomd.jpg') }}" alt="Image 4">
+        </a>
+    </div>
+    <div>
+        <a href="#">
+            <img src="{{ asset('assets/img/jarkome.jpg') }}" alt="Image 5">
         </a>
     </div>
 

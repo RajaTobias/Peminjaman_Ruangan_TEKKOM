@@ -59,7 +59,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="{{ asset('assets/img/Rectangle 4008.png')}}" alt="..." />
+                            <img src="{{ asset('assets/img/mlda.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas">Lab. Mulmed</span>
                         </a>
@@ -92,7 +92,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img src="{{ asset('assets/img/Rectangle 4008.png')}}" alt="..." />
+                            <img src="{{ asset('assets/img/emba.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Lab. Embedded</span>
                         </a>

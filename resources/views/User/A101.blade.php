@@ -18,7 +18,7 @@
           </div> 
 
         <div class="row6">
-            <form class="login">
+            <form class="login" method="post" action="{{ route('user.store') }}">
                 @csrf
                 <div class="input-text">
                     <p class="tekspinjam">Nama Lengkap</p><input type="text" id="Nama" name="Nama" required/>
@@ -51,7 +51,9 @@
                 <div class="input-text">
                 <p class="tekspinjam">Jam Selesai</p><input type="time" id="Jam_selesai" name="Jam_selesai" required/>
                 </div>
-
+                <div>
+                    <button class="border" input type="submit">Submit</button>
+                </div>
             </form>
         </div> 
         <!-- <footer class="footer fixed-bottom1" method="post" action="{{ route('pinjam.store') }}">
