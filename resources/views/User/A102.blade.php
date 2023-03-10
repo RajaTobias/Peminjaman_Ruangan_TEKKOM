@@ -51,7 +51,9 @@
                 <div class="input-text">
                 <p class="tekspinjam">Jam Selesai</p><input type="time" id="Jam_selesai" name="Jam_selesai" required/>
                 </div>
-
+                <div>
+                    <button class="border" input type="submit">Submit</button>
+                </div>
             </form>
         </div> 
         <!-- <footer class="footer fixed-bottom1" method="post" action="{{ route('pinjam.store') }}">

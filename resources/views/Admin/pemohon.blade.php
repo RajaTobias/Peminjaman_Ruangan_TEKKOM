@@ -50,13 +50,14 @@
                                 <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
                                 <td>
                                     <div class="pemohonBtn">
-                                        <a href="{{ route('Admin.accept', $data->id) }}" type="button" class="btn btn-success rounded-3">
+                                        <a href="" type="button" class="btn btn-success rounded-3">
                                             <i class="bx bx-check-circle icon"></i>Terima
                                         </a>
+                                        <label class="label-label success">Terima</label>
                                     </div>
 
                                     <div class="pemohon2Btn">
-                                        <a href="{{ route('Admin.decline', $data->id) }}" type="button" class="btn btn-danger" data-toggle="modal">
+                                        <a href="" type="button" class="btn btn-danger" data-toggle="modal">
                                             <i class="bx bx-minus-circle icon"></i>Tolak
                                         </a>
                                     </div>
