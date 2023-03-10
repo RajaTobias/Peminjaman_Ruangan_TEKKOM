@@ -48,7 +48,6 @@
                                 <td>{{ $data->Keperluan }}</td>
                                 <td>{{ $data->Ruangan }}</td>
                                 <td>{{ $data->Tanggal }}</td>
-
                                 <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
                                 <td>{{ ($data->is_accept == 1 && $data->is_decline == 0 )? 'diterima' :  
                                     (($data->is_accept == 0 && $data->is_decline == 1) ? 'dtiolak' : 'menunggu')}}</td>

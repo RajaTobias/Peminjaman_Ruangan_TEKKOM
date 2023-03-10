@@ -18,7 +18,7 @@
           </div> 
 
         <div class="row6">
-            <form class="login" method="post" action="{{ route('user.store') }}">
+            <form class="login" method="post" action="{{ route('User.store') }}">
                 @csrf
                 <div class="input-text">
                     <p class="tekspinjam">Nama Lengkap</p><input type="text" id="Nama" name="Nama" required/>

@@ -6,33 +6,30 @@ use Illuminate\Http\Request;
 
 class RuanganController extends Controller
 {
-    public function create() {
-        return view('ruangan.add');
-        }
         public function store(Request $request) {
         $request->validate([
         
         'Nama_ruangan' => 'required',
         'Jenis_ruangan' => 'required',
+        'Kapasitas_ruangan' => 'required',
+        'Deskripsi_ruangan' => 'required',
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        // DB::insert('INSERT INTO ruangans(id_admin,
-        // nama_admin, alamat, username, password) VALUES
-        // (:id_admin, :nama_admin, :alamat, :username,
-        // :password)',
-        // [
-        // 'id_admin' => $request->id_admin,
-        // 'nama_admin' => $request->nama_admin,
-        // 'alamat' => $request->alamat,
-        // 'username' => $request->username,
-        // 'password' => Hash::make($request->password),
-        // ]
-        // );
+        DB::insert('INSERT INTO ruangans(Nama_ruangan,
+        Jenis_ruangan, Kapasitas_ruangan, Deskripsi_ruangan) VALUES
+        (:Nama_ruangan, :Jenis_ruangan, :Kapasitas_ruangan, :Deskripsi_ruangan)',
+        [
+        'Nama_ruangan' => $request->Nama_ruangan,
+        'Jenis_ruangan' => $request->Jenis_ruangan,
+        'Kapasitas_ruangan' => $request->Kapasitas_ruangan,
+        'Deskripsi_ruangan' => $request->Deskripsi_ruangan,
+        ]
+        );
                 // Menggunakan laravel eloquent
-        Ruangan::create([
-            'Nama_ruangan' => $request->Nama_ruangan,
-            'Jenis_ruangan' => $request->Jenis_ruangan,
-        ]);
+        // Ruangan::create([
+        //     'Nama_ruangan' => $request->Nama_ruangan,
+        //     'Jenis_ruangan' => $request->Jenis_ruangan,
+        // ]);
         return redirect()->route('ruangan.index')->with('success', 'Data ruangan berhasil disimpan');
         }
 
