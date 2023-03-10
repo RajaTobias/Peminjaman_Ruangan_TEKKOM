@@ -1246,6 +1246,19 @@ table tr:hover td {
 .pemohon3Btn {
   cursor: pointer;
   font-size: 15px;
+  transform: translateY(50%);
+}
+
+.pemohon4Btn {
+  cursor: pointer;
+  font-size: 15px;
+  transform: translateY(-50%);
+}
+
+.pemohon5Btn {
+  cursor: pointer;
+  font-size: 15px;
+  transform: translateY(50%);
 }
 
 select {

@@ -30,7 +30,7 @@
                                 <th style="width:3% !important;">No</th>
                                 <th style="width:15% !important;">Nama</th>
                                 <th style="width:10% !important;">Role</th>
-                                <th style="width:10% !important;">Action</th>
+                                <th style="width:25% !important;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,11 +43,24 @@
                                 <td>
                                     <div class="pemohon3Btn">
                                         <a href="{{ route('Admin.ubahrole', $data->id) }}" type="button" class="btn btn-light rounded-3">
-                                            <i class="bx bx-edit-alt icon" ></i>  Ubah Role
+                                            <i class="bx bx-edit-alt icon" ></i>  Admin Lab
+                                        </a>
+                                    </div>
+
+                                    <div class="pemohon4Btn">
+                                        <a href="" type="button" class="btn btn-dark rounded-3">
+                                            <i class="bx bx-edit-alt icon" ></i>  User
+                                        </a>
+                                    </div>
+
+                                <div class="pemohon5Btn">
+                                        <a href="" type="button" class="btn btn-primary rounded-3">
+                                            <i class="bx bx-edit-alt icon" ></i>  Admin TU
                                         </a>
                                     </div>
                                 </td>
-                                
+
+                
                             </tr>
                             @endforeach
                             

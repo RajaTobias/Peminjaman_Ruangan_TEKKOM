@@ -53,7 +53,6 @@
                                         <a href="" type="button" class="btn btn-success rounded-3">
                                             <i class="bx bx-check-circle icon"></i>Terima
                                         </a>
-                                        <label class="label-label success">Terima</label>
                                     </div>
 
                                     <div class="pemohon2Btn">
