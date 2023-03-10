@@ -31,10 +31,10 @@
                     <form class="druangan">
                         <p class="teksr1">Lab. RPL</p>
                         <p class="teksf1">Fasilitas :</p>
-                        <p class="teksf2"> <i class='bx bx-chalkboard icon' ></i>  AC</p>
-                        <p class="teksf3"> <i class='bx bx-desktop icon' ></i>  Smart TV</p>
-                        <p class="teksf4"> <i class='bx bx-chair icon' ></i>  Kursi</p>
-                        <p class="teksf5"> <i class='bx bx-card icon' ></i>  Meja</p>
+                        <p class="teksf2"> <i class='bx bx-chair icon' ></i>  20 Kursi Meja</p>
+                        <p class="teksf3"> <i class='bx bx-card icon' ></i>  1 Papan Tulis</p>
+                        <p class="teksf4"> <i class='bx bx-hdd icon' ></i>  1 Proyektor</p>
+                        <p class="teksf5"> <i class='bx bx-chalkboard icon' ></i>  2 AC</p>
                       
 
                         <p class="teksf6">Kapasitas</p>
