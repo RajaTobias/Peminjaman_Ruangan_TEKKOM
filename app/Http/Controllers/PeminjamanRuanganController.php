@@ -13,16 +13,17 @@ class PeminjamanRuanganController extends Controller
         'Nama' => 'required',
         'NIM' => 'required',
         'Keperluan' => 'required',
-        'Ruangan' => 'required',
+        // 'Ruangan' => 'required',
         'Tanggal' => 'required',
         'Jam_mulai' => 'required',
         'Jam_selesai' => 'required',
+        'ruangan_id' => 'required'
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO peminjaman_ruangans(Nama,
-        NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai, user_id) VALUES
+        NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai, user_id, ruangan_id) VALUES
         (:Nama, :NIM, :Keperluan, :Ruangan,
-        :Tanggal, :Jam_mulai, :Jam_selesai, :user_id)',
+        :Tanggal, :Jam_mulai, :Jam_selesai, :user_id, :ruangan_id)',
         [ 
         'Nama' => $request->Nama,
         'NIM' => $request->NIM,
@@ -31,20 +32,19 @@ class PeminjamanRuanganController extends Controller
         'Tanggal' => $request->Tanggal,
         'Jam_mulai' => $request->Jam_mulai,
         'Jam_selesai' => $request->Jam_selesai,
-        'user_id' => auth()->user()->id
+        'user_id' => auth()->user()->id,
+        'ruangan_id' => $request->ruangan_id
         ]
         );
-        // Menggunakan laravel eloquent
-        // PeminjamanRuangan::create([
-        //     'Nama' => $request->Nama,
-        //     'NIM' => $request->NIM,
-        //     'Keperluan' => $request->Keperluan,
-        //     'Ruangan' => $request->Ruangan,
-        //     'Tanggal' => $request->Tanggal,
-        //     'Jam_mulai' => $request->Jam_mulai,
-        //     'Jam_selesai' => $request->Jam_selesai,
-        // ]);
         return redirect()->route('Admin.pemohon')->with('success', 'Peminjaman Berhasil');
+        }
+
+        public function dropdown()
+        {
+        $datas = DB::select('SELECT id, Nama_ruangan FROM ruangans;');
+        return view('Admin.peminjaman')
+        
+        ->with('datas', $datas);
         }
 
     public function delete($id){
@@ -53,7 +53,9 @@ class PeminjamanRuanganController extends Controller
     }
 
     public function index() {
-        $datas = DB::select('select * from peminjaman_ruangans');
+        $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai
+        FROM peminjaman_ruangans p INNER JOIN ruangans r
+        ON p.ruangan_id = r.id');
         return view('Admin.pemohon')
         
         ->with('datas', $datas);

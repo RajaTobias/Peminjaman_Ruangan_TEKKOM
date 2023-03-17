@@ -35,15 +35,12 @@
                 <!-- <div>
                     <button class="border" input type="submit">Submit</button>
                 </div> -->
-                <p class="tekspinjam">Pilih Ruangan</p><select name="Ruangan" id="Ruangan">
+                <p class="tekspinjam">Pilih Ruangan</p>
+                    <select name="ruangan_id" id="ruangan_id">
                         <label for="lang">JenisR</label>
-                        <option value="A101">Ruang 101</option>
-                        <option value="A102">Ruang 102</option>
-                        <option value="A201">Ruang 201</option>
-                        <option value="Lab. Embedded">Lab. Embedded</option>
-                        <option value="Lab. RPL">Lab. RPL</option>
-                        <option value="Lab. Mulmed">Lab. Mulmed</option>
-                        <option value="Lab. Jarkom">Lab. Jarkom</option>
+                        @foreach ($datas as $data)
+                        <option value= "{{ $data->id }}" >{{ $data->Nama_ruangan }}</option>
+                        @endforeach
                       </select>
                 
                 <div class="input-text">

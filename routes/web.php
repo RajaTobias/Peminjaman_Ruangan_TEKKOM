@@ -54,13 +54,13 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.deskripsiLabRPL');
     })->middleware('auth')->name('Admin.deskripsiLabRPL');
 
-    Route::get('/jadwal', function () {
-        return view ('Admin.jadwal');
-    })->middleware('is_admin')->name('Admin.jadwal');
+    // Route::get('/jadwal', function () {
+    //     return view ('Admin.jadwal');
+    // })->middleware('is_admin')->name('Admin.jadwal');
 
-    Route::get('/editjadwal', function () {
-        return view ('Admin.editjadwal');
-    })->middleware('is_admin')->name('Admin.editjadwal');
+    // Route::get('/editjadwal', function () {
+    //     return view ('Admin.editjadwal');
+    // })->middleware('is_admin')->name('Admin.editjadwal');
 
     Route::get('/pemohon', [PeminjamanRuanganController::class, 'index'])->middleware('is_admin')->name('Admin.pemohon');
 
@@ -71,10 +71,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/tambahruangan', function () {
         return view ('Admin.tambahruangan');
     })->middleware('is_admin')->name('Admin.tambahruangan');
-
-    Route::get('/peminjaman', function () {
-        return view ('Admin.peminjaman');
-    })->middleware('is_admin')->name('Admin.peminjaman');
 
     Route::get('/profile', function () {
         return view ('Admin.profile');
@@ -88,7 +84,15 @@ Route::prefix('admin')->group(function () {
 
     Route::get('pemohon/tolak/{id}', [AdminController::class, 'decline'])->middleware('is_admin')->name('Admin.decline');
 
-    Route::post('peminjaman/store', [PeminjamanRuanganController::class, 'store'])->name('pinjam.store');
+    Route::post('peminjaman/store', [PeminjamanRuanganController::class, 'store'])->middleware('is_admin')->name('pinjam.store');
+
+    Route::get('peminjaman', [PeminjamanRuanganController::class, 'dropdown'])->middleware('is_admin')->name('Admin.peminjaman');
+
+    Route::get('editjadwal', [JadwalController::class, 'dropdown'])->middleware('is_admin')->name('Admin.editjadwal');
+
+    Route::post('editjadwal/store', [JadwalController::class, 'store'])->middleware('is_admin')->name('editjadwal.store');
+
+    Route::get('jadwal', [JadwalController::class, 'index'])->middleware('is_admin')->name('Admin.jadwal');
 
     Route::view('/dashboard','Admin.dashboard')->middleware('is_admin')->name('Admin.dashboard');
 
@@ -166,9 +170,11 @@ Route::prefix('user')->group(function(){
         return view ('User.profile');
     })->middleware('auth')->name('User.profile');
 
-    Route::get('/peminjaman', function () {
-        return view ('User.peminjaman');
-    })->middleware('auth')->name('User.peminjaman');
+    // Route::get('/peminjaman', function () {
+    //     return view ('User.peminjaman');
+    // })->middleware('auth')->name('User.peminjaman');
+
+    Route::get('peminjaman', [UserPeminjamanController::class, 'dropdown'])->middleware('auth')->name('User.peminjaman');
 
     Route::post('/peminjaman/add', [UserPeminjamanController::class, 'store'])->middleware('auth')->name('User.store');
 

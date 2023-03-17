@@ -42,4 +42,5 @@ class AdminController extends Controller
         
         ->with('datas', $datas);
     }
+
 }

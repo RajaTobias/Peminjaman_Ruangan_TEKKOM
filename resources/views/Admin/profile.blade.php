@@ -29,17 +29,17 @@
                         </div>
                         <div class="input-text1">
                             <p class="teksp1">Nama Mahasiswa</p>
-                            <input type="text" id="inputNama" name="nama" required/>
+                            <input type="text" id="inputNama" name="nama" placeholder="{{ Auth::user()->name }}" readonly/>
                         </div>
                         
                         <div class="input-text1">
                             <p class="teksp2">No. Handphone</p>
-                            <input type="text" id="inputNo" name="no" required/>
+                            <input type="text" id="inputNo" name="no" readonly/>
                         </div>
         
                         <div class="input-text1">
                             <p class="teksp3">NIM</p>
-                            <input type="text" id="inputNIM" name="nim" required/>
+                            <input type="text" id="inputNIM" name="nim" readonly/>
                         </div>
         
                         <div>

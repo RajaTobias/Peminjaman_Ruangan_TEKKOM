@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class UserPeminjamanController extends Controller
 {
     public function index() {
-        $datas = DB::select('select * from peminjaman_ruangans where user_id = :user_id',['user_id' => auth()->user()->id
+        $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
+        FROM peminjaman_ruangans p INNER JOIN ruangans r
+        ON p.ruangan_id = r.id where user_id = :user_id',['user_id' => auth()->user()->id
 
         ]);
         return view('User.statuspinjam')
@@ -21,16 +23,17 @@ class UserPeminjamanController extends Controller
         'Nama' => 'required',
         'NIM' => 'required',
         'Keperluan' => 'required',
-        'Ruangan' => 'required',
+        // 'Ruangan' => 'required',
         'Tanggal' => 'required',
         'Jam_mulai' => 'required',
         'Jam_selesai' => 'required',
+        'ruangan_id' => 'required'
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO peminjaman_ruangans(Nama,
-        NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai, user_id) VALUES
+        NIM, Keperluan, Ruangan, Tanggal, Jam_mulai, Jam_selesai, user_id, ruangan_id) VALUES
         (:Nama, :NIM, :Keperluan, :Ruangan,
-        :Tanggal, :Jam_mulai, :Jam_selesai, :user_id)',
+        :Tanggal, :Jam_mulai, :Jam_selesai, :user_id, :ruangan_id)',
         [
         'Nama' => $request->Nama,
         'NIM' => $request->NIM,
@@ -39,10 +42,19 @@ class UserPeminjamanController extends Controller
         'Tanggal' => $request->Tanggal,
         'Jam_mulai' => $request->Jam_mulai,
         'Jam_selesai' => $request->Jam_selesai,
-        'user_id' => auth()->user()->id
+        'user_id' => auth()->user()->id,
+        'ruangan_id' => $request -> ruangan_id
         ]
         );
         return redirect()->route('User.statuspinjam')->with('success', 'Peminjaman Berhasil');
+        }
+
+        public function dropdown()
+        {
+        $datas = DB::select('SELECT id, Nama_ruangan FROM ruangans;');
+        return view('User.peminjaman')
+        
+        ->with('datas', $datas);
         }
 
 }

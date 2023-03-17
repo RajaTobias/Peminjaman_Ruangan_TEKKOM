@@ -46,7 +46,7 @@
                                 <td>{{ $data->Nama }}</td>
                                 <td>{{ $data->NIM }}</td>
                                 <td>{{ $data->Keperluan }}</td>
-                                <td>{{ $data->Ruangan }}</td>
+                                <td>{{ $data->Nama_ruangan }}</td>
                                 <td>{{ $data->Tanggal }}</td>
                                 <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
                                 <td>{{ ($data->is_accept == 1 && $data->is_decline == 0 )? 'diterima' :  
