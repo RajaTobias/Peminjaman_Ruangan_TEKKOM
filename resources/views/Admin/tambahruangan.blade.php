@@ -65,7 +65,7 @@
                                                 <ul>
                                                     <li><input type="checkbox" class="teksy3"></input> <i class='bx bx-laptop icon' ></i>  Komputer </li>
                                                     <li><input type="checkbox" class="teksy3"></input> <i class='bx bx-hdd icon' ></i>  Proyektor </i></li>
-                                                    <li><input type="checkbox" class="teksy3"></input> <i class='bx bx-card icon' ></i>  LCD </li>
+                                                    <li><input type="checkbox" class="teksy3"></input> <i class='bx bx-slideshow icon' ></i>  LCD </li>
                                                 </ul>
                                             </div>
                                         </div><!-- /cbp-hrsub-inner -->
