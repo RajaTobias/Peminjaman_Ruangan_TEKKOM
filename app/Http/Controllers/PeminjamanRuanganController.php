@@ -13,7 +13,6 @@ class PeminjamanRuanganController extends Controller
         'Nama' => 'required',
         'NIM' => 'required',
         'Keperluan' => 'required',
-        // 'Ruangan' => 'required',
         'Tanggal' => 'required',
         'Jam_mulai' => 'required',
         'Jam_selesai' => 'required',

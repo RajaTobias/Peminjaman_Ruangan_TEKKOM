@@ -28,31 +28,31 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/ruangan/deskripsiA101', function () {
         return view ('Admin.deskripsiA101');
-    })->middleware('auth')->name('Admin.deskripsiA101');
+    })->middleware('is_admin')->name('Admin.deskripsiA101');
 
     Route::get('/ruangan/deskripsiA102', function () {
         return view ('Admin.deskripsiA102');
-    })->middleware('auth')->name('Admin.deskripsiA102');
+    })->middleware('is_admin')->name('Admin.deskripsiA102');
 
     Route::get('/ruangan/deskripsiA201', function () {
         return view ('Admin.deskripsiA201');
-    })->middleware('auth')->name('Admin.deskripsiA201');
+    })->middleware('is_admin')->name('Admin.deskripsiA201');
     
     Route::get('/ruangan/deskripsiLabEMB', function () {
         return view ('Admin.deskripsiLabEMB');
-    })->middleware('auth')->name('Admin.deskripsiLabEMB');
+    })->middleware('is_admin')->name('Admin.deskripsiLabEMB');
 
     Route::get('/ruangan/deskripsiLabJKM', function () {
         return view ('Admin.deskripsiLabJKM');
-    })->middleware('auth')->name('Admin.deskripsiLabJKM');
+    })->middleware('is_admin')->name('Admin.deskripsiLabJKM');
 
     Route::get('/ruangan/deskripsiLabMLD', function () {
         return view ('Admin.deskripsiLabMLD');
-    })->middleware('auth')->name('Admin.deskripsiLabMLD');
+    })->middleware('is_admin')->name('Admin.deskripsiLabMLD');
 
     Route::get('/ruangan/deskripsiLabRPL', function () {
         return view ('Admin.deskripsiLabRPL');
-    })->middleware('auth')->name('Admin.deskripsiLabRPL');
+    })->middleware('is_admin')->name('Admin.deskripsiLabRPL');
 
     // Route::get('/jadwal', function () {
     //     return view ('Admin.jadwal');
@@ -78,7 +78,11 @@ Route::prefix('admin')->group(function () {
 
     Route::get('role', [AdminController::class, 'index'])->middleware('is_admin')->name('Admin.ubahuser');
 
-    Route::get('role/ubah/{id}', [AdminController::class, 'role'])->middleware('is_admin')->name('Admin.ubahrole');
+    Route::get('role user/ubah/{id}', [AdminController::class, 'role_user'])->middleware('is_admin')->name('Admin.ubahroleuser');
+
+    Route::get('role admin/ubah/{id}', [AdminController::class, 'role_admin_lab'])->middleware('is_admin')->name('Admin.ubahroleadminlab');
+
+    Route::get('role admin TU/ubah/{id}', [AdminController::class, 'role_admin_TU'])->middleware('is_admin')->name('Admin.ubahroleadminTU');
 
     Route::get('pemohon/terima/{id}', [AdminController::class, 'accept'])->middleware('is_admin')->name('Admin.accept');
 

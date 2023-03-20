@@ -39,22 +39,22 @@
                             <tr>
                                 <td>{{ $data->id }}</td>
                                 <td>{{ $data->name }}</td>
-                                <td>{{ $data->is_admin == 1 ? 'Admin' : 'User' }}</td>
+                                <td>{{ $data->is_admin == 1 && $data->is_TU == 0 ? 'Admin LAB' : ($data->is_admin == 1 && $data->is_TU == 1 ? 'Admin TU' : 'User') }}</td>
                                 <td>
-                                    <div class="pemohon3Btn">
-                                        <a href="{{ route('Admin.ubahrole', $data->id) }}" type="button" class="btn btn-light rounded-3">
+                                    <div class="pemohon3Btn" >
+                                        <a href="{{ route('Admin.ubahroleadminlab', $data->id) }}" type="button" class="btn btn-light rounded-3">
                                             <i class="bx bx-edit-alt icon" ></i>  Admin Lab
                                         </a>
                                     </div>
 
                                     <div class="pemohon4Btn">
-                                        <a href="" type="button" class="btn btn-dark rounded-3">
+                                        <a href="{{ route('Admin.ubahroleuser', $data->id) }}" type="button" class="btn btn-dark rounded-3">
                                             <i class="bx bx-edit-alt icon" ></i>  User
                                         </a>
                                     </div>
 
                                 <div class="pemohon5Btn">
-                                        <a href="" type="button" class="btn btn-primary rounded-3">
+                                        <a href="{{ route('Admin.ubahroleadminTU', $data->id) }}" type="button" class="btn btn-primary rounded-3">
                                             <i class="bx bx-edit-alt icon" ></i>  Admin TU
                                         </a>
                                     </div>
