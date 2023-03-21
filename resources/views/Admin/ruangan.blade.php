@@ -33,6 +33,7 @@
                             <span class="tekskelas">{{$data -> Nama_ruangan}}</span>
                         </a>
                     </div>
+                    
                     @endforeach
                     <!-- <div class="cardx">
                         <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiA102') }}">
