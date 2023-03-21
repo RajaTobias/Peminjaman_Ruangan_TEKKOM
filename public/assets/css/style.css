@@ -977,6 +977,19 @@ body .container .cardx {
     color: #FFF;
     border: none;
   }
+
+  .borderunduh {
+    width: 40px;
+    color: #000000;
+    border: none;
+    float: right;
+    margin-right: 1rem;
+  }
+
+  .borderunduh .btn {
+    width: 2rem;
+    font-size: 20px;
+  }
   
   .border2 {
     margin-top: 200px;

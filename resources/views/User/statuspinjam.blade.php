@@ -54,11 +54,13 @@
                                 @if($data->is_accept == 1 && $data->is_decline == 0 )
                                 <div class="badge1">
                                         <span class="teksbadge">
-                                        <i class="bx bx-no-check-circle icon"></i>  Diterima
+                                        <i class="bx bx-check-circle icon"></i>  Diterima
                                     </span>
-                                    <span>
-                                        <button class="border1" href=""><i class="bx bx-envelope icon"></i></button>
-                                    </span>
+                                    </div>
+                                    <div class="borderunduh">
+                                        <a href="" type="button" class="btn btn-info rounded-3">
+                                            <i class="bx bx-envelope icon"></i>
+                                        </a>
                                     </div>
                                     @else
                                         @if($data->is_accept == 0 && $data->is_decline == 1 )
