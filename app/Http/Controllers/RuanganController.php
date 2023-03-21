@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RuanganController extends Controller
 {
         public function store(Request $request) {
         $request->validate([
-        
         'Nama_ruangan' => 'required',
         'Jenis_ruangan' => 'required',
         'Kapasitas_ruangan' => 'required',
@@ -39,8 +39,8 @@ class RuanganController extends Controller
     }
 
     public function index() {
-        $datas = DB::select('select * from ruangan');
-        return view('ruangan.index')
+        $datas = DB::select('select * from ruangans');
+        return view('Admin.ruangan')
         
         ->with('datas', $datas);
     }

@@ -64,9 +64,9 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/pemohon', [PeminjamanRuanganController::class, 'index'])->middleware('is_admin')->name('Admin.pemohon');
 
-    Route::get('/ruangan', function () {
-        return view ('Admin.ruangan');
-    })->middleware('is_admin')->name('Admin.ruangan');
+    // Route::get('/ruangan', function () {
+    //     return view ('Admin.ruangan');
+    // })->middleware('is_admin')->name('Admin.ruangan');
 
     Route::get('/tambahruangan', function () {
         return view ('Admin.tambahruangan');
@@ -97,6 +97,8 @@ Route::prefix('admin')->group(function () {
     Route::post('editjadwal/store', [JadwalController::class, 'store'])->middleware('is_admin')->name('editjadwal.store');
 
     Route::get('jadwal', [JadwalController::class, 'index'])->middleware('is_admin')->name('Admin.jadwal');
+
+    Route::get('ruangan', [RuanganController::class, 'index'])->middleware('is_admin')->name('Admin.ruangan');
 
     Route::view('/dashboard','Admin.dashboard')->middleware('is_admin')->name('Admin.dashboard');
 

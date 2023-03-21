@@ -41,7 +41,7 @@
                             <!-- ini cuma contoh ntar isinya dipanggil dari database -->
                             @foreach ($datas as $data)
                             <tr>
-                                <td>{{ $data->id }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->Nama }}</td>
                                 <td>{{ $data->NIM }}</td>
                                 <td>{{ $data->Keperluan }}</td>
@@ -67,7 +67,85 @@
                             @endforeach
                             
                         </tbody>
-                    </table>                    
+                    </table>
+
+                    
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:5% !important;">No</th>
+                                <th style="width:17% !important;">Nama</th>
+                                <th style="width:15% !important;">NIM</th>
+                                <th style="width:10% !important;">Keperluan</th>
+                                <th style="width:10% !important;">Ruangan</th>
+                                <th style="width:12% !important;">Tanggal</th>
+                                <th style="width:12% !important;">Waktu</th>
+                                <th style="width:16% !important;">Persetujuan</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ini cuma contoh ntar isinya dipanggil dari database -->
+                            @foreach ($datas as $data)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $data->Nama }}</td>
+                                <td>{{ $data->NIM }}</td>
+                                <td>{{ $data->Keperluan }}</td>
+                                <td>{{ $data->Nama_ruangan }}</td>
+                                <td>{{ $data->Tanggal }}</td>
+
+                                <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
+                                <td>
+                                @if($data->is_accept == 1 && $data->is_decline == 0 )
+                                <div class="badge1">
+                                        <span class="teksbadge">
+                                        <i class="bx bx-no-check-circle icon"></i>  Diterima
+                                    </span>
+                                    <span>
+                                        <button class="border1" href=""><i class="bx bx-envelope icon"></i></button>
+                                    </span>
+                                    </div>
+                                    @else
+                                        @if($data->is_accept == 0 && $data->is_decline == 1 )
+                                    <div class="badge2">
+                                        <span class="teksbadge">
+                                        <i class="bx bx-no-entry icon"></i>  Ditolak
+                                    </span>
+                                    </div>
+                                        @else
+                                    <div class="badge3">
+                                        <span class="teksbadge">
+                                        <i class="bx bx-time icon"></i>  Menunggu
+                                    </span>
+                                    </div>
+                                        @endif
+                                    @endif
+                                </td>
+                                    
+                                <!-- {{ ($data->is_accept == 1 && $data->is_decline == 0 )? 'diterima' :  
+                                    (($data->is_accept == 0 && $data->is_decline == 1) ? 'ditolak' : 'menunggu')}}</td> -->
+                                <!-- <td>
+                                    <div class="pemohonBtn">
+                                        <a href="" type="button" class="btn btn-success rounded-3">
+                                            <i class="bx bx-check-circle icon"></i>Terima
+                                        </a>
+                                    </div>
+
+                                    <div class="pemohon2Btn">
+                                        <a href="" type="button" class="btn btn-danger" data-toggle="modal">
+                                            <i class="bx bx-minus-circle icon"></i>Tolak
+                                        </a>
+                                    </div>
+                 
+                                </td> -->
+                                
+                            </tr>
+                            @endforeach
+                            
+                        </tbody>
+                    </table>
 
                     </div>
              
