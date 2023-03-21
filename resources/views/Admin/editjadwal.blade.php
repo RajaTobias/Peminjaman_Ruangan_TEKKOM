@@ -41,22 +41,21 @@
                             </div>                
                         <div class="teksb">
                             <i class='bx bx-calendar-event icon'></i>
-                            <span class="">Edit Tanggal</span>
+                            <span class="">Keperluan</span>
                         </div>
-                             <div class= "tekse" id='cetak'>Hari ini</div>
-                            <input class="teksf" type='date' id='Tanggal_pinjam' name='Tanggal_pinjam' onchange='cetakTanggal()'/>
+                            <input class="teksf" type='text' id='Keperluan' name='Keperluan' onchange='cetakTanggal()'/>
                         <div class="teksc">
                                 <i class='bx bx-time icon'></i>
                                 <span class="">Waktu Mulai</span>
                             </div>
                            <div class= "teksg" id='mulai'>--:--</div>
-                             <input class="teksh" type='time' id='Waktu_mulai' name='Waktu_mulai' onchange='cetakWaktu()'/>
+                             <input class="teksh" type='datetime-local' id='Waktu_mulai' name='Waktu_mulai' onchange='cetakWaktu()'/>
                              <div class="teksd">
                                 <i class='bx bx-time-five icon'></i>
                                 <span class="">Waktu Selesai</span>
                             </div>
                            <div class= "teksi" id='selesai'>--:--</div>
-                           <input class="teksj" type='time' id='Waktu_selesai' name='Waktu_selesai' onchange='cetakJam()'/>
+                           <input class="teksj" type='datetime-local' id='Waktu_selesai' name='Waktu_selesai' onchange='cetakJam()'/>
   
                            <div>
                             <button class="borderej">Submit</button>

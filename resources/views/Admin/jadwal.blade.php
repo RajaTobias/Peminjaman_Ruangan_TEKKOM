@@ -69,18 +69,13 @@
     editable: true,
     eventLimit: true, // allow "more" link when too many events
     events: [
+        @foreach ($datas as $data)
         {
-        title: 'Kelar KP',
-        start: '2023-02-28'
-        },
-        {
-        title: 'Lulus KP',
-        start: '2023-02-28'
-        },
-        {
-        title: 'Menamatkan KP',
-        start: '2023-02-28'
+        title: '{{ $data->Keperluan }}',
+        start: '{{ $data->Waktu_mulai }}',
+        end: '{{$data -> Waktu_selesai}}'
         }
+        @endforeach
     ]
     });
 

@@ -162,9 +162,9 @@ Route::prefix('user')->group(function(){
         return view ('User.labmulmed');
     })->middleware('auth')->name('User.labmulmed');
 
-    Route::get('/jadwal', function () {
-        return view ('User.jadwal');
-    })->middleware('auth')->name('User.jadwal');
+    // Route::get('/jadwal', function () {
+    //     return view ('User.jadwal');
+    // })->middleware('auth')->name('User.jadwal');
 
     Route::get('/ruangan', function () {
         return view ('User.ruangan');
@@ -187,6 +187,8 @@ Route::prefix('user')->group(function(){
     Route::view('/dashboard','User.dashboard')->middleware('auth')->name('User.dashboard');
 
     Route::view('/contact','User.contact')->middleware('auth')->name('User.contact');
+
+    Route::get('jadwal', [JadwalController::class, 'userindex'])->middleware('auth')->name('User.jadwal');
 
 });
 
