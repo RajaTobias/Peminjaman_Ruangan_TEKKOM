@@ -13,7 +13,6 @@ class PeminjamanRuanganController extends Controller
         'Nama' => 'required',
         'NIM' => 'required',
         'Keperluan' => 'required',
-        // 'Ruangan' => 'required',
         'Tanggal' => 'required',
         'Jam_mulai' => 'required',
         'Jam_selesai' => 'required',
@@ -53,12 +52,21 @@ class PeminjamanRuanganController extends Controller
     }
 
     public function index() {
+        if (auth()->user()->is_TU == 1){
         $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai
         FROM peminjaman_ruangans p INNER JOIN ruangans r
-        ON p.ruangan_id = r.id');
+        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Kelas"');
         return view('Admin.pemohon')
         
         ->with('datas', $datas);
+        }else{
+            $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai
+        FROM peminjaman_ruangans p INNER JOIN ruangans r
+        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Laboratorium"');
+        return view('Admin.pemohon')
+        
+        ->with('datas', $datas);
+        }
     }
 
     public function edit($id) {
