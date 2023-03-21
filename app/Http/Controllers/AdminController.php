@@ -44,12 +44,33 @@ class AdminController extends Controller
         return redirect()->route('Admin.pemohon')->with('success', 'Peminjaman ditolak');
     }
 
-    public function index()
-    {
-        $datas = DB::select('SELECT id, name, is_admin, is_TU FROM users;');
+    public function index(Request $request)
+    {    if ($request->has('search')){
+        $datas = DB::select('SELECT id, name, is_admin, is_TU FROM users where name = :search;',[
+            'search'=>$request->search
+        ]);
         return view('Admin.ubahuser')
         
         ->with('datas', $datas);
+        }else{
+            $datas = DB::select('SELECT id, name, is_admin, is_TU FROM users;');
+            return view ('Admin.ubahuser')
+            ->with('datas', $datas);
+        }
+    }
+
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+    
+        // Search in the title and body columns from the posts table
+        $posts =DB::table('users')
+            ->where('name', 'LIKE', "%{$search}%")
+            // ->orWhere('Tipe', 'LIKE', "%{$search}%")
+            ->get();
+    
+        // Return the search view with the resluts compacted
+        return view('Admin.ubahuser',['users' => $posts]);
     }
 
 }
