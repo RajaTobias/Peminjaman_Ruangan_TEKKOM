@@ -22,6 +22,7 @@
                 <div class="container1">
                     <p class="teksx">Ruang Kelas</p>
                     <p class="teksy">Ruang Laboratorium</p>
+                    @foreach($datas as $data)
                     <div class="cardx">
                         <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiA101') }}">
                             <div class="portfolio-hover">
@@ -29,10 +30,11 @@
                             </div>
                             <img src="{{ asset('assets/img/101a.jpg') }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
-                            <span class="tekskelas">Ruang 101</span>
+                            <span class="tekskelas">{{$data -> Nama_ruangan}}</span>
                         </a>
                     </div>
-                    <div class="cardx">
+                    @endforeach
+                    <!-- <div class="cardx">
                         <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiA102') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -94,8 +96,10 @@
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Lab. Embedded</span>
                         </a>
-                    </div>
+                    </div> -->
+                
             </div>
+            
     
     
 

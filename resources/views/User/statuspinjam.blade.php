@@ -42,7 +42,7 @@
                             <!-- ini cuma contoh ntar isinya dipanggil dari database -->
                             @foreach ($datas as $data)
                             <tr>
-                                <td>{{ $data->id }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->Nama }}</td>
                                 <td>{{ $data->NIM }}</td>
                                 <td>{{ $data->Keperluan }}</td>

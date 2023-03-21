@@ -49,7 +49,7 @@
                             <!-- ini cuma contoh ntar isinya dipanggil dari database -->
                             @foreach ($datas as $data)
                             <tr>
-                                <td>{{ $data->id }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->name }}</td>
                                 <td>{{ $data->is_admin == 1 && $data->is_TU == 0 ? 'Admin LAB' : ($data->is_admin == 1 && $data->is_TU == 1 ? 'Admin TU' : 'User') }}</td>
                                 <td>
