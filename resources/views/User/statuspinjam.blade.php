@@ -56,6 +56,9 @@
                                         <span class="teksbadge">
                                         <i class="bx bx-no-check-circle icon"></i>  Diterima
                                     </span>
+                                    <span>
+                                        <button class="border1" href=""><i class="bx bx-envelope icon"></i></button>
+                                    </span>
                                     </div>
                                     @else
                                         @if($data->is_accept == 0 && $data->is_decline == 1 )

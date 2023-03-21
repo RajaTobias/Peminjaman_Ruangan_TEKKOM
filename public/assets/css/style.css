@@ -1164,6 +1164,25 @@ top: 12px;
   margin-right: 20px;
 } */
 
+.containerpm2 table {
+  margin-top: 5rem;
+}
+
+.containerpm2 .input-group {
+  width: 30%;
+  margin-top: 1rem;
+  float: right;
+  color: #000;
+}
+
+.containerpm2 .input-group-text{
+  background-color:rgba(153, 174, 194, 0.6);
+  color: #000;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: none;
+}
+
 table {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(0, 0, 0);
