@@ -69,8 +69,16 @@
                         </tbody>
                     </table>
                     
+                    </div>
+             
+            </div>
 
-                    <table>
+            <div class="row1">
+                <p class="tekspemohon2">Status Pemohon</p>
+
+                  
+                <div class="containersp">
+                     <table>
                         <thead>
                             <tr>
                                 <th style="width:5% !important;">No</th>
@@ -98,12 +106,9 @@
                                 <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
                                 <td>
                                 @if($data->is_accept == 1 && $data->is_decline == 0 )
-                                <div class="badge1">
+                                <div class="badge12">
                                         <span class="teksbadge">
-                                        <i class="bx bx-no-check-circle icon"></i>  Diterima
-                                    </span>
-                                    <span>
-                                        <button class="border1" href=""><i class="bx bx-envelope icon"></i></button>
+                                        <i class="bx bx-check-circle icon"></i>  Diterima
                                     </span>
                                     </div>
                                     @else
@@ -145,12 +150,9 @@
                             
                         </tbody>
                     </table>
-
                     </div>
              
             </div>
-          
-    
 
     </section>
 

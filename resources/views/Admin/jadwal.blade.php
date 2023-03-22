@@ -74,6 +74,16 @@
         title: '{{ $data->Keperluan }}',
         start: '{{ $data->Waktu_mulai }}',
         end: '{{$data -> Waktu_selesai}}'
+    },
+    {
+        title: '{{ $data->Keperluan }}',
+        start: '{{ $data->Waktu_mulai }}',
+        end: '{{$data -> Waktu_selesai}}'
+    },
+    {
+        title: '{{ $data->Keperluan }}',
+        start: '{{ $data->Waktu_mulai }}',
+        end: '{{$data -> Waktu_selesai}}'
     }
         @endforeach
     ]

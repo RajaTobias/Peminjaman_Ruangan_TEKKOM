@@ -333,11 +333,26 @@ img,p{
   width: 745px;
   height: 60px;
   left: -480px;
-  top: 100px;
+  top: 110px;
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 600;
-  font-size: 23px;
+  font-size: 21px;
+  line-height: 73px;
+  text-align: center;
+  color: #000000;
+}
+
+.tekspemohon2{
+  position: absolute;
+  width: 745px;
+  height: 60px;
+  left: -450px;
+  top: 425px;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
   line-height: 73px;
   text-align: center;
   color: #000000;
@@ -5249,6 +5264,28 @@ textarea.form-control-lg {
   background-color: rgba(245, 85, 85, 1);
 }
 .badge2:empty {
+  display: none;
+}
+.badge12 .bx {
+  color: #000;
+  font-weight: 700;
+}
+.badge12 {
+  font-family: sans-serif;
+  color: #000;
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 10px;
+  background-color: rgba(0, 220, 75, 1);
+}
+.badge12:empty {
   display: none;
 }
 .badge1 .bx {
