@@ -64,9 +64,9 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/pemohon', [PeminjamanRuanganController::class, 'index'])->middleware('is_admin')->name('Admin.pemohon');
 
-    // Route::get('/ruangan', function () {
-    //     return view ('Admin.ruangan');
-    // })->middleware('is_admin')->name('Admin.ruangan');
+    Route::get('/ruangan', function () {
+        return view ('Admin.ruangan');
+    })->middleware('is_admin')->name('Admin.ruangan');
 
     Route::get('/tambahruangan', function () {
         return view ('Admin.tambahruangan');
@@ -94,11 +94,15 @@ Route::prefix('admin')->group(function () {
 
     Route::post('peminjaman/store', [PeminjamanRuanganController::class, 'store'])->middleware('is_admin')->name('pinjam.store');
 
+    Route::post('tambahruangan/store', [RuanganController::class, 'store'])->middleware('is_admin')->name('tambahruangan.store');
+
     Route::get('peminjaman', [PeminjamanRuanganController::class, 'dropdown'])->middleware('is_admin')->name('Admin.peminjaman');
 
     Route::get('editjadwal', [JadwalController::class, 'dropdown'])->middleware('is_admin')->name('Admin.editjadwal');
 
     Route::post('editjadwal/store', [JadwalController::class, 'store'])->middleware('is_admin')->name('editjadwal.store');
+
+    // Route::post('tambahruangan/store', [RuanganController::class, 'store'])->middleware('is_admin')->name('tambahruangan.store');
 
     Route::get('jadwal', [JadwalController::class, 'index'])->middleware('is_admin')->name('Admin.jadwal');
 
