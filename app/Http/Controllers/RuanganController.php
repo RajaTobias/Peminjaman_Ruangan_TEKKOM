@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class RuanganController extends Controller
 {
@@ -11,27 +14,28 @@ class RuanganController extends Controller
         $request->validate([
         'Nama_ruangan' => 'required',
         'Jenis_ruangan' => 'required',
-        'Kapasitas_ruangan' => 'required',
-        'Deskripsi_ruangan' => 'required',
+        // 'Kapasitas_ruangan' => 'required',
+        // 'Deskripsi_ruangan' => 'required',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048'
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO ruangans(Nama_ruangan,
-        Jenis_ruangan, Kapasitas_ruangan, Deskripsi_ruangan) VALUES
-        (:Nama_ruangan, :Jenis_ruangan, :Kapasitas_ruangan, :Deskripsi_ruangan)',
+        Jenis_ruangan,image) VALUES
+        (:Nama_ruangan, :Jenis_ruangan,:image)',
         [
         'Nama_ruangan' => $request->Nama_ruangan,
         'Jenis_ruangan' => $request->Jenis_ruangan,
-        'Kapasitas_ruangan' => $request->Kapasitas_ruangan,
-        'Deskripsi_ruangan' => $request->Deskripsi_ruangan,
+        // 'Kapasitas_ruangan' => $request->Kapasitas_ruangan,
+        // 'Deskripsi_ruangan' => $request->Deskripsi_ruangan,
+        'image' => $request->image,
         ]
         );
-                // Menggunakan laravel eloquent
-        // Ruangan::create([
-        //     'Nama_ruangan' => $request->Nama_ruangan,
-        //     'Jenis_ruangan' => $request->Jenis_ruangan,
-        // ]);
-        return redirect()->route('ruangan.index')->with('success', 'Data ruangan berhasil disimpan');
+
+        
+        return redirect()->route('Admin.tambahruangan')->with('success', 'Data ruangan berhasil disimpan');
+
         }
+        
 
     public function delete($id){
         Ruangan::where('id_ruangan', $id)->delete();
@@ -44,23 +48,19 @@ class RuanganController extends Controller
         
         ->with('datas', $datas);
     }
-    public function edit($id) {
-        $data = DB::table('ruangan')->where('id_ruangan',
-        $id)->first();
-        return view('ruangan.edit')->with('data', $data);
-        }
-        public function update($id, Request $request) {
-        $request->validate([
-            'Nama_ruangan' => 'required',
-            'Jenis_ruangan' => 'required',
-        ]);
-        // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        Ruangan::update(
-         [
-            'Nama_ruangan' => $request->Nama_ruangan,
-            'Jenis_ruangan' => $request->Jenis_ruangan,
-         ]
-        );
-         return redirect()->route('ruangan.index')->with('success', 'Data ruangan berhasil diubah');
-     }
+
+    //  public function insert($id) {
+    //     $data = DB::table('ruangans')->where('id',
+    //     $id)->first();
+    //     return view('Admin.tambahruangan')->with('data', $data);
+    //     }
+    //     public function update($id, Request $request) {
+    //     $request->validate([
+    //         'Nama_ruangan' => 'required',
+    //         'Jenis_ruangan' => 'required',
+    //     ]);
+    //     // Me
+    // }
+
+    
 }

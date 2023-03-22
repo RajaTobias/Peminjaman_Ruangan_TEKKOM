@@ -25,26 +25,27 @@
                 <img src="{{ asset('assets/img/Vector (5).png') }}" alt="..." allign="middle">
                 <div class="containertr">
                     <p class="teksp">Tambah Ruangan</p>
-                    <form class="ptambahruangan">
+                    <form class="ptambahruangan" method="post" enctype="multipart/form-data" action="{{route('tambahruangan.store')}}">
+                        @csrf
                         <div class="profile-pic">
                             <img src="{{ asset('assets/img/Rectangle 4036.png') }}" id="fotop">
-                            <input type="file" id="file">
+                            <input type="file" id="image" name="image">
                             <label for="file" id="upBtn">Choose Photo</label>
                         </div>
                         <div class="input-text2">
                             <p class="tekstr">Nama Ruangan</p>
-                            <input type="text" id="inputNama" name="nama" required/>
+                            <input type="text" id="Nama_ruangan" name="Nama_ruangan" required/>
                         </div>
                         
                         <div class="input-text2">
                             <p class="tekstr2">Jenis Ruangan</p>
-                            <select name="languages" id="lang">
+                            <select name="Jenis_ruangan" id="Jenis_ruangan">
                                 <label for="lang">JenisR</label>
                                 <option value="RuangKelas">Ruang Kelas</option>
                                 <option value="RuangLab">Ruang Laboratorium</option>
                               </select>
                         </div>
-                        <div id="cbp-hrmenu" class="cbp-hrmenu">
+                        <!-- <div id="cbp-hrmenu" class="cbp-hrmenu">
                             <ul>
                                 <li>
                                     <a href="#">Deskripsi Ruangan</a> <i class='bx bx-chevron-down' ></i>
@@ -74,9 +75,9 @@
                                 <li>
                                     <div class="input-text3">
                                         <p class="tekska">Kapasitas Ruangan</p>
-                                        <input type="text" id="inputNama" name="nama" required/>
+                                        <input type="text" id="inputNama" name="nama" />
                                     </div>
-                        <div>
+                        <div> -->
                             <button class="border">Submit</button>
                         </div>
                                         </div><!-- /cbp-hrsub-inner -->
