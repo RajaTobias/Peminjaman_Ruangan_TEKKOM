@@ -22,8 +22,8 @@
                   
                 <img src="{{ asset('assets/img/Vector (5).png') }}" alt="..." allign="middle">
                 <div class="container1">
-                    <p class="teksx">Ruang Kelas</p>
-                    <p class="teksy">Ruang Laboratorium</p>
+                <p class="teksx">Daftar Ruangan</p>
+                    <p class="teksy"></p>
                     <div class="cardx">
                         <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiA101') }}">
                             <div class="portfolio-hover">

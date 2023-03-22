@@ -29,21 +29,21 @@
                         </div>
                         <div class="input-text1">
                             <p class="teksp1">Nama Mahasiswa</p>
-                            <input type="text" id="inputNama" name="nama" placeholder="{{ Auth::user()->name }}" readonly/>
+                            <input type="text" id="inputNama" name="nama"/>
                         </div>
                         
                         <div class="input-text1">
                             <p class="teksp2">No. Handphone</p>
-                            <input type="text" id="inputNo" name="no" readonly/>
+                            <input type="text" id="inputNo" name="no"/>
                         </div>
         
                         <div class="input-text1">
                             <p class="teksp3">NIM</p>
-                            <input type="text" id="inputNIM" name="nim" readonly/>
+                            <input type="text" id="inputNIM" name="nim"/>
                         </div>
         
                         <div>
-                            <a type="button" class="border1" href="{{ route('Admin.editprofile') }}"><i class="bx bx-pencil icon"></i></a><p class="teksp4">Edit</p>
+                            <a type="button" class="border1" href=""><i class="bx bx-pencil icon"></i></a><p class="teksp4">Update</p>
                         </div>
                     </form>
             </div>

@@ -76,6 +76,10 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.profile');
     })->middleware('is_admin')->name('Admin.profile');
 
+    Route::get('/editprofile', function () {
+        return view ('Admin.editprofile');
+    })->middleware('is_admin')->name('Admin.editprofile');
+
     Route::get('role', [AdminController::class, 'index'])->middleware('is_admin')->name('Admin.ubahuser');
 
     Route::get('role user/ubah/{id}', [AdminController::class, 'role_user'])->middleware('is_admin')->name('Admin.ubahroleuser');
