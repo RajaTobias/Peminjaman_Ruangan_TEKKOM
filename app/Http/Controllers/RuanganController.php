@@ -18,6 +18,12 @@ class RuanganController extends Controller
         // 'Deskripsi_ruangan' => 'required',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048'
         ]);
+        $ruangans = null;
+            if($request->hasFile('image')) {
+                $ruangans = str_replace('public/', '', $request->file('image')->store('public/image'));
+            } else {
+                return redirect()->back()->with('error', 'Terjadi kesalahan:<br>' . $e->getMessage() . '<br>Silahkan coba lagi.');
+            }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO ruangans(Nama_ruangan,
         Jenis_ruangan,image) VALUES
@@ -27,7 +33,7 @@ class RuanganController extends Controller
         'Jenis_ruangan' => $request->Jenis_ruangan,
         // 'Kapasitas_ruangan' => $request->Kapasitas_ruangan,
         // 'Deskripsi_ruangan' => $request->Deskripsi_ruangan,
-        'image' => $request->image,
+        'image' => $ruangans,
         ]
         );
 

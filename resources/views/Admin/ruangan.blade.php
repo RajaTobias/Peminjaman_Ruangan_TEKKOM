@@ -28,7 +28,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"></div>
                             </div>
-                            <img src="{{ asset('assets/img/101a.jpg') }}" alt="..." />
+                            <img src="{{ asset('storage/'. $data->image) }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas">{{$data -> Nama_ruangan}}</span>
                         </a>
