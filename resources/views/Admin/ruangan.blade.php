@@ -13,15 +13,14 @@
         <!-- <img src="assets/img/Vector (5).png" alt="..." allign="middle"> -->
         <div class="panel-header panel-header-lg">
             <!-- <img src="assets/img/6header-panel.jpg" alt="..." allign="middle"> -->
-            <p class="teks">Peminjaman Ruangan</p>
           </div> 
           <div class="portfolio">
             <div class="row1">
                   
                 <img src="/assets/img/Vector (5).png" alt="..." allign="middle">
                 <div class="container1">
-                    <p class="teksx">Ruang Kelas</p>
-                    <p class="teksy">Ruang Laboratorium</p>
+                    <p class="teksx">Daftar Ruangan</p>
+                    <p class="teksy"></p>
                     @foreach($datas as $data)
                     <div class="cardx">
                         <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiA101') }}">

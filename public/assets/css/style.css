@@ -409,6 +409,10 @@ body .container {
     margin: auto;
 }
 
+.border1 .bx {
+  margin-left: 0.4rem;
+}
+
   body .containersp {
     justify-content: center;
     width: 95%;

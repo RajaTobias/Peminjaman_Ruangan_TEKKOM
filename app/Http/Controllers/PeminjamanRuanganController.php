@@ -69,6 +69,23 @@ class PeminjamanRuanganController extends Controller
         }
     }
 
+    public function acc_index() {
+        if (auth()->user()->is_TU == 1){
+        $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
+        FROM peminjaman_ruangans p INNER JOIN ruangans r
+        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Kelas" where = p.is_accept == 1');
+        return view('Admin.pemohon')
+        
+        ->with('datas', $datas);
+        }else{
+            $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
+        FROM peminjaman_ruangans p INNER JOIN ruangans r
+        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Laboratorium" where = p.is_accept == 1');
+        return view('Admin.pemohon')
+        
+        ->with('datas', $datas);
+        }
+    }
 
     public function edit($id) {
         $data = DB::table('peminjaman_ruangans')->where('id',
