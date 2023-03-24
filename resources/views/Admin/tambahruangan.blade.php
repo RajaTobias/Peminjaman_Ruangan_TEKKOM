@@ -29,7 +29,7 @@
                         @csrf
                         <div class="profile-pic">
                             <img src="{{ asset('assets/img/Rectangle 4036.png') }}" id="fotop">
-                            <input type="file" id="image" name="image">
+                            <input type="file" id="file" name="image">
                             <label for="file" id="upBtn">Choose Photo</label>
                         </div>
                         <div class="input-text2">
@@ -69,24 +69,24 @@
                                                     <li><input type="checkbox" class="teksy3"></input> <i class='bx bx-slideshow icon' ></i>  LCD </li>
                                                 </ul>
                                             </div>
-                                        </div><!-- /cbp-hrsub-inner -->
-                                    </div><!-- /cbp-hrsub -->
-                                </li>
-                                <li>
+                                        </div></cbp-hrsub-inner -->
+                                    <!-- </div>/cbp-hrsub -->
+                                <!-- </li>
+                                <li> -->
                                     <div class="input-text3">
                                         <p class="tekska">Kapasitas Ruangan</p>
                                         <input type="text" id="inputNama" name="nama" />
                                     </div>
-                        <div> -->
-                            <button class="border">Submit</button>
+                        <div> 
+                            <button class="border" input type="submit">Submit</button>
                         </div>
-                                        </div><!-- /cbp-hrsub-inner -->
-                                    </div><!-- /cbp-hrsub -->
+                                        <!-- </div>/cbp-hrsub-inner -->
+                                    <!-- </div>/cbp-hrsub -->
                                     
-                                </li>
+                                <!-- </li>
                             </ul>
                             
-                        </div>
+                        </div> -->
                     
                     </form>
                     

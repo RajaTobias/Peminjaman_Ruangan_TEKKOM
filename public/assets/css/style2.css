@@ -893,9 +893,18 @@ body .container .cardx {
    
   }
 
+  .profile-pic {
+    height: 300px;
+    width: 200px;
+    margin-left: -20px;
+    position: absolute;
+    size: cover;
+    z-index: 3;
+  }
+
   .border {
-    margin-top: 35px;
-    transform: translateX(5%);
+    transform: translateY(30%);
+    margin-left: 27rem;
     width: 250.76px;
     padding: 3px;
     background: #E7F6FF;
@@ -905,7 +914,6 @@ body .container .cardx {
     border: none;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 220px;
   }
 
   .border1 {
@@ -1059,8 +1067,8 @@ top: 12px;
   border: none;
   outline: transparent;
   text-indent: 18px;
-  margin-left: -250px;
-  margin-top: 70px;
+  margin-left: -15px;
+  margin-top: 110px;
 }
 
 .input-text3 input::-webkit-input-placeholder {
