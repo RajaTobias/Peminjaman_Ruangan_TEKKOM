@@ -9,6 +9,7 @@ use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PeminjamanRuanganController;
 use App\Http\Controllers\UserPeminjamanController;
+use App\Http\Controllers\SuratController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -164,7 +165,7 @@ Route::prefix('user')->group(function(){
     //     return view ('User.jadwal');
     // })->middleware('auth')->name('User.jadwal');
 
-    Route::get('/statuspinjam/suratkelas',[PeminjamanRuanganController::class, 'indexsurat'])->middleware('auth')->name('User.suratkelas');
+    // Route::get('/statuspinjam/suratkelas',[PeminjamanRuanganController::class, 'indexsurat'])->middleware('auth')->name('User.suratkelas');
 
     Route::get('/ruangan', function () {
         return view ('User.ruangan');
@@ -188,7 +189,7 @@ Route::prefix('user')->group(function(){
 
     Route::view('/contact','User.contact')->middleware('auth')->name('User.contact');
 
-    Route::get('surat/{id}', [SuratController::class, 'index'])->middleware('auth');
+    Route::get('cetaksurat/{id}', [SuratController::class, 'index'])->middleware('auth')->name('User.surat');
 
     Route::get('jadwal', [JadwalController::class, 'userindex'])->middleware('auth')->name('User.jadwal');
 
