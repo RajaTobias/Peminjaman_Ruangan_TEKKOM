@@ -6,9 +6,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\RuanganController;
-use App\Http\Controllers\Userontroller;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PeminjamanRuanganController;
 use App\Http\Controllers\UserPeminjamanController;
+use App\Http\Controllers\SuratController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -54,14 +55,6 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.deskripsiLabRPL');
     })->middleware('is_admin')->name('Admin.deskripsiLabRPL');
 
-    // Route::get('/jadwal', function () {
-    //     return view ('Admin.jadwal');
-    // })->middleware('is_admin')->name('Admin.jadwal');
-
-    // Route::get('/editjadwal', function () {
-    //     return view ('Admin.editjadwal');
-    // })->middleware('is_admin')->name('Admin.editjadwal');
-
     Route::get('/pemohon', [PeminjamanRuanganController::class, 'index'])->middleware('is_admin')->name('Admin.pemohon');
 
     Route::get('/ruangan', function () {
@@ -71,14 +64,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/tambahruangan', function () {
         return view ('Admin.tambahruangan');
     })->middleware('is_admin')->name('Admin.tambahruangan');
-
-    Route::get('/profile', function () {
-        return view ('Admin.profile');
-    })->middleware('is_admin')->name('Admin.profile');
-
-    Route::get('/editprofile', function () {
-        return view ('Admin.editprofile');
-    })->middleware('is_admin')->name('Admin.editprofile');
 
     Route::get('role', [AdminController::class, 'index'])->middleware('is_admin')->name('Admin.ubahuser');
 
@@ -100,9 +85,13 @@ Route::prefix('admin')->group(function () {
 
     Route::get('editjadwal', [JadwalController::class, 'dropdown'])->middleware('is_admin')->name('Admin.editjadwal');
 
-    Route::post('editjadwal/store', [JadwalController::class, 'store'])->middleware('is_admin')->name('editjadwal.store');
+    Route::get('profile', [UserController::class, 'index'])->middleware('is_admin')->name('Admin.profile');
 
-    // Route::post('tambahruangan/store', [RuanganController::class, 'store'])->middleware('is_admin')->name('tambahruangan.store');
+    Route::post('editprofile/update', [UserController::class, 'update'])->middleware('is_admin')->name('Admin.updateprofile');
+
+    Route::get('editprofile', [UserController::class, 'edit'])->middleware('is_admin')->name('Admin.editprofile');
+
+    Route::post('editjadwal/store', [JadwalController::class, 'store'])->middleware('is_admin')->name('editjadwal.store');
 
     Route::get('jadwal', [JadwalController::class, 'index'])->middleware('is_admin')->name('Admin.jadwal');
 
@@ -176,7 +165,7 @@ Route::prefix('user')->group(function(){
     //     return view ('User.jadwal');
     // })->middleware('auth')->name('User.jadwal');
 
-    Route::get('/statuspinjam/suratkelas',[PeminjamanRuanganController::class, 'indexsurat'])->middleware('auth')->name('User.suratkelas');
+    // Route::get('/statuspinjam/suratkelas',[PeminjamanRuanganController::class, 'indexsurat'])->middleware('auth')->name('User.suratkelas');
 
     Route::get('/ruangan', function () {
         return view ('User.ruangan');
@@ -199,6 +188,8 @@ Route::prefix('user')->group(function(){
     Route::view('/dashboard','User.dashboard')->middleware('auth')->name('User.dashboard');
 
     Route::view('/contact','User.contact')->middleware('auth')->name('User.contact');
+
+    Route::get('cetaksurat/{id}', [SuratController::class, 'index'])->middleware('auth')->name('User.surat');
 
     Route::get('jadwal', [JadwalController::class, 'userindex'])->middleware('auth')->name('User.jadwal');
 

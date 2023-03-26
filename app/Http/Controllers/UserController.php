@@ -3,71 +3,43 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function create() {
-        return view('user.add');
-        }
-        public function store(Request $request) {
-        $request->validate([
-        'Nama_lengkap' => 'required',
-        'NIM' => 'required',
-        'Password' => 'required',
-        ]);
-        // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        // DB::insert('INSERT INTO ruangans(id_admin,
-        // nama_admin, alamat, username, password) VALUES
-        // (:id_admin, :nama_admin, :alamat, :username,
-        // :password)',
-        // [
-        // 'id_admin' => $request->id_admin,
-        // 'nama_admin' => $request->nama_admin,
-        // 'alamat' => $request->alamat,
-        // 'username' => $request->username,
-        // 'password' => Hash::make($request->password),
-        // ]
-        // );
-                // Menggunakan laravel eloquent
-        User::create([
-            'Nama_lengkap' => $request->Nama_lengkap,
-            'NIM' => $request->NIM,
-            'Password' => Hash::make($request->Password),
-        ]);
-        return redirect()->route('user.index')->with('success', 'Data user berhasil disimpan');
-        }
-
-    public function delete($id){
-        User::where('NIM', $id)->delete();
-        return redirect()->route('user.index')->with('success', 'Data user berhasil dihapus');
-    }
-
     public function index() {
-        $datas = DB::select('select * from user');
-        return view('user.index')
+        $datas = DB::select('select * from users');
+        return view('Admin.profile')
         
         ->with('datas', $datas);
     }
 
-    public function edit($id) {
-        $data = DB::table('user')->where('NIM',
-        $id)->first();
-        return view('user.edit')->with('data', $data);
+    public function edit() {
+        $data = DB::table('users');
+        return view('Admin.editprofile')->with('data', $data);
         }
-        public function update($id, Request $request) {
+        public function update(Request $request) {
         $request->validate([
-            'Nama_lengkap' => 'required',
-            'NIM' => 'required',
-            'Password' => 'required',
+            'name' => 'required',
+            'Nomor_ID' => 'nullable',
+            'Nomor_HP' => 'nullable',
+            'Image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
+        $user = null;
+            if($request->hasFile('image')) {
+                $user = str_replace('public/', '', $request->file('image')->store('public/image'));
+            }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        User::update(
-         [
-            'Nama_lengkap' => $request->Nama_lengkap,
-            'NIM' => $request->NIM,
-            'Password' => Hash::make($request->Password),
-         ]
-        );
-         return redirect()->route('admin.index')->with('success', 'Data admin berhasil diubah');
+        DB::update('UPDATE users SET name =
+                :name, Nomor_ID = :Nomor_ID, Nomor_HP = :Nomor_HP, Image = :Image where id = :id',
+                [
+                'id' => auth()->user()->id,
+                'name' => $request->name,
+                'Nomor_ID' => $request->Nomor_ID,
+                'Nomor_HP' => $request->Nomor_HP,
+                'Image' => $user,
+                ]
+                );
+         return redirect()->route('Admin.profile')->with('success', 'Data admin berhasil diubah');
      }
 }
