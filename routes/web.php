@@ -164,6 +164,8 @@ Route::prefix('user')->group(function(){
     //     return view ('User.jadwal');
     // })->middleware('auth')->name('User.jadwal');
 
+    Route::get('/statuspinjam/suratkelas',[PeminjamanRuanganController::class, 'indexsurat'])->middleware('auth')->name('User.suratkelas');
+
     Route::get('/ruangan', function () {
         return view ('User.ruangan');
     })->middleware('auth')->name('User.ruangan');
