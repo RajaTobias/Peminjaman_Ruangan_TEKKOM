@@ -58,7 +58,7 @@
                                     </span>
                                     </div>
                                     <div class="borderunduh">
-                                        <a href="{{ route('User.suratkelas') }}" target="_blank" type="button" class="btn btn-info rounded-3">
+                                        <a href="{{ route('User.suratkelas') }}" target="_blankikoiop" type="button" class="btn btn-info rounded-3">
                                             <i class="bx bx-envelope icon"></i>
                                         </a>
                                     </div>
@@ -109,5 +109,11 @@
     
 
     </section>
+
+   @endsection
+
+   @section('customjs')
+
+   <script src="{{ asset('assets/js/download.js') }}"></script>
 
    @endsection
