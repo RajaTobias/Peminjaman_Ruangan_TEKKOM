@@ -314,6 +314,12 @@ img {
     width: 100%;
 }
 
+#fotox{
+  margin-top: 1.5rem;
+  height: 90%;
+  width: 100%;
+}
+
 #file {
     display: none;
     margin-top: 260px;
