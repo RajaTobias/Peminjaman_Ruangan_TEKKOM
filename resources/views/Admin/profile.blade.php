@@ -28,18 +28,18 @@
                             <label for="file" id="upBtn">Choose Photo</label>
                         </div>
                         <div class="input-text1">
-                            <p class="teksp1">Nama Mahasiswa</p>
+                            <p class="teksp1">Nama</p>
                             <input type="text" id="inputNama" name="nama" placeholder="{{ Auth::user()->name }}" readonly/>
                         </div>
                         
                         <div class="input-text1">
                             <p class="teksp2">No. Handphone</p>
-                            <input type="text" id="inputNo" name="no" readonly/>
+                            <input type="text" id="inputNo" name="no" placeholder="{{ Auth::user()->Nomor_HP }}" readonly/>
                         </div>
         
                         <div class="input-text1">
                             <p class="teksp3">NIM</p>
-                            <input type="text" id="inputNIM" name="nim" readonly/>
+                            <input type="text" id="inputNIM" name="nim" placeholder="{{ Auth::user()->Nomor_ID }}"readonly/>
                         </div>
         
                         <div>
