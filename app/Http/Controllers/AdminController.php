@@ -9,6 +9,42 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function indexprofile() {
+        $datas = DB::select('select * from users');
+        return view('Admin.profile')
+        
+        ->with('datas', $datas);
+    }
+
+    public function edit() {
+        $data = DB::table('users');
+        return view('Admin.editprofile')->with('data', $data);
+        }
+        public function update(Request $request) {
+        $request->validate([
+            'name' => 'required',
+            'Nomor_ID' => 'nullable',
+            'Nomor_HP' => 'nullable',
+            'Image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
+        ]);
+        $user = null;
+            if($request->hasFile('Image')) {
+                $user = str_replace('public/', '', $request->file('Image')->store('public/Image'));
+            }
+        // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
+        DB::update('UPDATE users SET name =
+                :name, Nomor_ID = :Nomor_ID, Nomor_HP = :Nomor_HP, Image = :Image where id = :id',
+                [
+                'id' => auth()->user()->id,
+                'name' => $request->name,
+                'Nomor_ID' => $request->Nomor_ID,
+                'Nomor_HP' => $request->Nomor_HP,
+                'Image' => $user,
+                ]
+                );
+         return redirect()->route('Admin.profile')->with('success', 'Data admin berhasil diubah');
+     }
+
     public function role_user($id)
     {
         DB::update('UPDATE users SET is_admin = 0 WHERE id = :id', ['id' => $id]);

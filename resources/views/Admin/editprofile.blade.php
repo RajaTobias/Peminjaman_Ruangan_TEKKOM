@@ -29,7 +29,7 @@
                             <label for="file" id="upBtn">Choose Photo</label>
                         </div>
                         <div class="input-text1">
-                            <p class="teksp1">Nama Mahasiswa</p>
+                            <p class="teksp1">Nama</p>
                             <input type="text" id="name" name="name"/>
                         </div>
                         
@@ -44,7 +44,7 @@
                         </div>
         
                         <div>
-                            <button class="border" input type="submit">Submit</button>
+                            <button class="border3" input type="submit">Submit</button>
                         </div>
                     </form>
             </div>

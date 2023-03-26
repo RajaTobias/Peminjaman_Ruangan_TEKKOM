@@ -1,41 +1,41 @@
 @extends('layouts.layout0')
 
-@section('customcss') 
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+@section('customcss')
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/styles2.css') }}">
-  
-    <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    @endsection
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+@endsection
 
 @section('content')
-    <section class="home">
+
+<section class="home">
         <!-- <img src="assets/img/Vector (5).png" alt="..." allign="middle"> -->
         <div class="panel-header panel-header-lg">
             <!-- <img src="assets/img/6header-panel.jpg" alt="..." allign="middle"> -->
-            <p class="teks">Peminjaman Ruangan</p>
           </div> 
           <div class="portfolio">
             <div class="row1">
                   
-                <img src="{{ asset('assets/img/Vector (5).png') }}" alt="..." allign="middle">
+                <img src="/assets/img/Vector (5).png" alt="..." allign="middle">
                 <div class="container1">
-                <p class="teksx">Daftar Ruangan</p>
+                    <p class="teksx">Daftar Ruangan</p>
                     <p class="teksy"></p>
+                    @foreach($datas as $data)
                     <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiA101') }}">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiA101') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"></div>
                             </div>
-                            <img src="{{ asset('assets/img/101a.jpg') }}" alt="..." />
+                            <img src="{{ asset('storage/'. $data->image) }}" alt="..." />
                             <i class='bx bx-buildings icon' ></i>
-                            <span class="tekskelas">Ruang 101</span>
+                            <span class="tekskelas">{{$data -> Nama_ruangan}}</span>
                         </a>
                     </div>
-                    <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiA102') }}">
+                    
+                    @endforeach
+                    <!-- <div class="cardx">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiA102') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -45,7 +45,7 @@
                         </a>
                     </div>
                     <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiA201') }}">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiA201') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -55,7 +55,7 @@
                         </a>
                     </div>
                     <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiLabMLD') }}">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiLabMLD') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -66,7 +66,7 @@
                     </div>
                   
                     <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiLabRPL') }}">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiLabRPL') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -77,7 +77,7 @@
                     </div>
                   
                     <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiLabJKM') }}">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiLabJKM') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiLabEMB') }}">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('Admin.deskripsiLabEMB') }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -96,11 +96,13 @@
                             <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas2">Lab. Embedded</span>
                         </a>
-                    </div>
-                    
+                    </div> -->
+                
             </div>
+            
     
     
 
     </section>
-    @endsection
+    
+@endsection

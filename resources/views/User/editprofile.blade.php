@@ -21,27 +21,30 @@
                 <img src="/assets/img/Vector (5).png" alt="..." allign="middle">
                 <div class="containerp">
                     <p class="teksp">Profile Setting</p>
-                    <form class="pprofile">
+                    <form class="pprofile" method ="post" action = "{{route('User.updateprofile')}}">
+                        @csrf
                         <div class="profile-pic">
-                            <img src="{{ Auth::user()->Image }}" id="fotop">
+                            <img src="{{ asset('assets/img/Rectangle 4036.png') }}" id="fotop">
+                            <input type="file" id="file" name="image">
+                            <label for="file" id="upBtn">Choose Photo</label>
                         </div>
                         <div class="input-text1">
                             <p class="teksp1">Nama</p>
-                            <input type="text" id="inputNama" name="nama" placeholder="{{ Auth::user()->name }}" readonly/>
+                            <input type="text" id="name" name="name"/>
                         </div>
                         
                         <div class="input-text1">
                             <p class="teksp2">No. Handphone</p>
-                            <input type="text" id="inputNo" name="no" placeholder="{{ Auth::user()->Nomor_HP }}" readonly/>
+                            <input type="text" id="Nomor_HP" name="Nomor_HP"/>
                         </div>
         
                         <div class="input-text1">
                             <p class="teksp3">NIM</p>
-                            <input type="text" id="inputNIM" name="nim" placeholder="{{ Auth::user()->Nomor_ID }}"readonly/>
+                            <input type="text" id="Nomor_ID" name="Nomor_ID"/>
                         </div>
         
                         <div>
-                            <a type="button" class="border1" href="{{ route('User.editprofile') }}"><i class="bx bx-pencil icon"></i></a><p class="teksp4">Edit</p>
+                            <button class="border3" input type="submit">Submit</button>
                         </div>
                     </form>
             </div>
