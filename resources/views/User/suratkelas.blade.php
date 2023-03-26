@@ -50,10 +50,11 @@
 </head>
 
 <body>
+    @foreach($datas as $data)
     <div class="information">
         <table width="100%" height="100">
         </tr>
-        <td colspan="2" align="center"></td><img style="position:absolute;top:0.27in;left:0.27in;width:1.21in;height:1.41in" src="logo_undip.jpeg" />
+        <td colspan="2" align="center"></td><img style="position:absolute;top:0.27in;left:0.27in;width:1.21in;height:1.41in" src="{{ asset('assets/img/logo_undip.jpeg') }}" />
         </tr>
         <div style="position:absolute;top:0.51in;left:1.56in;width:4.39in;line-height:0.23in;"><span style="font-style:normal;font-weight:bold;font-size:14pt;font-family:Times;color:#000080">KEMENTERIAN PENDIDIKAN, KEBUDAYAAN</span><span style="font-style:normal;font-weight:bold;font-size:13pt;font-family:Times;color:#000080"> </span><br/></SPAN></div>
         <div style="position:absolute;top:0.82in;left:1.56in;width:2.44in;line-height:0.23in;"><span style="font-style:normal;font-weight:bold;font-size:14pt;font-family:Times;color:#000080">RISET, DAN TEKNOLOGI</span><span style="font-style:normal;font-weight:bold;font-size:13pt;font-family:Times;color:#000080"> </span><br/></SPAN></div>
@@ -66,7 +67,7 @@
         <div style="position:absolute;top:2.21in;left:3in;width:3.61in;line-height:0.24in;"><span style="font-style:normal;font-weight:bold;font-size:14pt;font-family:Times;color:#000000">SURAT PEMINJAMAN RUANGAN</span><span style="font-style:normal;font-weight:normal;font-size:14pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
         <div style="position:absolute;top:2.59in;left:0.47in;width:4.65in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Dengan ini saya,</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
         <div style="position:absolute;top:2.89in;left:0.47in;width:0.48in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Nama </span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
-        <div style="position:absolute;top:2.89in;left:2.75in;width:1.32in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: </span></SPAN><br/></div>
+        <div style="position:absolute;top:2.89in;left:2.75in;width:3in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: {{ $data->Nama }}</span></SPAN><br/></div>
                 <div style="position:absolute;top:3.19in;left:0.47in;width:1.69in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">NIM</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
                 <div style="position:absolute;top:3.19in;left:2.75in;width:2.02in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: </span></SPAN><br/></div>
                 <div style="position:absolute;top:3.55in;left:0.47in;width:7.61in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Mengajukan permohonan peminjaman ruangan untuk keperluan kegiatan.</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
@@ -95,6 +96,7 @@
             </tbody>
         </table>
     </div>
+    @endforeach
 </body>
 
 </html>

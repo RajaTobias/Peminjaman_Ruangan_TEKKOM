@@ -58,7 +58,7 @@
                                     </span>
                                     </div>
                                     <div class="borderunduh">
-                                        <a href="" type="button" class="btn btn-info rounded-3">
+                                        <a href="{{ route('User.suratkelas') }}" target="_blank" type="button" class="btn btn-info rounded-3">
                                             <i class="bx bx-envelope icon"></i>
                                         </a>
                                     </div>
