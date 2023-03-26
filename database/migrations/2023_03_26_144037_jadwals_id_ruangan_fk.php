@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('peminjaman_ruangans', function (Blueprint $table) {
-            $table->dropColumn('Ruangan');
+        Schema::table('jadwals', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_ruangan');
+            $table->foreign('id_ruangan')->references('id')->on('ruangans');
         });
-
     }
 
     /**
@@ -26,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('peminjaman_ruangans', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

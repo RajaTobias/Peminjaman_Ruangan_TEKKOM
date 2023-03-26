@@ -69,15 +69,15 @@ class PeminjamanRuanganController extends Controller
         }
     }
 
-    // public function indexsurat() {
-    //     $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
-    //     FROM peminjaman_ruangans p INNER JOIN ruangans r
-    //     ON p.ruangan_id = r.id  where p.id = p.id');
-    //     return view('User.suratkelas')
+    public function indexsurat() {
+        $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
+        FROM peminjaman_ruangans p INNER JOIN ruangans r
+        ON p.ruangan_id = r.id  where p.id = p.id');
+        return view('User.suratkelas')
         
-    //     ->with('datas', $datas);
+        ->with('datas', $datas);
         
-    // }
+    }
 
     public function acc_index() {
         if (auth()->user()->is_TU == 1){

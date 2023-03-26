@@ -9,7 +9,8 @@ class JadwalController extends Controller
 {
 
     public function index() {
-        $datas = DB::select('select Keperluan, Waktu_mulai, Waktu_selesai, id_ruangan from jadwals');
+        $datas = DB::select('select j.id, j.Keperluan, j.Waktu_mulai, j.Waktu_selesai, r.Nama_ruangan FROM jadwals j INNER JOIN ruangans r
+        ON j.id_ruangan = r.id');
         return view('Admin.jadwal')
         
         ->with('datas', $datas);

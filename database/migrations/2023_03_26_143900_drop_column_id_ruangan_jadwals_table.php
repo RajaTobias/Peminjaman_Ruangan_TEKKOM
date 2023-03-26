@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('peminjaman_ruangans', function (Blueprint $table) {
-            $table->dropColumn('Ruangan');
+        Schema::table('jadwals', function (Blueprint $table) {
+            $table->dropColumn('id_ruangan');
         });
-
     }
 
     /**
@@ -26,8 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('peminjaman_ruangans', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

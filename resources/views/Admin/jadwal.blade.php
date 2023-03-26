@@ -37,6 +37,7 @@
 
                     </div>
                             <div id='calendar'></div>
+                            
                     </div>
                     <div class="border2">
                         <a href="{{ route('Admin.editjadwal') }}">
@@ -67,12 +68,13 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'interaction', 'dayGrid' ],
     editable: true,
+    eventClick: true,
     eventLimit: true, // allow "more" link when too many events
     events: [
         @foreach ($datas as $data)
         {
-        title: '{{ $data->Keperluan }}',
         start: '{{ $data->Waktu_mulai }}',
+        title: '{{ $data->Nama_ruangan }}',
         end: '{{$data -> Waktu_selesai}}'
     },
         @endforeach

@@ -59,7 +59,6 @@
                                     </div>
                                     <div class="borderunduh">
                                         <a href="{{ route('User.surat', $data->id) }}" target="_blank" type="button" class="btn btn-info rounded-3">
-
                                             <i class="bx bx-envelope icon"></i>
                                         </a>
                                     </div>
