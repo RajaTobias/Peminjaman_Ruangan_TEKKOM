@@ -23,9 +23,7 @@
                     <p class="teksp">Profile Setting</p>
                     <form class="pprofile">
                         <div class="profile-pic">
-                            <img src="/assets/img/Rectangle 4036.png" id="fotop">
-                            <input type="file" id="file">
-                            <label for="file" id="upBtn">Choose Photo</label>
+                            <img src="{{ Auth::user()->Image }}" id="fotop">
                         </div>
                         <div class="input-text1">
                             <p class="teksp1">Nama</p>

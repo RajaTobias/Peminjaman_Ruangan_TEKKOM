@@ -37,8 +37,8 @@
 
                     </div>
                             <div id='calendar'></div>
+                            
                     </div>
-    
             </div>
           
     
@@ -63,30 +63,17 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'interaction', 'dayGrid' ],
     editable: true,
-    // eventClick: true,
+    eventClick: true,
     eventLimit: true, // allow "more" link when too many events
     events: [
         @foreach ($datas as $data)
         {
-        title: '{{ $data->Keperluan }}',
         start: '{{ $data->Waktu_mulai }}',
+        title: '{{ $data->Nama_ruangan }}',
         end: '{{$data -> Waktu_selesai}}'
-        }
+    },
         @endforeach
     ]
-
-    eventClick: function(info){
-        info.jsEvent.preventDefault();
-
-        info.el.style.borderColor='white';
-
-        Swal.fire({
-        title: '{{ $data->Keperluan }}',
-        icon: 'info',
-        html:'<p>'
-    })
-    }
-
     });
 
     calendar.render();

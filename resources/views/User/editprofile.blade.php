@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layout0')
 
 @section('customcss')  
     <!----======== CSS ======== -->
@@ -21,11 +21,11 @@
                 <img src="/assets/img/Vector (5).png" alt="..." allign="middle">
                 <div class="containerp">
                     <p class="teksp">Profile Setting</p>
-                    <form class="pprofile" method ="post" action = "{{route('Admin.updateprofile')}}">
+                    <form class="pprofile" method ="post" action = "{{route('User.updateprofile')}}">
                         @csrf
                         <div class="profile-pic">
-                            <img src="/assets/img/Rectangle 4036.png" id="fotop">
-                            <input type="file" id="file" name="Image">
+                            <img src="{{ asset('assets/img/Rectangle 4036.png') }}" id="fotop">
+                            <input type="file" id="file" name="image">
                             <label for="file" id="upBtn">Choose Photo</label>
                         </div>
                         <div class="input-text1">

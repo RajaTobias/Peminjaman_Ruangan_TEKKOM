@@ -85,11 +85,11 @@ Route::prefix('admin')->group(function () {
 
     Route::get('editjadwal', [JadwalController::class, 'dropdown'])->middleware('is_admin')->name('Admin.editjadwal');
 
-    Route::get('profile', [UserController::class, 'index'])->middleware('is_admin')->name('Admin.profile');
+    Route::get('profile', [AdminController::class, 'indexprofile'])->middleware('is_admin')->name('Admin.profile');
 
-    Route::post('editprofile/update', [UserController::class, 'update'])->middleware('is_admin')->name('Admin.updateprofile');
+    Route::post('editprofile/update', [AdminController::class, 'update'])->middleware('is_admin')->name('Admin.updateprofile');
 
-    Route::get('editprofile', [UserController::class, 'edit'])->middleware('is_admin')->name('Admin.editprofile');
+    Route::get('editprofile', [AdminController::class, 'edit'])->middleware('is_admin')->name('Admin.editprofile');
 
     Route::post('editjadwal/store', [JadwalController::class, 'store'])->middleware('is_admin')->name('editjadwal.store');
 
@@ -104,6 +104,8 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::prefix('user')->group(function(){
+
+    Route::get('ruangan', [RuanganController::class, 'indexuser'])->middleware('auth')->name('User.ruangan');
 
     Route::get('/ruangan/deskripsiA101', function () {
         return view ('User.deskripsiA101');
@@ -167,13 +169,16 @@ Route::prefix('user')->group(function(){
 
     // Route::get('/statuspinjam/suratkelas',[PeminjamanRuanganController::class, 'indexsurat'])->middleware('auth')->name('User.suratkelas');
 
-    Route::get('/ruangan', function () {
-        return view ('User.ruangan');
-    })->middleware('auth')->name('User.ruangan');
+    // Route::get('/ruangan', function () {
+    //     return view ('User.ruangan');
+    // })->middleware('auth')->name('User.ruangan');
 
-    Route::get('/profile', function () {
-        return view ('User.profile');
-    })->middleware('auth')->name('User.profile');
+    Route::get('profile', [UserController::class, 'indexuser'])->middleware('auth')->name('User.profile');
+
+    Route::post('editprofile/update', [UserController::class, 'updateuser'])->middleware('auth')->name('User.updateprofile');
+
+    Route::get('editprofile', [UserController::class, 'edituser'])->middleware('auth')->name('User.editprofile');
+
 
     // Route::get('/peminjaman', function () {
     //     return view ('User.peminjaman');
@@ -191,7 +196,7 @@ Route::prefix('user')->group(function(){
 
     Route::get('cetaksurat/{id}', [SuratController::class, 'index'])->middleware('auth')->name('User.surat');
 
-    Route::get('jadwal', [JadwalController::class, 'userindex'])->middleware('auth')->name('User.jadwal');
+    Route::get('jadwal', [JadwalController::class, 'indexuser'])->middleware('auth')->name('User.jadwal');
 
 });
 

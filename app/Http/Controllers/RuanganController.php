@@ -55,6 +55,13 @@ class RuanganController extends Controller
         ->with('datas', $datas);
     }
 
+    public function indexuser() {
+        $datas = DB::select('select * from ruangans');
+        return view('User.ruangan')
+        
+        ->with('datas', $datas);
+    }
+
     //  public function insert($id) {
     //     $data = DB::table('ruangans')->where('id',
     //     $id)->first();

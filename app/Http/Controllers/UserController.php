@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function index() {
+    public function indexuser() {
         $datas = DB::select('select * from users');
-        return view('Admin.profile')
+        return view('User.profile')
         
         ->with('datas', $datas);
     }
 
-    public function edit() {
+    public function edituser() {
         $data = DB::table('users');
-        return view('Admin.editprofile')->with('data', $data);
+        return view('User.editprofile')->with('data', $data);
         }
-        public function update(Request $request) {
+        public function updateuser(Request $request) {
         $request->validate([
             'name' => 'required',
             'Nomor_ID' => 'nullable',
@@ -26,8 +26,8 @@ class UserController extends Controller
             'Image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
         $user = null;
-            if($request->hasFile('image')) {
-                $user = str_replace('public/', '', $request->file('image')->store('public/image'));
+            if($request->hasFile('Image')) {
+                $user = str_replace('public/', '', $request->file('Image')->store('public/Image'));
             }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::update('UPDATE users SET name =
@@ -40,6 +40,6 @@ class UserController extends Controller
                 'Image' => $user,
                 ]
                 );
-         return redirect()->route('Admin.profile')->with('success', 'Data admin berhasil diubah');
+         return redirect()->route('User.profile')->with('success', 'Data user berhasil diubah');
      }
 }
