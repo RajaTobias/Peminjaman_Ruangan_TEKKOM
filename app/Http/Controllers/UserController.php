@@ -26,8 +26,8 @@ class UserController extends Controller
             'Image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
         $user = null;
-            if($request->hasFile('Image')) {
-                $user = str_replace('public/', '', $request->file('Image')->store('public/Image'));
+            if($request->hasFile('image')) {
+                $user = str_replace('public/', '', $request->file('image')->store('public/image'));
             }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::update('UPDATE users SET name =
