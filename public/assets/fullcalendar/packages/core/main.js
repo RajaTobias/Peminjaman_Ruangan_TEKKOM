@@ -2237,6 +2237,11 @@ Docs & License: https://fullcalendar.io/
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(EventApi.prototype, "keperluan", {
+            get: function () { return this._def.keperluan; },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(EventApi.prototype, "url", {
             get: function () { return this._def.url; },
             enumerable: true,
@@ -2974,6 +2979,7 @@ Docs & License: https://fullcalendar.io/
         groupId: String,
         title: String,
         url: String,
+        keperluan: String,
         rendering: String,
         extendedProps: null
     };
@@ -4516,7 +4522,7 @@ Docs & License: https://fullcalendar.io/
         unselectAuto: true,
         // selectMinDistance: 0,
         dropAccept: '*',
-        eventOrder: 'start,-duration,allDay,title',
+        eventOrder: 'start,-duration,allDay,title,keperluan',
         // ^ if start tie, longer events go before shorter. final tie-breaker is title text
         // rerenderDelay: null,
         eventLimit: false,

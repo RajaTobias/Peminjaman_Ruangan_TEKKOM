@@ -51,13 +51,19 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="title" style="color: #000;">Peminjaman Ruangan</h5>
+                    <h5 class="modal-title" style="color: #000;">Peminjaman Ruangan</h5>
                     <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button> -->
                   </div>
                   <div class="modal-body">
+                  <h5 class="k1" style="color: #000;">Keperluan</h5>
+                  <h5 class="keperluan" id="keperluan" style="color: #000;"></h5>
+                  <h5 class="k2" style="color: #000;">Ruangan</h5>
+                  <h5 class="title" id="title" style="color: #000;"></h5>
+                  <h5 class="k3" style="color: #000;">Waktu Mulai</h5>
                   <h5 class="start" id="start" style="color: #000;"></h5>
+                  <h5 class="k4" style="color: #000;">Waktu Selesai</h5>
                   <h5 class="end" id="end" style="color: #000;"></h5>
                   </div>
                   <div class="modal-footer">
@@ -96,18 +102,22 @@
         {
         start: '{{ $data->Waktu_mulai }}',
         title: '{{ $data->Nama_ruangan }}',
-        end: '{{$data -> Waktu_selesai}}'
+        end: '{{ $data -> Waktu_selesai }}',
+        keperluan: '{{ $data -> Keperluan }}'
     },
         @endforeach
+        // console.log(event.start);
     ],
     
     eventClick : function(event) {
       // Modal Value
       var options = { year: 'numeric', month: 'long', day: 'numeric' };
-      $('#title').text(event.title);
-      $('#start').text(event.start);
-      $('#end').text(event.end);
+      $('#keperluan').text(event.event.keperluan);
+      $('#title').text(event.event.title);
+      $('#start').text(new Date(event.event.start).toLocaleTimeString("en-US", options));
+      $('#end').text(new Date(event.event.end).toLocaleTimeString("en-US", options));
       $('#modalEventView').modal('toggle');
+      console.log(event);
     }
     });
 
