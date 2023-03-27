@@ -89,7 +89,7 @@ class AdminController extends Controller
         
         ->with('datas', $datas);
         }else{
-            $datas = DB::select('SELECT id, name, is_admin, is_TU FROM users;');
+            $datas = DB::select('SELECT id, name, is_admin, is_TU FROM users;') ;
             return view ('Admin.ubahuser')
             ->with('datas', $datas);
         }

@@ -50,6 +50,7 @@
 </head>
 
 <body>
+@foreach($datas as $data)
     <div class="information">
         <table width="100%" height="100">
         </tr>
@@ -66,14 +67,14 @@
         <div style="position:absolute;top:2.21in;left:3in;width:3.61in;line-height:0.24in;"><span style="font-style:normal;font-weight:bold;font-size:14pt;font-family:Times;color:#000000">SURAT PEMINJAMAN RUANGAN</span><span style="font-style:normal;font-weight:normal;font-size:14pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
         <div style="position:absolute;top:2.59in;left:0.47in;width:4.65in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Dengan ini saya,</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
         <div style="position:absolute;top:2.89in;left:0.47in;width:0.48in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Nama </span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
-        <div style="position:absolute;top:2.89in;left:2.75in;width:1.32in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: </span></SPAN><br/></div>
+        <div style="position:absolute;top:2.89in;left:2.75in;width:5.32in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: {{$data->Nama}}</span></SPAN><br/></div>
                 <div style="position:absolute;top:3.19in;left:0.47in;width:1.69in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">NIM</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
-                <div style="position:absolute;top:3.19in;left:2.75in;width:2.02in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: </span></SPAN><br/></div>
+                <div style="position:absolute;top:3.19in;left:2.75in;width:2.02in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: {{$data->NIM}}</span></SPAN><br/></div>
                 <div style="position:absolute;top:3.55in;left:0.47in;width:7.61in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Mengajukan permohonan peminjaman ruangan untuk keperluan kegiatan.</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
                 <div style="position:absolute;top:3.89in;left:0.47in;width:1.10in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Kegiatan</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
-                <div style="position:absolute;top:3.89in;left:2.75in;width:1.75in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: </span></SPAN><br/></div>
+                <div style="position:absolute;top:3.89in;left:2.75in;width:1.75in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: {{$data->Keperluan}}</span></SPAN><br/></div>
                 <div style="position:absolute;top:4.19in;left:0.47in;width:1.69in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Tanggal, waktu</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
-                <div style="position:absolute;top:4.19in;left:2.75in;width:1.47in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: </span></SPAN><br/></div>
+                <div style="position:absolute;top:4.19in;left:2.75in;width:4.47in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">: {{$data->Tanggal}}, {{$data->Jam_mulai}}-{{$data->Jam_selesai}}</span></SPAN><br/></div>
                 <div style="position:absolute;top:4.59in;left:0.47in;width:7.61in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Untuk itu saya bersedia mematuhi ketentuan yang berlaku.</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
                 <div style="position:absolute;top:5.28in;left:6.92in;width:1.67in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Semarang,</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
                 <div style="position:absolute;top:5.64in;left:1.5in;width:3.83in;line-height:0.20in;"><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000">Koor Laboratorium</span><span style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Times;color:#000000"> </span><br/></SPAN></div>
@@ -95,6 +96,10 @@
             </tbody>
         </table>
     </div>
+    @endforeach
+    <script type = "text/javascript">
+        window.print();
+    </script>
 </body>
 
 </html>
