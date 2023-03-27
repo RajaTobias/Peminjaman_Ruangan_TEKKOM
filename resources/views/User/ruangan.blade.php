@@ -23,7 +23,7 @@
                     <p class="teksy"></p>
                     @foreach($datas as $data)
                     <div class="cardx">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsiA101') }}">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="{{ route('User.deskripsi', $data -> id) }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"></div>
                             </div>

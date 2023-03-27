@@ -15,21 +15,21 @@
 
 @section('content')
     <section class="home">
+    @foreach ($datas as $data)
         <!-- <img src="assets/img/Vector (5).png" alt="..." allign="middle"> -->
         <div class="panel-header panel-header-lg">
             <!-- <img src="assets/img/6header-panel.jpg" alt="..." allign="middle"> -->
           </div> 
    
           <div class="portfolio">
-
-
+            
             <div class="row1">
 
 
                 <div class="containerp">
                     <p class="teksdes">Deskripsi Ruangan</p>
                     <form class="druangan">
-                        <p class="teksr1">Ruang 101</p>
+                        <p class="teksr1">{{$data -> Nama_ruangan}}</p>
                         <p class="teksf1">Fasilitas :</p>
                         <p class="teksf2"> <i class='bx bx-chair icon' ></i>  83 Kursi Meja</p>
                         <p class="teksf3"> <i class='bx bx-desktop icon' ></i>  1 Smart TV</p>
@@ -44,42 +44,42 @@
                 
 
                    
-                                <div class="cardy">
+                                <div class="cardv">
                                     <a href="{{ route('User.A101') }}" class="borderdr">Pinjam Ruangan <i class='bx bx-chevron-right icon'> </i> </a>
                                 </div>
                     </form>
-            </div>
+                </div>
     
         
             <div class="slider">
-    <div>
-        <a href="#">
-            <img src="{{ asset('assets/img/101a.jpg') }}" alt="Image 1">
-        </a>            
-    </div>
-    <div>
-        <a href="#">
-            <img src="{{ asset('assets/img/101c.jpg') }}" alt="Image 2">
-        </a>
-    </div>
-    <div>
-        <a href="#">
-            <img src="{{ asset('assets/img/101d.jpg') }}" alt="Image 3">
-        </a>            
-    </div>
-    <div>
-        <a href="#">
-            <img src="{{ asset('assets/img/101e.jpg') }}" alt="Image 4">
-        </a>            
-    </div>
-    <div>
-        <a href="#">
-            <img src="{{ asset('assets/img/101f.jpg') }}" alt="Image 5">
-        </a>
-    </div>
-</div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/101a.jpg') }}" alt="Image 1">
+                    </a>            
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/101c.jpg') }}" alt="Image 2">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/101d.jpg') }}" alt="Image 3">
+                    </a>            
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/101e.jpg') }}" alt="Image 4">
+                    </a>            
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/101f.jpg') }}" alt="Image 5">
+                    </a>
+                </div>
+         </div>
      
-    
+    @endforeach
 
     </section>
     @endsection

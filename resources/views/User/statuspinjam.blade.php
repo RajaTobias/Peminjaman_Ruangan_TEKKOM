@@ -58,9 +58,15 @@
                                     </span>
                                     </div>
                                     <div class="borderunduh">
+                                        @if($data->Jenis_ruangan == "Ruang Kelas")
                                         <a href="{{ route('User.surat', $data->id) }}" target="_blank" type="button" class="btn btn-info rounded-3">
                                             <i class="bx bx-envelope icon"></i>
                                         </a>
+                                        @else
+                                        <a href="{{ route('User.suratlab', $data->id) }}" target="_blank" type="button" class="btn btn-info rounded-3">
+                                            <i class="bx bx-envelope icon"></i>
+                                        </a>
+                                        @endif
                                     </div>
                                     @else
                                         @if($data->is_accept == 0 && $data->is_decline == 1 )

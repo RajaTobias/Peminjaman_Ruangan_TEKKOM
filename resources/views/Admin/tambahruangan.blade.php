@@ -45,6 +45,8 @@
                                 <option value="RuangLab">Ruang Laboratorium</option>
                               </select>
                         </div>
+
+                        
                         <!-- <div id="cbp-hrmenu" class="cbp-hrmenu">
                             <ul>
                                 <li>
@@ -73,15 +75,11 @@
                                     <!-- </div>/cbp-hrsub -->
                                 <!-- </li>
                                 <li> -->
-                                    <div class="input-text3">
-                                        <p class="tekska">Kapasitas Ruangan</p>
-                                        <input type="text" id="inputNama" name="nama" />
+                         
+                                    <div> 
+                                        <button class="border" input type="submit">Submit</button>
                                     </div>
-                        <div> 
-                            <button class="border" input type="submit">Submit</button>
-                        </div>
-                                        <!-- </div>/cbp-hrsub-inner -->
-                                    <!-- </div>/cbp-hrsub -->
+
                                     
                                 <!-- </li>
                             </ul>

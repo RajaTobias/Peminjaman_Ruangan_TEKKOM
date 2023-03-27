@@ -29,7 +29,7 @@
                         @csrf
                         <div class="teksa">
                             <i class='bx bx-map icon'></i>
-                            <span class="">Ganti Ruangan</span>
+                            <span class="">Pilih Ruangan</span>
                             </div>
                             <div class="teksz">            
                             <select name="id_ruangan" id="id_ruangan">
@@ -48,13 +48,11 @@
                                 <i class='bx bx-time icon'></i>
                                 <span class="">Waktu Mulai</span>
                             </div>
-                           <div class= "teksg" id='mulai'>--:--</div>
                              <input class="teksh" type='datetime-local' id='Waktu_mulai' name='Waktu_mulai' onchange='cetakWaktu()'/>
                              <div class="teksd">
                                 <i class='bx bx-time-five icon'></i>
                                 <span class="">Waktu Selesai</span>
                             </div>
-                           <div class= "teksi" id='selesai'>--:--</div>
                            <input class="teksj" type='datetime-local' id='Waktu_selesai' name='Waktu_selesai' onchange='cetakJam()'/>
   
                            <div>

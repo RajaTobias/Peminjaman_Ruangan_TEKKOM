@@ -39,14 +39,35 @@
                             <div id='calendar'></div>
                             
                     </div>
+
                     <div class="border2">
                         <a href="{{ route('Admin.editjadwal') }}">
                             <i class='bx bx-calendar-edit'></i><p class="tekse2">Edit</p>
                         </a>
                     </div>
             </div>
-          
-    
+            @foreach ($datas as $data)
+            <div id="modalEventView" class="modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="title" style="color: #000;">Peminjaman Ruangan</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button> -->
+                  </div>
+                  <div class="modal-body">
+                  <h5 class="start" id="start" style="color: #000;"></h5>
+                  <h5 class="end" id="end" style="color: #000;"></h5>
+                  </div>
+                  <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      @endforeach
 
     </section>
 @endsection
@@ -78,7 +99,16 @@
         end: '{{$data -> Waktu_selesai}}'
     },
         @endforeach
-    ]
+    ],
+    
+    eventClick : function(event) {
+      // Modal Value
+      var options = { year: 'numeric', month: 'long', day: 'numeric' };
+      $('#title').text(event.title);
+      $('#start').text(event.start);
+      $('#end').text(event.end);
+      $('#modalEventView').modal('toggle');
+    }
     });
 
     calendar.render();

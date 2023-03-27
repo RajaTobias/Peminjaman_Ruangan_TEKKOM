@@ -27,9 +27,19 @@ use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->group(function () {
 
-    Route::get('/ruangan/deskripsiA101', function () {
-        return view ('Admin.deskripsiA101');
-    })->middleware('is_admin')->name('Admin.deskripsiA101');
+    // Route::get('/ruangan/deskripsiA101', function () {
+    //     return view ('Admin.deskripsiA101');
+    // })->middleware('is_admin')->name('Admin.deskripsiA101');
+
+    Route::get('ruangan/deskripsi/{id}', [RuanganController::class, 'desc'])->middleware('is_admin')->name('Admin.deskripsi');
+
+    Route::get('deskripsi/fasilitas', function () {
+        return view ('Admin.fasilitas');
+    })->middleware('is_admin')->name('Admin.fasilitas');
+
+    // Route::get('deskripsi/fotoruang', function () {
+    //     return view ('Admin.fotoruang');
+    // })->middleware('is_admin')->name('Admin.fotoruang');
 
     Route::get('/ruangan/deskripsiA102', function () {
         return view ('Admin.deskripsiA102');
@@ -82,6 +92,8 @@ Route::prefix('admin')->group(function () {
     Route::post('tambahruangan/store', [RuanganController::class, 'store'])->middleware('is_admin')->name('tambahruangan.store');
 
     Route::get('peminjaman', [PeminjamanRuanganController::class, 'dropdown'])->middleware('is_admin')->name('Admin.peminjaman');
+
+    Route::get('deskripsi/fotoruang', [RuanganController::class, 'dropdown'])->middleware('is_admin')->name('Admin.fotoruang');
 
     Route::get('editjadwal', [JadwalController::class, 'dropdown'])->middleware('is_admin')->name('Admin.editjadwal');
 
@@ -194,9 +206,13 @@ Route::prefix('user')->group(function(){
 
     Route::view('/contact','User.contact')->middleware('auth')->name('User.contact');
 
-    Route::get('cetaksurat/{id}', [SuratController::class, 'index'])->middleware('auth')->name('User.surat');
+    Route::get('cetaksuratkelas/{id}', [SuratController::class, 'index'])->middleware('auth')->name('User.surat');
+
+    Route::get('cetaksuratlab/{id}', [SuratController::class, 'indexlab'])->middleware('auth')->name('User.suratlab');
 
     Route::get('jadwal', [JadwalController::class, 'indexuser'])->middleware('auth')->name('User.jadwal');
+
+    Route::get('ruangan/deskripsi/{id}', [RuanganController::class, 'descuser'])->middleware('auth')->name('User.deskripsi');
 
 });
 

@@ -15,6 +15,7 @@
 
 @section('content')
     <section class="home">
+        @foreach ($datas as $data)
         <!-- <img src="assets/img/Vector (5).png" alt="..." allign="middle"> -->
         <div class="panel-header panel-header-lg">
             <!-- <img src="assets/img/6header-panel.jpg" alt="..." allign="middle"> -->
@@ -29,7 +30,7 @@
                 <div class="containerp">
                     <p class="teksdes">Deskripsi Ruangan</p>
                     <form class="druangan">
-                        <p class="teksr1">Ruang 101</p>
+                        <p class="teksr1">{{$data -> Nama_ruangan}}</p>
                         <p class="teksf1">Fasilitas :</p>
                         <p class="teksf2"> <i class='bx bx-chair icon' ></i>  83 Kursi Meja</p>
                         <p class="teksf3"> <i class='bx bx-desktop icon' ></i>  1 Smart TV</p>
@@ -40,6 +41,14 @@
 
                         <p class="teksf6">Kapasitas</p>
                         <p class="teksf7"> <i class='bx bx-male-female icon' ></i>  Orang</p>
+
+                        <div class="cardf">
+                                    <a href="{{ route('Admin.fotoruang') }}" class="borderdr">Tambah Foto <i class='bx bx-chevron-right icon'> </i> </a>
+                                </div>
+
+                        <div class="cardy">
+                                    <a href="{{ route('Admin.fasilitas') }}" class="borderdr">Fasilitas <i class='bx bx-chevron-right icon'> </i> </a>
+                                </div>
 
                     </form>
             </div>
@@ -73,7 +82,7 @@
     </div>
 </div>
      
-    
+    @endforeach
 
     </section>
     @endsection

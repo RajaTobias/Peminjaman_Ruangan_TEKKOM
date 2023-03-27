@@ -62,6 +62,24 @@ class RuanganController extends Controller
         ->with('datas', $datas);
     }
 
+    public function desc($id){
+        $datas = DB::select('select * from ruangans where id = :id', ['id'=> $id]);
+        return view('Admin.deskripsiA101')->with('datas',$datas);
+    }
+
+    public function descuser($id){
+        $datas = DB::select('select * from ruangans where id = :id', ['id'=> $id]);
+        return view('User.deskripsiA101')->with('datas',$datas);
+    }
+
+    public function dropdown()
+        {
+        $datas = DB::select('SELECT id, Nama_ruangan FROM ruangans;');
+        return view('Admin.fotoruang')
+        
+        ->with('datas', $datas);
+        }
+
     //  public function insert($id) {
     //     $data = DB::table('ruangans')->where('id',
     //     $id)->first();

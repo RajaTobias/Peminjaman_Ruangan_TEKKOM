@@ -5156,10 +5156,38 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.cardy {
-  margin-left: 130px;
+.cardf {
+  margin-left: -20px;
   text-align: center;
   margin-top: 400px;
+  background-color: #fff;
+  background-clip: border-box;
+  width: 50%;
+  font-size: 15px;
+  background: rgba(255, 241, 220, 1);
+  border-radius: 10px;
+  border: 1px solid #000000;
+  height: 25px;
+}
+
+.cardy {
+  margin-left: 170px;
+  text-align: center;
+  margin-top: -25px;
+  background-color: #fff;
+  background-clip: border-box;
+  width: 50%;
+  font-size: 15px;
+  background: #E7F6FF;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  height: 25px;
+}
+
+.cardv {
+  margin-left: 150px;
+  text-align: center;
+  margin-top: 390px;
   background-color: #fff;
   background-clip: border-box;
   width: 60%;
