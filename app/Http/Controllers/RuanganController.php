@@ -16,24 +16,24 @@ class RuanganController extends Controller
         'Jenis_ruangan' => 'required',
         // 'Kapasitas_ruangan' => 'required',
         // 'Deskripsi_ruangan' => 'required',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048'
+        'lcd_proyektor' => 'nullable|lcd_proyektor|mimes:jpeg,png,jpg,svg|max:2048'
         ]);
         $ruangans = null;
-            if($request->hasFile('image')) {
-                $ruangans = str_replace('public/', '', $request->file('image')->store('public/image'));
+            if($request->hasFile('lcd_proyektor')) {
+                $ruangans = str_replace('public/', '', $request->file('lcd_proyektor')->store('public/lcd_proyektor'));
             } else {
                 return redirect()->back()->with('error', 'Terjadi kesalahan:<br>' . $e->getMessage() . '<br>Silahkan coba lagi.');
             }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO ruangans(Nama_ruangan,
-        Jenis_ruangan,image) VALUES
-        (:Nama_ruangan, :Jenis_ruangan,:image)',
+        Jenis_ruangan,lcd_proyektor) VALUES
+        (:Nama_ruangan, :Jenis_ruangan,:lcd_proyektor)',
         [
         'Nama_ruangan' => $request->Nama_ruangan,
         'Jenis_ruangan' => $request->Jenis_ruangan,
         // 'Kapasitas_ruangan' => $request->Kapasitas_ruangan,
         // 'Deskripsi_ruangan' => $request->Deskripsi_ruangan,
-        'image' => $ruangans,
+        'lcd_proyektor' => $ruangans,
         ]
         );
 
@@ -72,6 +72,30 @@ class RuanganController extends Controller
         return view('User.deskripsiA101')->with('datas',$datas);
     }
 
+    public function descupdate(Request $request) {
+        $request->validate([
+            'kursi' => 'nullable',
+            'smart_tv' => 'nullable',
+            'layar_proyektor' => 'nullable',
+            'lcd_proyektor' => 'nullable',
+            'ac' => 'nullable',
+            'kapasitas' => 'nullable'
+        ]);
+        // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
+        DB::update('UPDATE ruangans SET kursi =
+                :kursi, smart_tv = :smart_tv, layar_proyektor = :layar_proyektor, lcd_proyektor = :lcd_proyektor, ac =:ac, kapasitas = :kapasitas where id = :id',
+                [
+                'id' => $id,
+                'kursi' => $request->kursi,
+                'smart_tv' => $request->smart_tv,
+                'layar_proyektor' => $request->layar_proyektor,
+                'lcd_proyektor' => $request->lcd_proyektor,
+                'ac' => $request->ac,
+                'kapasitas' => $request->kapasitas,
+                ]
+                );
+         return redirect()->route('Admin.deskripsiA101')->with('success', 'Data user berhasil diubah');
+     }
     //  public function insert($id) {
     //     $data = DB::table('ruangans')->where('id',
     //     $id)->first();
