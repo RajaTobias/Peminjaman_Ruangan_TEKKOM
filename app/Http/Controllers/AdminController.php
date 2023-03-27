@@ -29,7 +29,7 @@ class AdminController extends Controller
         ]);
         $user = null;
             if($request->hasFile('Image')) {
-                $user = str_replace('public/', '', $request->file('Image')->store('public/Image'));
+                $user = str_replace('public/', '', $request->file('Image')->store('public/image'));
             }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::update('UPDATE users SET name =

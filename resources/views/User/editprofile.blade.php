@@ -25,7 +25,7 @@
                         @csrf
                         <div class="profile-pic">
                             <img src="{{ asset('assets/img/Rectangle 4036.png') }}" id="fotop">
-                            <input type="file" id="file" name="image">
+                            <input type="file" id="file" name="Image">
                             <label for="file" id="upBtn">Choose Photo</label>
                         </div>
                         <div class="input-text1">
