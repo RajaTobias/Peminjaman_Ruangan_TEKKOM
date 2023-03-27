@@ -32,15 +32,16 @@
                     <form class="druangan">
                         <p class="teksr1">{{$data -> Nama_ruangan}}</p>
                         <p class="teksf1">Fasilitas :</p>
-                        <p class="teksf2"> <i class='bx bx-chair icon' ></i>  83 Kursi Meja</p>
-                        <p class="teksf3"> <i class='bx bx-desktop icon' ></i>  1 Smart TV</p>
-                        <p class="teksf4"> <i class='bx bx-hdd icon' ></i>  1 Proyektor</p>
-                        <p class="teksf5"> <i class='bx bx-slideshow icon' ></i>  1 LCD</p>
-                        <p class="teksf8"> <i class='bx bx-chalkboard icon' ></i>  3 AC</p>
+                        <p class="teksf2"> <i class='bx bx-chair icon' ></i>  {{$data->kursi}} Kursi Meja</p>
+                        <p class="teksf3"> <i class='bx bx-desktop icon' ></i>  {{$data->smart_tv}} Smart TV</p>
+                        <p class="teksf4"> <i class='bx bx-hdd icon' ></i>  {{$data->layar_proyektor}} Proyektor</p>
+                        <p class="teksf5"> <i class='bx bx-slideshow icon' ></i>  {{$data->lcd_proyektor}} LCD</p>
+                        <p class="teksf8"> <i class='bx bx-chalkboard icon' ></i>  {{$data->ac}} AC</p>
                       
 
                         <p class="teksf6">Kapasitas</p>
-                        <p class="teksf7"> <i class='bx bx-male-female icon' ></i>  Orang</p>
+                        <p class="teksf7"> <i class='bx bx-male-female icon' ></i>  {{$data->kapasitas}} Orang</p>
+                        
 
                         <div class="cardf">
                                     <a href="{{ route('Admin.fotoruang') }}" class="borderdr">Tambah Foto <i class='bx bx-chevron-right icon'> </i> </a>
