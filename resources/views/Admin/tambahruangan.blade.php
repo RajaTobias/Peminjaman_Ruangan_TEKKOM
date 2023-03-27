@@ -75,10 +75,7 @@
                                     <!-- </div>/cbp-hrsub -->
                                 <!-- </li>
                                 <li> -->
-                                    <div class="input-text3">
-                                        <p class="tekska">Kapasitas Ruangan</p>
-                                        <input type="text" id="inputNama" name="nama" />
-                                    </div>
+                         
                                     <div> 
                                         <button class="border" input type="submit">Submit</button>
                                     </div>

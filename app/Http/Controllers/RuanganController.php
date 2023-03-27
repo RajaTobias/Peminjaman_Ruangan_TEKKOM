@@ -96,6 +96,14 @@ class RuanganController extends Controller
                 );
          return redirect()->route('Admin.deskripsiA101')->with('success', 'Data user berhasil diubah');
      }
+    public function dropdown()
+        {
+        $datas = DB::select('SELECT id, Nama_ruangan FROM ruangans;');
+        return view('Admin.fotoruang')
+        
+        ->with('datas', $datas);
+        }
+
     //  public function insert($id) {
     //     $data = DB::table('ruangans')->where('id',
     //     $id)->first();

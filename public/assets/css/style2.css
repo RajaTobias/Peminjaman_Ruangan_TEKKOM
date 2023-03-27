@@ -903,8 +903,8 @@ body .container .cardx {
   }
 
   .border {
-    transform: translateY(30%);
-    margin-left: 27rem;
+    transform: translateY(350%);
+    margin-left: 16rem;
     width: 250.76px;
     padding: 3px;
     background: #E7F6FF;
@@ -986,15 +986,15 @@ top: 12px;
 .ptambahruangan {
   position: absolute;
   margin: 0 auto;
-  width: 815px;
-  height: 500px;
+  width:675px;
+  height: 400px;
   background: #FFFFFF;
   -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 40px 70px 20px 70px;
-  margin-top: 800px;
-  margin-left: 50px;
+  margin-top: 750px;
+  /* margin-left: 20px; */
   z-index: 4;
 }
 

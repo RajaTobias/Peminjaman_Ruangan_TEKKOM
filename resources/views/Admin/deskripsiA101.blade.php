@@ -43,6 +43,14 @@
                         <p class="teksf7"> <i class='bx bx-male-female icon' ></i>  {{$data->kapasitas}} Orang</p>
                         
 
+                        <div class="cardf">
+                                    <a href="{{ route('Admin.fotoruang') }}" class="borderdr">Tambah Foto <i class='bx bx-chevron-right icon'> </i> </a>
+                                </div>
+
+                        <div class="cardy">
+                                    <a href="{{ route('Admin.fasilitas') }}" class="borderdr">Fasilitas <i class='bx bx-chevron-right icon'> </i> </a>
+                                </div>
+
                     </form>
             </div>
     

@@ -638,7 +638,7 @@ textarea {
 }
 .teksf{
   position: absolute;
-  max-width: 100%;
+  width: 62%;
   left: 70px;
   top: 155px;
   font-style: normal;
@@ -673,7 +673,7 @@ textarea {
   position: absolute;
   max-width: 100%;
   left: 70px;
-  top: 285px;
+  top: 245px;
   font-style: normal;
   text-align: center;
   color: #000000;
@@ -683,7 +683,7 @@ textarea {
   max-width: 100%;
   height: 10px;
   left: 70px;
-  top: 350px;
+  top: 320px;
   font-style: normal;
   font-size: 19px;
   font-weight: 400;
@@ -695,7 +695,7 @@ textarea {
   max-width: 100%;
   height: 10px;
   left: 70px;
-  top: 385px;
+  top: 355px;
   font-style: normal;
   font-size: 19px;
   font-weight: 600;
@@ -706,7 +706,7 @@ textarea {
   position: absolute;
   max-width: 100%;
   left: 70px;
-  top: 425px;
+  top: 355px;
   font-style: normal;
   text-align: center;
   color: #000000;

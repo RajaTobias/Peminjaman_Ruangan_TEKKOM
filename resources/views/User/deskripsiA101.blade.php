@@ -39,10 +39,12 @@
                       
 
                         <p class="teksf6">Kapasitas</p>
-                        <p class="teksf7"> <i class='bx bx-male-female icon' ></i>  {{$data->kapasitas}}Orang</p>
+                        <p class="teksf7"> <i class='bx bx-male-female icon' ></i>  Orang</p>
 
-                        <p class="teksf8">Edit</p>
-                                <div class="cardy">
+                
+
+                   
+                                <div class="cardv">
                                     <a href="{{ route('User.A101') }}" class="borderdr">Pinjam Ruangan <i class='bx bx-chevron-right icon'> </i> </a>
                                 </div>
                     </form>

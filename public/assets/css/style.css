@@ -991,8 +991,8 @@ body .container .cardx {
   }
 
   .borderej {
-    margin-top: 430px;
-    margin-left: 70px;
+    margin-top: 360px;
+    margin-left: 50px;
     transform: translateX(5%);
     width: 50%;
     background: #E7F6FF;
@@ -1125,8 +1125,8 @@ top: 12px;
 .ejadwal {
   position: absolute;
   margin: 0 auto;
-  width: 455px;
-  height: 570px;
+  width: 405px;
+  height: 520px;
   background: #FFFFFF;
   -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
