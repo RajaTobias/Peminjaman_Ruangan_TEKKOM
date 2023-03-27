@@ -23,7 +23,7 @@
                     <p class="teksp">Profile Setting</p>
                     <form class="pprofile">
                         <div class="profile-pic">
-                            <img src="{{ asset('storage/'. auth()->user()->Image) }}" id="fotop">
+                            <img src="{{ asset('storage/'. auth()->user()->Image) }}" id="fotox">
                         </div>
                         <div class="input-text1">
                             <p class="teksp1">Nama</p>
