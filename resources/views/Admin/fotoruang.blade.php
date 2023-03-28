@@ -18,12 +18,12 @@
           </div> 
 
         <div class="row6">
-            <form class="login" method="post" action="">
+        @foreach ($datas as $data)
+            <form class="login" method="post" enctype="multipart/form-data" action="{{route ('image.store', $data->id)}}">
                 @csrf
-                <p class="tekspinjam">Pilih Ruangan</p>
-                    <select name="ruangan_id" id="ruangan_id">
+                <p class="tekspinjam">Ruangan</p>
+                    <select name="id_ruangan" id="id_ruangan">
                         <label for="lang">JenisR</label>
-                        @foreach ($datas as $data)
                         <option value= "{{ $data->id }}" >{{ $data->Nama_ruangan }}</option>
                         <!-- <option value="A102">Ruang 102</option>
                         <option value="A201">Ruang 201</option>
@@ -31,33 +31,19 @@
                         <option value="Lab. RPL">Lab. RPL</option>
                         <option value="Lab. Mulmed">Lab. Mulmed</option>
                         <option value="Lab. Jarkom">Lab. Jarkom</option> -->
-                        @endforeach
+                       
                       </select>
                 
                 <div class="input-text">
-                    <p class="tekspinjam">Gambar 1</p><input type="file" id="file" name="Image">
-                </div>
-
-                <div class="input-text">
-                    <p class="tekspinjam">Gambar 2</p> <input type="file" id="file" name="Image">
-                </div>
-                
-                <div class="input-text">
-                     <p class="tekspinjam">Gambar 3</p> <input type="file" id="file" name="Image">
-                </div>
-
-                <div class="input-text">
-                     <p class="tekspinjam">Gambar 4</p> <input type="file" id="file" name="Image">
-                </div>
-
-                <div class="input-text">
-                    <p class="tekspinjam">Gambar 5</p> <input type="file" id="file" name="Image">
+                    <p class="tekspinjam">Gambar</p><input type="file" id="file" name="image">
                 </div>
 
                 <div>
                     <button class="border" input type="submit">Submit</button>
                 </div>
+                
             </form>
+            @endforeach
         </div> 
         <!-- <footer class="footer fixed-bottom1" method="post" action="{{ route('pinjam.store') }}">
             <div class="teksa">

@@ -1,4 +1,4 @@
-<section class="sb-nav-fixed">
+<section class="sb-nav-top-fixed">
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-transparent">
                 <!-- Navbar Search-->
                 <!-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -26,4 +26,10 @@
                 </ul>
                 
             </nav>
+
+            <style>
+                .sb-nav-top-fixed {
+                    float : right;
+}
+            </style>
     </section>
