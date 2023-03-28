@@ -18,18 +18,19 @@
           </div> 
 
         <div class="row6">
-            <form class="login" method="post" action="">
+        @foreach ($datas as $data)
+            <form class="login" method="post" action="{{route('fasilitas.store', $data-> id)}}">
                 @csrf
                 <div class="input-text">
-                    <p class="tekspinjam">Kursi Meja</p><input type="text" id="Nama" name="Nama" required/>
+                    <p class="tekspinjam">Kursi Meja</p><input type="text" id="kursi" name="kursi" required/>
                 </div>
                 
                 <div class="input-text">
-                    <p class="tekspinjam">Proyektor</p><input type="text" id="NIM" name="NIM" required/>
+                    <p class="tekspinjam">Proyektor</p><input type="text" id="layar_proyektor" name="layar_proyektor" required/>
                 </div>
 
                 <div class="input-text">
-                    <p class="tekspinjam">Smart TV</p><input type="text" id="Keperluan" name="Keperluan" required/>
+                    <p class="tekspinjam">Smart TV</p><input type="text" id="smart_tv" name="smart_tv" required/>
                 </div>
                 
                 <div class="input-text">
@@ -37,21 +38,22 @@
                 </div>
 
                 <div class="input-text">
-                     <p class="tekspinjam">LCD</p><input type="text" id="Jam_mulai" name="Jam_mulai" required/>
+                     <p class="tekspinjam">LCD</p><input type="text" id="lcd_proyektor" name="lcd_proyektor" required/>
                 </div>
 
                 <div class="input-text">
-                    <p class="tekspinjam">AC</p><input type="text" id="Jam_selesai" name="Jam_selesai" required/>
+                    <p class="tekspinjam">AC</p><input type="text" id="ac" name="ac" required/>
                 </div>
 
                 <div class="input-text">
-                    <p class="tekspinjam">Kapasitas</p><input type="text" id="Jam_selesai" name="Jam_selesai" required/>
+                    <p class="tekspinjam">Kapasitas</p><input type="text" id="kapasitas" name="kapasitas" required/>
                 </div>
 
                 <div>
                     <button class="border" input type="submit">Submit</button>
                 </div>
             </form>
+            @endforeach
         </div> 
         <!-- <footer class="footer fixed-bottom1" method="post" action="{{ route('pinjam.store') }}">
             <div class="teksa">
@@ -81,13 +83,13 @@
                     <span class="">Waktu Mulai</span>
                 </div>
                <div class= "teksg" id='mulai'>--:--</div>
-                 <input class="teksh" type='time' id='Jam_mulai' name='Jam_mulai' onchange='cetakWaktu()'/>
+                 <input class="teksh" type='time' id='lcd_proyektor' name='lcd_proyektor' onchange='cetakWaktu()'/>
                  <div class="teksd">
                     <i class='bx bx-time-five icon'></i>
                     <span class="">Waktu Selesai</span>
                 </div>
                <div class= "teksi" id='selesai'>--:--</div>
-               <input class="teksj" type='time' id='Jam_selesai' name='Jam_selesai' onchange='cetakJam()'/>
+               <input class="teksj" type='time' id='ac' name='ac' onchange='cetakJam()'/>
  
         </footer> -->
 

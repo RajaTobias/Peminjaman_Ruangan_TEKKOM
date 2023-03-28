@@ -27,19 +27,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->group(function () {
 
-    // Route::get('/ruangan/deskripsiA101', function () {
-    //     return view ('Admin.deskripsiA101');
-    // })->middleware('is_admin')->name('Admin.deskripsiA101');
-
     Route::get('ruangan/deskripsi/{id}', [RuanganController::class, 'desc'])->middleware('is_admin')->name('Admin.deskripsi');
 
-    Route::get('deskripsi/fasilitas', function () {
-        return view ('Admin.fasilitas');
-    })->middleware('is_admin')->name('Admin.fasilitas');
-
-    // Route::get('deskripsi/fotoruang', function () {
-    //     return view ('Admin.fotoruang');
-    // })->middleware('is_admin')->name('Admin.fotoruang');
+    Route::get('deskripsi/fasilitas/{id}', [RuanganController::class, 'descedit'])->middleware('is_admin')->name('Admin.fasilitas');
 
     Route::get('/ruangan/deskripsiA102', function () {
         return view ('Admin.deskripsiA102');
@@ -75,9 +65,9 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.tambahruangan');
     })->middleware('is_admin')->name('Admin.tambahruangan');
 
-    Route::get('/tambahdesc', function () {
-        return view ('Admin.tambahdeskripsi');
-    })->middleware('is_admin')->name('Admin.tambahdeskripsi');
+    // Route::get('/tambahdesc', function () {
+    //     return view ('Admin.tambahdeskripsi');
+    // })->middleware('is_admin')->name('Admin.tambahdeskripsi');
 
     Route::get('role', [AdminController::class, 'index'])->middleware('is_admin')->name('Admin.ubahuser');
 
@@ -97,7 +87,9 @@ Route::prefix('admin')->group(function () {
 
     Route::get('peminjaman', [PeminjamanRuanganController::class, 'dropdown'])->middleware('is_admin')->name('Admin.peminjaman');
 
-    Route::get('deskripsi/fotoruang', [RuanganController::class, 'dropdown'])->middleware('is_admin')->name('Admin.fotoruang');
+    // Route::get('deskripsi/foto', [RuanganController::class, 'descimage'])->middleware('is_admin')->name('Admin.fotoruang');
+
+    Route::get('deskripsi/fotoruang/{id}', [RuanganController::class, 'imageedit'])->middleware('is_admin')->name('Admin.fotoruang');
 
     Route::get('editjadwal', [JadwalController::class, 'dropdown'])->middleware('is_admin')->name('Admin.editjadwal');
 
@@ -105,9 +97,13 @@ Route::prefix('admin')->group(function () {
 
     Route::post('editprofile/update', [AdminController::class, 'update'])->middleware('is_admin')->name('Admin.updateprofile');
 
+    Route::post('deskripsi/gambar/store/{id}', [RuanganController::class, 'storeimage'])->middleware('is_admin')->name('image.store');
+
     Route::get('editprofile', [AdminController::class, 'edit'])->middleware('is_admin')->name('Admin.editprofile');
 
     Route::post('editjadwal/store', [JadwalController::class, 'store'])->middleware('is_admin')->name('editjadwal.store');
+
+    Route::post('deskripsi/fasilitas/store/{id}', [RuanganController::class, 'descupdate'])->middleware('is_admin')->name('fasilitas.store');
 
     Route::get('jadwal', [JadwalController::class, 'index'])->middleware('is_admin')->name('Admin.jadwal');
 

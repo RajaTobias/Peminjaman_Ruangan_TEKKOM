@@ -15,7 +15,6 @@
 
 @section('content')
     <section class="home">
-        @foreach ($datas as $data)
         <!-- <img src="assets/img/Vector (5).png" alt="..." allign="middle"> -->
         <div class="panel-header panel-header-lg">
             <!-- <img src="assets/img/6header-panel.jpg" alt="..." allign="middle"> -->
@@ -30,6 +29,7 @@
                 <div class="containerp">
                     <p class="teksdes">Deskripsi Ruangan</p>
                     <form class="druangan">
+                    @foreach ($datas as $data)
                         <p class="teksr1">{{$data -> Nama_ruangan}}</p>
                         <p class="teksf1">Fasilitas :</p>
                         <p class="teksf2"> <i class='bx bx-chair icon' ></i>  {{$data->kursi}} Kursi Meja</p>
@@ -41,14 +41,14 @@
 
                         <p class="teksf6">Kapasitas</p>
                         <p class="teksf7"> <i class='bx bx-male-female icon' ></i>  {{$data->kapasitas}} Orang</p>
-                        
+                        @endforeach
 
                         <div class="cardf">
-                                    <a href="{{ route('Admin.fotoruang') }}" class="borderdr">Tambah Foto <i class='bx bx-chevron-right icon'> </i> </a>
+                                    <a href="{{ route('Admin.fotoruang', $data->id) }}" class="borderdr">Tambah Foto <i class='bx bx-chevron-right icon'> </i> </a>
                                 </div>
 
                         <div class="cardy">
-                                    <a href="{{ route('Admin.fasilitas') }}" class="borderdr">Fasilitas <i class='bx bx-chevron-right icon'> </i> </a>
+                                    <a href="{{ route('Admin.fasilitas', $data->id) }}" class="borderdr">Fasilitas <i class='bx bx-chevron-right icon'> </i> </a>
                                 </div>
 
                     </form>
@@ -56,12 +56,14 @@
     
         
             <div class="slider">
+    @foreach ($datas as $data)
     <div>
         <a href="#">
-            <img src="{{ asset('assets/img/101a.jpg') }}" alt="Image 1">
+            <img src="{{ asset('storage/'. $data->image) }}" alt="Image 1">
         </a>            
     </div>
-    <div>
+    @endforeach
+    <!-- <div>
         <a href="#">
             <img src="{{ asset('assets/img/101c.jpg') }}" alt="Image 2">
         </a>
@@ -80,11 +82,9 @@
         <a href="#">
             <img src="{{ asset('assets/img/101f.jpg') }}" alt="Image 5">
         </a>
-    </div>
+    </div> -->
 </div>
-     
-    @endforeach
-
+    
     </section>
     @endsection
 

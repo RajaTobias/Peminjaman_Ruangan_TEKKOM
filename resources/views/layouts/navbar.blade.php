@@ -26,10 +26,4 @@
                 </ul>
                 
             </nav>
-            <style>
-                .sb-nav-top-fixed {
-                    float: right;
-                    font-weight: 400;
-                }
-            </style>
     </section>
