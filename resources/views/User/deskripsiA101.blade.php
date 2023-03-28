@@ -44,9 +44,9 @@
                 
 
                    
-                                <div class="cardv">
+                                <!-- <div class="cardv">
                                     <a href="{{ route('User.A101') }}" class="borderdr">Pinjam Ruangan <i class='bx bx-chevron-right icon'> </i> </a>
-                                </div>
+                                </div> -->
                     </form>
                 </div>
     
