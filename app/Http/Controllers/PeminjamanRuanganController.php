@@ -52,16 +52,25 @@ class PeminjamanRuanganController extends Controller
 
     public function index() {
         if (auth()->user()->is_TU == 1){
-        $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
-        FROM peminjaman_ruangans p INNER JOIN ruangans r
-        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Kelas" and p.Nama IS NOT NULL');
+            $datas = DB::table('peminjaman_ruangans')
+            ->select('peminjaman_ruangans.id','peminjaman_ruangans.Nama','peminjaman_ruangans.NIM', 'peminjaman_ruangans.Keperluan','peminjaman_ruangans.Tanggal','peminjaman_ruangans.Jam_mulai',
+            'peminjaman_ruangans.Jam_selesai','peminjaman_ruangans.is_accept','peminjaman_ruangans.is_decline', 'ruangans.Nama_ruangan')
+            ->join('ruangans','ruangans.id','=','peminjaman_ruangans.ruangan_id')
+            ->where('ruangans.Jenis_ruangan', '=', "Ruang Kelas")
+            ->where('peminjaman_ruangans.Nama', '!=', NULL)
+            ->paginate(3);
         return view('Admin.pemohon')
         
         ->with('datas', $datas);
-        }else{
-            $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
-        FROM peminjaman_ruangans p INNER JOIN ruangans r
-        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Laboratorium" and p.Nama IS NOT NULL');
+        }
+        else{
+            $datas = DB::table('peminjaman_ruangans')
+            ->select('peminjaman_ruangans.id','peminjaman_ruangans.Nama','peminjaman_ruangans.NIM', 'peminjaman_ruangans.Keperluan','peminjaman_ruangans.Tanggal','peminjaman_ruangans.Jam_mulai',
+            'peminjaman_ruangans.Jam_selesai','peminjaman_ruangans.is_accept','peminjaman_ruangans.is_decline', 'ruangans.Nama_ruangan')
+            ->join('ruangans','ruangans.id','=','peminjaman_ruangans.ruangan_id')
+            ->where('ruangans.Jenis_ruangan', '=', "Ruang Laboratorium")
+            ->where('peminjaman_ruangans.Nama', '!=', NULL)
+            ->paginate(3);
         return view('Admin.pemohon')
         
         ->with('datas', $datas);

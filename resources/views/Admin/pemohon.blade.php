@@ -150,7 +150,7 @@
                         </tbody>
                     </table>
                     </div>
-             
+                    {{ $datas->links('pagination::bootstrap-4') }}
             </div>
 
     </section>

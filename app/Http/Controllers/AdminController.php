@@ -88,7 +88,8 @@ class AdminController extends Controller
         return view('Admin.ubahuser', ['datas' => $datas])
         
         ->with('datas', $datas);
-        }else{
+        }
+        else{
             $datas = DB::table('users')->paginate(7) ;
             return view ('Admin.ubahuser', ['datas' => $datas])
             ->with('datas', $datas);

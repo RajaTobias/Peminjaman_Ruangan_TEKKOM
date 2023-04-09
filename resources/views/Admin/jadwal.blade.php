@@ -45,6 +45,11 @@
                             <i class='bx bx-calendar-edit'></i><p class="tekse2">Edit</p>
                         </a>
                     </div>
+                    <div class="border2">
+                        <a href="{{ route('Admin.editjadwal') }}">
+                            <i class='bx bx-calendar-edit'></i><p class="tekse2">Edit</p>
+                        </a>
+                    </div>
             </div>
             @foreach ($datas as $data)
             <div id="modalEventView" class="modal" tabindex="-1" role="dialog">
