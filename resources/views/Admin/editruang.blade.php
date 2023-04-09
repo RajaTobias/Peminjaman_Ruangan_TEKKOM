@@ -24,7 +24,7 @@
                   
                 <img src="{{ asset('assets/img/Vector (5).png') }}" alt="..." allign="middle">
                 <div class="containertr">
-                    <p class="teksp">Tambah Ruangan</p>
+                    <p class="teksp">Edit Ruangan</p>
                     <form class="ptambahruangan" method="post" enctype="multipart/form-data" action="">
                         @csrf
                         <div class="profile-pic">
