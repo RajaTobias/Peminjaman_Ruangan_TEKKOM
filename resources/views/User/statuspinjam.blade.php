@@ -32,8 +32,8 @@
                                 <th style="width:15% !important;">NIM</th>
                                 <th style="width:10% !important;">Keperluan</th>
                                 <th style="width:10% !important;">Ruangan</th>
-                                <th style="width:12% !important;">Tanggal</th>
-                                <th style="width:12% !important;">Waktu</th>
+                                <th style="width:12% !important;">Waktu Mulai</th>
+                                <th style="width:12% !important;">Waktu Selesai</th>
                                 <th style="width:16% !important;">Persetujuan</th>
 
                             </tr>
@@ -47,9 +47,8 @@
                                 <td>{{ $data->NIM }}</td>
                                 <td>{{ $data->Keperluan }}</td>
                                 <td>{{ $data->Nama_ruangan }}</td>
-                                <td>{{ $data->Tanggal }}</td>
-
-                                <td>{{ $data->Jam_mulai }} s/d {{ $data->Jam_selesai }}</td>
+                                <td>{{ $data->Jam_mulai }}</td>
+                                <td>{{ $data->Jam_selesai }}</td>
                                 <td>
                                 @if($data->is_accept == 1 && $data->is_decline == 0 )
                                 <div class="badge1">

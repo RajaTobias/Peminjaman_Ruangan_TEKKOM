@@ -46,16 +46,16 @@
                         @endforeach
                       </select>
                 
-                <div class="input-text">
+                <!-- <div class="input-text">
                      <p class="tekspinjam">Tanggal</p><input type="date" id="Tanggal" name="Tanggal" required/>
+                </div> -->
+
+                <div class="input-text">
+                     <p class="tekspinjam">Jam Mulai</p><input type="datetime-local" id="Jam_mulai" name="Jam_mulai" required/>
                 </div>
 
                 <div class="input-text">
-                     <p class="tekspinjam">Jam Mulai</p><input type="time" id="Jam_mulai" name="Jam_mulai" required/>
-                </div>
-
-                <div class="input-text">
-                    <p class="tekspinjam">Jam Selesai</p><input type="time" id="Jam_selesai" name="Jam_selesai" required/>
+                    <p class="tekspinjam">Jam Selesai</p><input type="datetime-local" id="Jam_selesai" name="Jam_selesai" required/>
                 </div>
 
                 <div>

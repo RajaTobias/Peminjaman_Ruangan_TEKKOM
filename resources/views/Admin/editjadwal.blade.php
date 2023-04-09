@@ -32,7 +32,7 @@
                             <span class="">Pilih Ruangan</span>
                             </div>
                             <div class="teksz">            
-                            <select name="id_ruangan" id="id_ruangan">
+                            <select name="ruangan_id" id="ruangan_id">
                                 <label for="lang">JenisR</label>
                                 @foreach ($datas as $data)
                                 <option value= "{{ $data->id }}" >{{ $data->Nama_ruangan }}</option>
@@ -48,12 +48,12 @@
                                 <i class='bx bx-time icon'></i>
                                 <span class="">Waktu Mulai</span>
                             </div>
-                             <input class="teksh" type='datetime-local' id='Waktu_mulai' name='Waktu_mulai' onchange='cetakWaktu()'/>
+                             <input class="teksh" type='datetime-local' id='Jam_mulai' name='Jam_mulai' onchange='cetakWaktu()'/>
                              <div class="teksd">
                                 <i class='bx bx-time-five icon'></i>
                                 <span class="">Waktu Selesai</span>
                             </div>
-                           <input class="teksj" type='datetime-local' id='Waktu_selesai' name='Waktu_selesai' onchange='cetakJam()'/>
+                           <input class="teksj" type='datetime-local' id='Jam_selesai' name='Jam_selesai' onchange='cetakJam()'/>
   
                            <div>
                             <button class="borderej">Submit</button>

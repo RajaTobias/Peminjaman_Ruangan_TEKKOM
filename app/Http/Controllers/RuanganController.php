@@ -87,18 +87,20 @@ class RuanganController extends Controller
             'kursi' => 'nullable',
             'smart_tv' => 'nullable',
             'layar_proyektor' => 'nullable',
+            'lcd_proyektor' => 'nullable',
             'image' => 'nullable',
             'ac' => 'nullable',
             'kapasitas' => 'nullable'
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::update('UPDATE ruangans SET kursi =
-                :kursi, smart_tv = :smart_tv, layar_proyektor = :layar_proyektor, image = :image, ac =:ac, kapasitas = :kapasitas where id = :id',
+                :kursi, smart_tv = :smart_tv, layar_proyektor = :layar_proyektor, lcd_proyektor = :lcd_proyektor, image = :image, ac =:ac, kapasitas = :kapasitas where id = :id',
                 [
                 'id' => $id,
                 'kursi' => $request->kursi,
                 'smart_tv' => $request->smart_tv,
                 'layar_proyektor' => $request->layar_proyektor,
+                'lcd_proyektor' => $request->lcd_proyektor,
                 'image' => $request->image,
                 'ac' => $request->ac,
                 'kapasitas' => $request->kapasitas,

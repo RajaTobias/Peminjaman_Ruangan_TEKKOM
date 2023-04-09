@@ -77,7 +77,8 @@
                             @endforeach
                             
                         </tbody>
-                    </table>                 
+                    </table>   
+                    {{ $datas->links() }}                   
 
                     </div>
              

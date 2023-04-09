@@ -19,7 +19,7 @@
 
         <div class="row6">
             <form class="login" method="post" action="{{ route('User.store') }}">
-                @csrf
+            @csrf
                 <div class="input-text">
                     <p class="tekspinjam">Nama Lengkap</p><input type="text" id="Nama" name="Nama" required/>
                 </div>
@@ -32,27 +32,30 @@
                     <p class="tekspinjam">Keperluan</p><input type="text" id="Keperluan" name="Keperluan" required/>
                 </div>
 
-                <!-- <div>
-                    <button class="border" input type="submit">Submit</button>
-                </div> -->
                 <p class="tekspinjam">Pilih Ruangan</p>
                     <select name="ruangan_id" id="ruangan_id">
                         <label for="lang">JenisR</label>
                         @foreach ($datas as $data)
                         <option value= "{{ $data->id }}" >{{ $data->Nama_ruangan }}</option>
+                        <!-- <option value="A102">Ruang 102</option>
+                        <option value="A201">Ruang 201</option>
+                        <option value="Lab. Embedded">Lab. Embedded</option>
+                        <option value="Lab. RPL">Lab. RPL</option>
+                        <option value="Lab. Mulmed">Lab. Mulmed</option>
+                        <option value="Lab. Jarkom">Lab. Jarkom</option> -->
                         @endforeach
                       </select>
                 
+                <!-- <div class="input-text">
+                     <p class="tekspinjam">Tanggal</p><input type="date" id="Tanggal" name="Tanggal" required/>
+                </div> -->
+
                 <div class="input-text">
-                <p class="tekspinjam">Tanggal</p><input type="date" id="Tanggal" name="Tanggal" required/>
+                     <p class="tekspinjam">Jam Mulai</p><input type="datetime-local" id="Jam_mulai" name="Jam_mulai" required/>
                 </div>
 
                 <div class="input-text">
-                <p class="tekspinjam">Jam Mulai</p><input type="time" id="Jam_mulai" name="Jam_mulai" required/>
-                </div>
-
-                <div class="input-text">
-                <p class="tekspinjam">Jam Selesai</p><input type="time" id="Jam_selesai" name="Jam_selesai" required/>
+                    <p class="tekspinjam">Jam Selesai</p><input type="datetime-local" id="Jam_selesai" name="Jam_selesai" required/>
                 </div>
 
                 <div>

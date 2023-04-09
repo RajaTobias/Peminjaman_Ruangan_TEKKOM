@@ -85,12 +85,12 @@ class AdminController extends Controller
         $datas = DB::select('SELECT id, name, is_admin, is_TU FROM users where name = :search;',[
             'search'=>$request->search
         ]);
-        return view('Admin.ubahuser')
+        return view('Admin.ubahuser', ['datas' => $datas])
         
         ->with('datas', $datas);
         }else{
-            $datas = DB::select('SELECT id, name, is_admin, is_TU FROM users;') ;
-            return view ('Admin.ubahuser')
+            $datas = DB::table('users')->paginate(7) ;
+            return view ('Admin.ubahuser', ['datas' => $datas])
             ->with('datas', $datas);
         }
     }

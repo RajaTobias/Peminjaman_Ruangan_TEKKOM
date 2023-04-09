@@ -13,22 +13,21 @@ class PeminjamanRuanganController extends Controller
         'Nama' => 'required',
         'NIM' => 'required',
         'Keperluan' => 'required',
-        'Tanggal' => 'required',
+        // 'Tanggal' => 'required',
         'Jam_mulai' => 'required',
         'Jam_selesai' => 'required',
         'ruangan_id' => 'required'
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO peminjaman_ruangans(Nama,
-        NIM, Keperluan, Tanggal, Jam_mulai, Jam_selesai, user_id, ruangan_id) VALUES
-        (:Nama, :NIM, :Keperluan,
-        :Tanggal, :Jam_mulai, :Jam_selesai, :user_id, :ruangan_id)',
+        NIM, Keperluan, Jam_mulai, Jam_selesai, user_id, ruangan_id) VALUES
+        (:Nama, :NIM, :Keperluan, :Jam_mulai, :Jam_selesai, :user_id, :ruangan_id)',
         [ 
         'Nama' => $request->Nama,
         'NIM' => $request->NIM,
         'Keperluan' => $request->Keperluan,
         // 'Ruangan' => $request->Ruangan,
-        'Tanggal' => $request->Tanggal,
+        // 'Tanggal' => $request->Tanggal,
         'Jam_mulai' => $request->Jam_mulai,
         'Jam_selesai' => $request->Jam_selesai,
         'user_id' => auth()->user()->id,
@@ -55,14 +54,14 @@ class PeminjamanRuanganController extends Controller
         if (auth()->user()->is_TU == 1){
         $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
         FROM peminjaman_ruangans p INNER JOIN ruangans r
-        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Kelas"');
+        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Kelas" and p.Nama IS NOT NULL');
         return view('Admin.pemohon')
         
         ->with('datas', $datas);
         }else{
             $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
         FROM peminjaman_ruangans p INNER JOIN ruangans r
-        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Laboratorium"');
+        ON p.ruangan_id = r.id where r.Jenis_ruangan = "Ruang Laboratorium" and p.Nama IS NOT NULL');
         return view('Admin.pemohon')
         
         ->with('datas', $datas);
