@@ -461,6 +461,7 @@ body .container {
 
   .cardx img {
 border-radius: 10px;
+z-index: 1;
   }
 
   .containerp{
@@ -881,7 +882,15 @@ body .container .cardx {
     justify-content: center;
     opacity: 0;
     transition: opacity ease-in-out 0.25s;
-    z-index: 4;
+    z-index: 1;
+  }
+
+  .portfolio .container1 .cardx .portfolio-link {
+    z-index: 2;
+  }
+  
+  .portfolio .container1 .cardx .editt {
+  z-index: 4;
   }
 
   .portfolio .container1 .cardx .portfolio-link .portfolio-hover .portfolio-hover-content {
@@ -1040,6 +1049,40 @@ body .container .cardx {
     color: rgb(0, 0, 0);
      border: 1px solid #000000;
     cursor: pointer;
+  }
+
+  .editt {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 14rem;
+    width: 30px;
+    padding: 0px 0px 0px 5.5px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    z-index: 7;
+  }
+
+  .editt a {
+    color: rgba(4, 120, 87, 1);
+  }
+
+  .deletee {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 16.3rem;
+    width: 30px;
+    padding: 0px 0px 0px 6px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    z-index: 7;
+  }
+
+  .deletee a {
+    color: rgba(239, 68, 68, 1);
   }
 
   p {

@@ -58,12 +58,12 @@
                            <div>
                             <button class="borderej">Submit</button>
                         </div>
+
                     </form>
             </div>
-          
     
-
     </section>
+
     @endsection
 
 @section('customjs')

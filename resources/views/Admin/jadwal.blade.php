@@ -40,6 +40,9 @@
                             
                     </div>
 
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#ModalImport" style="font-weight: bold" >
+                            <span ></span> {{ __('Import') }}
+                        </a>
                     <div class="border2">
                         <a href="{{ route('Admin.editjadwal') }}">
                             <i class='bx bx-calendar-edit'></i><p class="tekse2">Edit</p>
@@ -130,5 +133,5 @@
 });
 
     </script>
-
+    @include('Admin.modal.import')
 @endsection
