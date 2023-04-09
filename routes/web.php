@@ -65,6 +65,10 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.tambahruangan');
     })->middleware('is_admin')->name('Admin.tambahruangan');
 
+    Route::get('/editruang', function () {
+        return view ('Admin.editruang');
+    })->middleware('is_admin')->name('Admin.editruang');
+
     // Route::get('/tambahdesc', function () {
     //     return view ('Admin.tambahdeskripsi');
     // })->middleware('is_admin')->name('Admin.tambahdeskripsi');

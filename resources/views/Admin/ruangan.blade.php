@@ -28,8 +28,17 @@
                                 <div class="portfolio-hover-content"></div>
                             </div>
                             <img src="{{ asset('storage/'. $data->image) }}" alt="..." />
-                            <i class='bx bx-buildings icon' ></i>
                             <span class="tekskelas">{{$data -> Nama_ruangan}}</span>
+                            <div class="editt">
+                            <a href="{{ route('Admin.editruang') }}">
+                                <i class='bx bx-edit'></i>
+                            </a>
+                          </div>
+                          <div class="deletee">
+                            <a href="">
+                                <i class='bx bx-trash'></i>
+                            </a>
+                          </div>
                         </a>
                     </div>
                     
