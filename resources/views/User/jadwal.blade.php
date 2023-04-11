@@ -94,9 +94,9 @@
     events: [
         @foreach ($datas as $data)
         {
-        start: '{{ $data->Waktu_mulai }}',
+        start: '{{ $data->Jam_mulai }}',
         title: '{{ $data->Nama_ruangan }}',
-        end: '{{ $data -> Waktu_selesai }}',
+        end: '{{ $data -> Jam_selesai }}',
         keperluan: '{{ $data -> Keperluan }}'
     },
         @endforeach

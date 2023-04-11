@@ -41,10 +41,11 @@ class RuanganController extends Controller
         }
         
 
-    // public function delete($id){
-    //     Ruangan::where('id_ruangan', $id)->delete();
-    //     return redirect()->route('ruangan.index')->with('success', 'Data ruangan berhasil dihapus');
-    // }
+        public function delete($id) {
+            DB::delete('DELETE FROM ruangans WHERE id =
+            :id', ['id' => $id]);
+            return redirect()->route('Admin.ruangan')->with('success', 'Data Barang berhasil dihapus');
+        }
 
     public function index() {
         $datas = DB::select('select * from ruangans');
