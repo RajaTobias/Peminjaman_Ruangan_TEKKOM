@@ -54,7 +54,7 @@ class PeminjamanRuanganController extends Controller
     public function index() {
         if (auth()->user()->is_TU == 1){
             $datas = DB::table('peminjaman_ruangans')
-            ->select('peminjaman_ruangans.id','peminjaman_ruangans.Nama','peminjaman_ruangans.NIM', 'peminjaman_ruangans.Keperluan','peminjaman_ruangans.Tanggal','peminjaman_ruangans.Jam_mulai',
+            ->select('peminjaman_ruangans.id','peminjaman_ruangans.Nama','peminjaman_ruangans.NIM', 'peminjaman_ruangans.Keperluan','peminjaman_ruangans.Jam_mulai',
             'peminjaman_ruangans.Jam_selesai','peminjaman_ruangans.is_accept','peminjaman_ruangans.is_decline', 'ruangans.Nama_ruangan')
             ->join('ruangans','ruangans.id','=','peminjaman_ruangans.ruangan_id')
             ->where('ruangans.Jenis_ruangan', '=', "Ruang Kelas")
@@ -66,7 +66,7 @@ class PeminjamanRuanganController extends Controller
         }
         else{
             $datas = DB::table('peminjaman_ruangans')
-            ->select('peminjaman_ruangans.id','peminjaman_ruangans.Nama','peminjaman_ruangans.NIM', 'peminjaman_ruangans.Keperluan','peminjaman_ruangans.Tanggal','peminjaman_ruangans.Jam_mulai',
+            ->select('peminjaman_ruangans.id','peminjaman_ruangans.Nama','peminjaman_ruangans.NIM', 'peminjaman_ruangans.Keperluan','peminjaman_ruangans.Jam_mulai',
             'peminjaman_ruangans.Jam_selesai','peminjaman_ruangans.is_accept','peminjaman_ruangans.is_decline', 'ruangans.Nama_ruangan')
             ->join('ruangans','ruangans.id','=','peminjaman_ruangans.ruangan_id')
             ->where('ruangans.Jenis_ruangan', '=', "Ruang Laboratorium")

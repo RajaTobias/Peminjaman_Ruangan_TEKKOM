@@ -22,7 +22,7 @@ class UserPeminjamanController extends Controller
             'peminjaman_ruangans.Jam_selesai','peminjaman_ruangans.is_accept','peminjaman_ruangans.is_decline', 'ruangans.Nama_ruangan', 'ruangans.Jenis_ruangan')
             ->join('ruangans','ruangans.id','=','peminjaman_ruangans.ruangan_id')
             ->where(['user_id' => auth()->user()->id])
-            ->paginate(3);
+            ->paginate(8);
         return view('User.statuspinjam')
         
         ->with('datas', $datas);

@@ -68,7 +68,11 @@
                             
                         </tbody>
                     </table>
-                    
+                    <!-- <div class="pagint">
+                        <ul class="paginat">
+                            {{ $datas->links('pagination::bootstrap-4') }}
+                        </ul>
+                    </div> -->
                     </div>
              
             </div>
@@ -149,10 +153,13 @@
                             
                         </tbody>
                     </table>
-                    </div>
-                    {{ $datas->links('pagination::bootstrap-4') }}
+                    </div> 
             </div>
-
+            <div class="pagint">
+                        <ul class="paginat">
+                            {{ $datas->links('pagination::bootstrap-4') }}
+                        </ul>
+                    </div>
     </section>
 
    @endsection
