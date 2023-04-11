@@ -108,7 +108,7 @@
                     </table>                    
                     <div class="pagint2">
                         <ul class="paginat2">
-                            {{ $datas->links('pagination::bootstrap-4') }}
+                            {{ $datas->onEachSide(1)->links('pagination::bootstrap-4') }}
                         </ul>
                     </div>
                     </div>

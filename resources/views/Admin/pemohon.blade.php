@@ -157,7 +157,7 @@
             </div>
             <div class="pagint">
                         <ul class="paginat">
-                            {{ $datas->links('pagination::bootstrap-4') }}
+                            {{ $datas->onEachSide(1)->links('pagination::bootstrap-4') }}
                         </ul>
                     </div>
     </section>
