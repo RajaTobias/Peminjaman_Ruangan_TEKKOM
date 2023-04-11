@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('image')->nullable();
             $table->unsignedBigInteger('id_ruangan');
-            $table->foreign('id_ruangan')->references('id')->on('ruangans');
+            $table->foreign('id_ruangan')->references('id')->on('ruangans')->onDelete('cascade');
         });
     }
 

@@ -117,6 +117,8 @@ Route::prefix('admin')->group(function () {
 
     Route::view('/contact','Admin.contact')->middleware('is_admin')->name('Admin.contact');
 
+    Route::get('/ruangan/delete/{id}', [RuanganController::class,'delete'])->name('ruangan.delete');
+
 });
 
 Route::prefix('user')->group(function(){

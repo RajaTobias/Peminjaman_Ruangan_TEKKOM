@@ -41,8 +41,8 @@
                             <p class="tekstr2">Jenis Ruangan</p>
                             <select name="Jenis_ruangan" id="Jenis_ruangan">
                                 <label for="lang">JenisR</label>
-                                <option value="RuangKelas">Ruang Kelas</option>
-                                <option value="RuangLab">Ruang Laboratorium</option>
+                                <option value="Ruang Kelas">Ruang Kelas</option>
+                                <option value="Ruang Laboratorium">Ruang Laboratorium</option>
                               </select>
                         </div>
 

@@ -35,7 +35,7 @@
                             </a>
                           </div>
                           <div class="deletee">
-                            <a href="">
+                            <a href="{{ route('ruangan.delete', $data->id) }}" onclick="return confirm('{{ __('Are you sure you want to delete?') }}')">
                                 <i class='bx bx-trash'></i>
                             </a>
                           </div>

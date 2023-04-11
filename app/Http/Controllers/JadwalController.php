@@ -17,8 +17,7 @@ class JadwalController extends Controller
     }
 
     public function indexuser() {
-        $datas = DB::select('select j.id, j.Keperluan, j.Waktu_mulai, j.Waktu_selesai, r.Nama_ruangan FROM jadwals j INNER JOIN ruangans r
-        ON j.id_ruangan = r.id');
+        $datas = DB::select('select * from peminjaman_ruangans INNER JOIN ruangans ON peminjaman_ruangans.ruangan_id = ruangans.id where is_accept = 1');
         return view('User.jadwal')
         
         ->with('datas', $datas);
@@ -62,15 +61,16 @@ class JadwalController extends Controller
         'ruangan_id' => 'required',
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        DB::insert('INSERT INTO peminjaman_ruangans(Keperluan, Jam_mulai, Jam_selesai, ruangan_id, is_accept) VALUES
+        DB::insert('INSERT INTO peminjaman_ruangans(Keperluan, Jam_mulai, Jam_selesai, ruangan_id, is_accept, user_id) VALUES
         (:Keperluan,
-        :Jam_mulai, :Jam_selesai, :ruangan_id, :is_accept)',
+        :Jam_mulai, :Jam_selesai, :ruangan_id, :is_accept, :user_id)',
         [ 
         'Keperluan' => $request->Keperluan,
         // 'Ruangan' => $request->Ruangan,
         'Jam_mulai' => $request->Jam_mulai,
         'Jam_selesai' => $request->Jam_selesai,
         'ruangan_id' => $request->ruangan_id,
+        'user_id' => auth()->user()->id,
         'is_accept' => "1"
         ]
         );
