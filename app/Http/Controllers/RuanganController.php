@@ -21,8 +21,6 @@ class RuanganController extends Controller
         $ruangans = null;
             if($request->hasFile('image')) {
                 $ruangans = str_replace('public/', '', $request->file('image')->store('public/image'));
-            } else {
-                return redirect()->back()->with('error', 'Terjadi kesalahan:<br>' . $e->getMessage() . '<br>Silahkan coba lagi.');
             }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO ruangans(Nama_ruangan,

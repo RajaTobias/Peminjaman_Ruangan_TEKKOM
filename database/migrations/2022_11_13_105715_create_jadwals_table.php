@@ -19,7 +19,6 @@ return new class extends Migration
             $table->dateTime('Tanggal_pinjam');
             $table->time('Waktu_mulai');
             $table->time('Waktu_selesai');
-            $table->integer('id_ruangan');
         });
     }
 
