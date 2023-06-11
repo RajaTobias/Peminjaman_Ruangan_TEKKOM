@@ -29,7 +29,7 @@ class UserController extends Controller
             if($request->hasFile('Image')) {
                 $user = str_replace('public/', '', $request->file('Image')->store('public/image'));
             }
-        // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
+        
         DB::update('UPDATE users SET name =
                 :name, Nomor_ID = :Nomor_ID, Nomor_HP = :Nomor_HP, Image = :Image where id = :id',
                 [

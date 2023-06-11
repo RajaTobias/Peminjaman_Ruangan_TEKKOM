@@ -65,14 +65,6 @@ Route::prefix('admin')->group(function () {
         return view ('Admin.tambahruangan');
     })->middleware('is_admin')->name('Admin.tambahruangan');
 
-    Route::get('/editruang', function () {
-        return view ('Admin.editruang');
-    })->middleware('is_admin')->name('Admin.editruang');
-
-    // Route::get('/tambahdesc', function () {
-    //     return view ('Admin.tambahdeskripsi');
-    // })->middleware('is_admin')->name('Admin.tambahdeskripsi');
-
     Route::get('role', [AdminController::class, 'index'])->middleware('is_admin')->name('Admin.ubahuser');
 
     Route::get('role user/ubah/{id}', [AdminController::class, 'role_user'])->middleware('is_admin')->name('Admin.ubahroleuser');
@@ -90,8 +82,6 @@ Route::prefix('admin')->group(function () {
     Route::post('tambahruangan/store', [RuanganController::class, 'store'])->middleware('is_admin')->name('tambahruangan.store');
 
     Route::get('peminjaman', [PeminjamanRuanganController::class, 'dropdown'])->middleware('is_admin')->name('Admin.peminjaman');
-
-    // Route::get('deskripsi/foto', [RuanganController::class, 'descimage'])->middleware('is_admin')->name('Admin.fotoruang');
 
     Route::get('deskripsi/fotoruang/{id}', [RuanganController::class, 'imageedit'])->middleware('is_admin')->name('Admin.fotoruang');
 
@@ -119,6 +109,13 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/ruangan/delete/{id}', [RuanganController::class,'delete'])->name('ruangan.delete');
 
+    Route::get('ruangan/edit/ruangan/{id}', [RuanganController::class, 'edit'])->middleware('is_admin')->name('Admin.editruang');
+
+    Route::post('ruangan/update/ruangan/{id}', [RuanganController::class, 'update'])->middleware('is_admin')->name('ruangan.update');
+
+    Route::post('jadwal/import', [JadwalController::class, 'import'])->middleware('is_admin')->name('jadwal.import');
+
+    Route::get('jadwal/download', [JadwalController::class, 'download'])->middleware('is_admin')->name('jadwal.download');
 });
 
 Route::prefix('user')->group(function(){
@@ -181,26 +178,11 @@ Route::prefix('user')->group(function(){
         return view ('User.labmulmed');
     })->middleware('auth')->name('User.labmulmed');
 
-    // Route::get('/jadwal', function () {
-    //     return view ('User.jadwal');
-    // })->middleware('auth')->name('User.jadwal');
-
-    // Route::get('/statuspinjam/suratkelas',[PeminjamanRuanganController::class, 'indexsurat'])->middleware('auth')->name('User.suratkelas');
-
-    // Route::get('/ruangan', function () {
-    //     return view ('User.ruangan');
-    // })->middleware('auth')->name('User.ruangan');
-
     Route::get('profile', [UserController::class, 'indexuser'])->middleware('auth')->name('User.profile');
 
     Route::post('editprofile/update', [UserController::class, 'updateuser'])->middleware('auth')->name('User.updateprofile');
 
     Route::get('editprofile', [UserController::class, 'edituser'])->middleware('auth')->name('User.editprofile');
-
-
-    // Route::get('/peminjaman', function () {
-    //     return view ('User.peminjaman');
-    // })->middleware('auth')->name('User.peminjaman');
 
     Route::get('peminjaman', [UserPeminjamanController::class, 'dropdown'])->middleware('auth')->name('User.peminjaman');
 

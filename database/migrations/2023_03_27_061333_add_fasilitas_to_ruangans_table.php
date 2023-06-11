@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('lcd_proyektor')->nullable()->default(0);
             $table->integer('ac')->nullable()->default(0);
             $table->integer('kapasitas')->nullable()->default(0);
+            $table->integer('papan_tulis')->nullable()->default(0);
         });
     }
 

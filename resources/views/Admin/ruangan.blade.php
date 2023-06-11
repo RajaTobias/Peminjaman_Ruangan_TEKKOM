@@ -30,7 +30,7 @@
                             <img src="{{ asset('storage/'. $data->image) }}" alt="..." />
                             <span class="tekskelas">{{$data -> Nama_ruangan}}</span>
                             <div class="editt">
-                            <a href="{{ route('Admin.editruang') }}">
+                            <a href="{{ route('Admin.editruang', $data->id) }}">
                                 <i class='bx bx-edit'></i>
                             </a>
                           </div>

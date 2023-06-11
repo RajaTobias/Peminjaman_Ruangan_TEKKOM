@@ -36,6 +36,7 @@
                         <p class="teksf4"> <i class='bx bx-hdd icon' ></i>  {{$data->layar_proyektor}} Proyektor</p>
                         <p class="teksf5"> <i class='bx bx-slideshow icon' ></i>  {{$data->lcd_proyektor}} LCD</p>
                         <p class="teksf8"> <i class='bx bx-chalkboard icon' ></i>  {{$data->ac}} AC</p>
+                        <p class="teksf9"> <i class='bx bx-card icon' ></i>  {{$data->papan_tulis}} Papan Tulis</p>
                       
 
                         <p class="teksf6">Kapasitas</p>

@@ -35,7 +35,7 @@
                       </select>
                 
                 <div class="input-text">
-                    <p class="tekspinjam">Gambar</p><input type="file" id="file" name="image">
+                    <p class="tekspinjam">Gambar</p><input type="file" id="file" name="image" required>
                 </div>
 
                 <div>

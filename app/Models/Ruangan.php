@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ruangan extends Model
 {
-    use HasFactory;
+    protected $table = "ruangans";
+
+    protected $fillable = [
+        'Nama_ruangan',
+        'Jenis_ruangan',
+        'image', 
+        'kursi', 
+        'smart_tv',
+        'layar_proyektor',
+        'lcd_proyektor',
+        'ac',
+        'kapasitas'
+    ];
 }

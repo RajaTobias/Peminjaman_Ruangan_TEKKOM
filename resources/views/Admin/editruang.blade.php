@@ -25,7 +25,8 @@
                 <img src="{{ asset('assets/img/Vector (5).png') }}" alt="..." allign="middle">
                 <div class="containertr">
                     <p class="teksp">Edit Ruangan</p>
-                    <form class="ptambahruangan" method="post" enctype="multipart/form-data" action="">
+                    @foreach ($datas as $data)
+                    <form class="ptambahruangan" method ="post" enctype="multipart/form-data" action = "{{route('ruangan.update', $data-> id)}}">
                         @csrf
                         <div class="profile-pic">
                             <img src="{{ asset('assets/img/Rectangle 4036.png') }}" id="fotop">
@@ -87,6 +88,7 @@
                         </div> -->
                     
                     </form>
+                    @endforeach
                     
                 </div>
             </div>

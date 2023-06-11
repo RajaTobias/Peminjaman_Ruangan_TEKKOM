@@ -403,12 +403,23 @@ figure {
   font-size: 16px;
   color: #000000;
 }
+.teksf9{
+  position: absolute;
+  width: 161px;
+  height: 33px;
+  left: 60px;
+  top: 280px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+}
 .teksf6{
   position: absolute;
   width: 161px;
   height: 33px;
   left: 15px;
-  top: 300px;
+  top: 320px;
   font-style: normal;
   font-weight: 600;
   font-size: 17px;
@@ -420,7 +431,7 @@ figure {
   width: 161px;
   height: 33px;
   left: 60px;
-  top: 330px;
+  top: 350px;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

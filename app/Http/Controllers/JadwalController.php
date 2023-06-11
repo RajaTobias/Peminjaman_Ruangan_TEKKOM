@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Imports\JadwalImport;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
 
 class JadwalController extends Controller
 {
@@ -32,27 +35,6 @@ class JadwalController extends Controller
 
     }
 
-    // public function store(Request $request) {
-    // $request->validate([
-    // 'Keperluan' => 'required',
-    // 'Waktu_mulai' => 'required',
-    // 'Waktu_selesai' => 'required',
-    // 'id_ruangan' => 'required',
-    // ]);
-    
-    // DB::insert('INSERT INTO jadwals(
-    // Keperluan, Waktu_mulai, Waktu_selesai, id_ruangan) VALUES
-    // (:Keperluan, :Waktu_mulai, :Waktu_selesai, :id_ruangan)',
-    // [
-    // 'Keperluan' => $request->Keperluan,
-    // 'Waktu_mulai' => $request->Waktu_mulai,
-    // 'Waktu_selesai' => $request->Waktu_selesai,
-    // 'id_ruangan' => $request->id_ruangan,
-    // ]
-    // );
-    // return redirect()->route('Admin.jadwal')->with('success', 'Data jadwal berhasil disimpan');
-    // }
-
     public function store(Request $request) {
         $request->validate([
         'Keperluan' => 'required',
@@ -60,13 +42,12 @@ class JadwalController extends Controller
         'Jam_selesai' => 'required',
         'ruangan_id' => 'required',
         ]);
-        // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
+      
         DB::insert('INSERT INTO peminjaman_ruangans(Keperluan, Jam_mulai, Jam_selesai, ruangan_id, is_accept, user_id) VALUES
         (:Keperluan,
         :Jam_mulai, :Jam_selesai, :ruangan_id, :is_accept, :user_id)',
         [ 
         'Keperluan' => $request->Keperluan,
-        // 'Ruangan' => $request->Ruangan,
         'Jam_mulai' => $request->Jam_mulai,
         'Jam_selesai' => $request->Jam_selesai,
         'ruangan_id' => $request->ruangan_id,
@@ -83,5 +64,23 @@ class JadwalController extends Controller
         return view('Admin.editjadwal')
         
         ->with('datas', $datas);
+        }
+
+        public function import(Request $request)
+        {
+        $file = $request->file('file');
+        $namaFile = $file->getClientOriginalName();
+        $file -> move ('DataJadwal', $namaFile);
+
+        Excel::import(new JadwalImport, public_path('/DataJadwal/'.$namaFile));
+        return redirect()->route('Admin.jadwal');
+        }
+
+        public function download(){
+            try{
+                Storage::disk('local')->download('public/downloads/Jadwal.xlsx');
+            }catch(\Exception $e){
+                abort(404);
+            }
         }
 }

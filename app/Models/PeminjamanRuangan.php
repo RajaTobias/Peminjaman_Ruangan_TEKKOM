@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PeminjamanRuangan extends Model
 {
-    use HasFactory;
+    protected $table = "peminjaman_ruangans";
+ 
+    protected $fillable = ['Keperluan','Jam_mulai','Jam_selesai', 'is_accept', 'ruangan_id'];
 }

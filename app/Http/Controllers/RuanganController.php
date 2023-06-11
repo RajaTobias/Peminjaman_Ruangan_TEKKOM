@@ -14,23 +14,18 @@ class RuanganController extends Controller
         $request->validate([
         'Nama_ruangan' => 'required',
         'Jenis_ruangan' => 'required',
-        // 'Kapasitas_ruangan' => 'required',
-        // 'Deskripsi_ruangan' => 'required',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048'
         ]);
         $ruangans = null;
             if($request->hasFile('image')) {
                 $ruangans = str_replace('public/', '', $request->file('image')->store('public/image'));
             }
-        // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::insert('INSERT INTO ruangans(Nama_ruangan,
         Jenis_ruangan,image) VALUES
         (:Nama_ruangan, :Jenis_ruangan,:image)',
         [
         'Nama_ruangan' => $request->Nama_ruangan,
         'Jenis_ruangan' => $request->Jenis_ruangan,
-        // 'Kapasitas_ruangan' => $request->Kapasitas_ruangan,
-        // 'Deskripsi_ruangan' => $request->Deskripsi_ruangan,
         'image' => $ruangans,
         ]
         );
@@ -39,12 +34,39 @@ class RuanganController extends Controller
         return redirect()->route('Admin.tambahruangan')->with('success', 'Data ruangan berhasil disimpan');
 
         }
+
+        public function edit($id){
+            $datas = DB::select('select * from ruangans where id = :id', ['id'=> $id]);
+            return view('Admin.editruang')->with('datas',$datas);
+        }
+
+        public function update($id, Request $request) {
+            $request->validate([
+                'Nama_ruangan' => 'required',
+                'Jenis_ruangan' => 'required',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:5000'
+            ]);
+            $ruangans = null;
+            if($request->hasFile('image')) {
+                $ruangans = str_replace('public/', '', $request->file('image')->store('public/image'));
+            }
+            DB::update('UPDATE ruangans SET Nama_ruangan =
+                    :Nama_ruangan, Jenis_ruangan = :Jenis_ruangan, image = :image where id = :id',
+                    [
+                    'id' => $id,
+                    'Nama_ruangan' => $request->Nama_ruangan,
+                    'Jenis_ruangan' => $request->Jenis_ruangan,
+                    'image' => $ruangans,
+                    ]
+                    );
+             return redirect()->route('Admin.ruangan',['id' => $id])->with('success', 'Data user berhasil diubah');
+         }
         
 
         public function delete($id) {
             DB::delete('DELETE FROM ruangans WHERE id =
             :id', ['id' => $id]);
-            return redirect()->route('Admin.ruangan')->with('success', 'Data Barang berhasil dihapus');
+            return redirect()->route('Admin.ruangan')->with('success', 'Data berhasil dihapus');
         }
 
     public function index() {
@@ -62,17 +84,15 @@ class RuanganController extends Controller
     }
 
     public function desc($id){
-        // $datas = DB::select('select * from ruangans where id = :id', ['id'=> $id]);
-        // return view('Admin.deskripsiA101')->with('datas',$datas);
         $datas = DB::select('select r.id, r.Nama_ruangan, r.Jenis_ruangan, r.image, r.kursi, r.kursi, r.smart_tv, r.layar_proyektor, r.lcd_proyektor, r.ac,
-        r.kapasitas, i.image FROM ruangans r LEFT JOIN images_ruangans i ON r.id = i.id_ruangan where r.id = :id', ['id'=> $id]);
+        r.kapasitas, r.papan_tulis, i.image FROM ruangans r LEFT JOIN images_ruangans i ON r.id = i.id_ruangan where r.id = :id', ['id'=> $id]);
         return view('Admin.deskripsiA101')->with('datas',$datas);
     }
     
 
     public function descuser($id){
         $datas = DB::select('select r.id, r.Nama_ruangan, r.Jenis_ruangan, r.image, r.kursi, r.kursi, r.smart_tv, r.layar_proyektor, r.lcd_proyektor, r.ac,
-        r.kapasitas, i.image FROM ruangans r LEFT JOIN images_ruangans i ON r.id = i.id_ruangan where r.id = :id', ['id'=> $id]);
+        r.kapasitas, r.papan_tulis, i.image FROM ruangans r LEFT JOIN images_ruangans i ON r.id = i.id_ruangan where r.id = :id', ['id'=> $id]);
         return view('User.deskripsiA101')->with('datas',$datas);
     }
 
@@ -89,11 +109,12 @@ class RuanganController extends Controller
             'lcd_proyektor' => 'nullable',
             'image' => 'nullable',
             'ac' => 'nullable',
-            'kapasitas' => 'nullable'
+            'kapasitas' => 'nullable',
+            'papan_tulis' => 'nullable'
         ]);
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::update('UPDATE ruangans SET kursi =
-                :kursi, smart_tv = :smart_tv, layar_proyektor = :layar_proyektor, lcd_proyektor = :lcd_proyektor, image = :image, ac =:ac, kapasitas = :kapasitas where id = :id',
+                :kursi, smart_tv = :smart_tv, layar_proyektor = :layar_proyektor, lcd_proyektor = :lcd_proyektor, image = :image, ac =:ac, kapasitas = :kapasitas, papan_tulis = :papan_tulis where id = :id',
                 [
                 'id' => $id,
                 'kursi' => $request->kursi,
@@ -103,11 +124,13 @@ class RuanganController extends Controller
                 'image' => $request->image,
                 'ac' => $request->ac,
                 'kapasitas' => $request->kapasitas,
+                'papan_tulis' => $request->papan_tulis
                 ]
                 );
          return redirect()->route('Admin.deskripsi',['id' => $id])->with('success', 'Data user berhasil diubah');
      }
-    public function dropdown($id)
+
+        public function dropdown($id)
         {
         $datas = DB::select('SELECT id, Nama_ruangan FROM ruangans where id = :id', ['id'=> $id]);
         return view('Admin.fotoruang')
@@ -119,13 +142,6 @@ class RuanganController extends Controller
             $datas = DB::select('select * from ruangans where id = :id', ['id'=> $id]);
             return view('Admin.fotoruang')->with('datas',$datas);
         }
-
-        // public function imageindex($id){
-        //     $datas = DB::select('select p.id, p.Nama, p.NIM, p.Keperluan, r.Nama_ruangan, p.Tanggal, p.Jam_mulai, p.Jam_selesai, p.is_accept, p.is_decline
-        //     FROM peminjaman_ruangans p INNER JOIN ruangans r
-        //     ON p.ruangan_id = r.id  where p.id = p.id', ['id'=> $id]);
-        //     return view('Admin.deskripsiA101')->with('datas',$datas);
-        // }
 
         public function storeimage($id, Request $request) {
             $request->validate([

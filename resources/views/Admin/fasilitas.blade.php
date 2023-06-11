@@ -34,7 +34,7 @@
                 </div>
                 
                 <div class="input-text">
-                     <p class="tekspinjam">Papan Tulis</p><input type="text" id="Tanggal" name="Tanggal" required/>
+                     <p class="tekspinjam">Papan Tulis</p><input type="text" id="papan_tulis" name="papan_tulis" required/>
                 </div>
 
                 <div class="input-text">
