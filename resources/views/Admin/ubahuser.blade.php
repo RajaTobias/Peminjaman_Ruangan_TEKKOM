@@ -24,18 +24,6 @@
 
                   
                 <div class="containerpm2">
-                    <form>
-                        <div class="input-group no-border">
-                            <input type="search" id="inputPassword9" name="search" value="" class="form-control" placeholder="Search Name..." >
-                    <form action="/users" method="GET">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <i class="bx bx-search-alt-2 icon"></i>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                </form>
                     <table>
                         <thead>
                             <tr>
@@ -77,10 +65,13 @@
                             @endforeach
                             
                         </tbody>
+    
                     </table>   
-                        
-                    {{ $datas->links('pagination::bootstrap-4') }}
-
+                    <div class="pagint2">
+                        <ul class="paginat2">
+                            {{ $datas->onEachSide(1)->links('pagination::bootstrap-4') }}
+                        </ul>
+                    </div>
                     </div>
              
             </div>

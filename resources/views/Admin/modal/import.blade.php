@@ -16,7 +16,7 @@
                   <div class="modal-footer">
                   <a href="https://drive.google.com/file/d/1ItIZ0wIh_hkXYIpLBNAuiA2H3qh2AzbR/view?usp=share_link" class="panduan" >Panduan <i class='bx bx-download icon'> </i> </a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Import</button>
+                    <button type="submit" class="btn btn-info">Import</button>
                   </div>
                   </div>
                   </form>
