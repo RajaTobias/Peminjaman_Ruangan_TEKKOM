@@ -30,7 +30,8 @@
                                 <th style="width:3% !important;">No</th>
                                 <th style="width:15% !important;">Nama</th>
                                 <th style="width:10% !important;">Role</th>
-                                <th style="width:25% !important;">Action</th>
+                                <th style="width:26% !important;">Ubah Role</th>
+                                <th style="width:13% !important;">Reset</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,6 +59,13 @@
                                             <i class="bx bx-edit-alt icon" ></i> Admin TU
                                         </a>
                                 </div>
+                                </td>
+                                <td>
+                                    <div class="pemohon6Btn" >
+                                        <a href="#" type="button" class="btn btn-warning rounded-3">
+                                            <i class="bx bx-reset icon" ></i>  Reset Password
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

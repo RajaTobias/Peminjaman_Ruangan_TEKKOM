@@ -452,7 +452,7 @@ body .container {
   
     justify-content: center;
 
-    width: 60%;
+    width: 82%;
     height: 550px;
     margin-top: 11rem;
     margin-left: 21rem;
@@ -1017,7 +1017,7 @@ body .container .cardx {
   }
 
   .borderej {
-    margin-top: 360px;
+    margin-top: 60px;
     margin-left: 50px;
     transform: translateX(5%);
     width: 50%;

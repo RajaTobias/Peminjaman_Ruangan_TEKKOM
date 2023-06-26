@@ -670,7 +670,7 @@ textarea {
   color: #000000;
 }
 .teksh{
-  position: absolute;
+  margin-top: 150px;
   max-width: 100%;
   left: 70px;
   top: 245px;
@@ -703,7 +703,7 @@ textarea {
   color: #000000;
 }
 .teksj{
-  position: absolute;
+  margin-top: 80px;
   max-width: 100%;
   left: 70px;
   top: 355px;
