@@ -215,6 +215,42 @@ class DatabaseSeeder extends Seeder
         ],
     );
 
+    DB::table('images_ruangans')->insert([
+        'image' => 'image/fWkvrMMqv7H5olEm4Vv4cn9SzFcZ1LcJaOTtvj8o.jpg.jpg',
+        'id_ruangan' => '6',
+        ],
+    );
+
+    DB::table('images_ruangans')->insert([
+        'image' => 'image/HYdJ2VQqUUq0yY24eN49xURPGP8uc4xZSCIGU5an.jpg',
+        'id_ruangan' => '6',
+        ],
+    );
+
+    DB::table('images_ruangans')->insert([
+        'image' => 'image/qWydXipDlNSVzHDECDA0GRdUXDVz8LnoSgqL8lX8.jpg.jpg',
+        'id_ruangan' => '6',
+        ],
+    );
+
+    DB::table('images_ruangans')->insert([
+        'image' => 'image/YCqa98WiOSROaI5OOyLmnkfgpdfEmpqItq9u4bDk.jpg.jpg',
+        'id_ruangan' => '7',
+        ],
+    );
+
+    DB::table('images_ruangans')->insert([
+        'image' => 'image/MREGKVvjfX0Yw29u4OjAy2HPKtYy1PauZ44XSTC9.jpg',
+        'id_ruangan' => '7',
+        ],
+    );
+
+    DB::table('images_ruangans')->insert([
+        'image' => 'image/SVUx9fHWdZHFKcywz2IS8rekUsXQOukF9sniRKqC.jpg',
+        'id_ruangan' => '7',
+        ],
+    );
+
     
     }
 

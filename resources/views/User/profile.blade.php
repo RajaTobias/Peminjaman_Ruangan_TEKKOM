@@ -30,10 +30,10 @@
                             <input type="text" id="inputNama" name="nama" placeholder="{{ Auth::user()->name }}" readonly/>
                         </div>
                         
-                        <div class="input-text1">
+                        <!-- <div class="input-text1">
                             <p class="teksp2">No. Handphone</p>
                             <input type="text" id="inputNo" name="no" placeholder="{{ Auth::user()->Nomor_HP }}" readonly/>
-                        </div>
+                        </div> -->
         
                         <div class="input-text1">
                             <p class="teksp3">NIM</p>

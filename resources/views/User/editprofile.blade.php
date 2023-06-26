@@ -34,13 +34,13 @@
                         </div>
                         
                         <div class="input-text1">
-                            <p class="teksp2">No. Handphone</p>
-                            <input type="text" id="Nomor_HP" name="Nomor_HP"/>
-                        </div>
-        
-                        <div class="input-text1">
                             <p class="teksp3">NIM</p>
                             <input type="text" id="Nomor_ID" name="Nomor_ID"/>
+                        </div>
+
+                        <div class="input-text1">
+                            <p class="teksps">Change Password</p>
+                            <input type="text" id="password" name="password"/>
                         </div>
         
                         <div>

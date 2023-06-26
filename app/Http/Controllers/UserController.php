@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -20,9 +21,9 @@ class UserController extends Controller
         }
         public function updateuser(Request $request) {
         $request->validate([
-            'name' => 'required',
+            'name' => 'nullable',
             'Nomor_ID' => 'nullable',
-            'Nomor_HP' => 'nullable',
+            'password' => 'nullable',
             'Image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
         $user = null;
@@ -31,12 +32,12 @@ class UserController extends Controller
             }
         
         DB::update('UPDATE users SET name =
-                :name, Nomor_ID = :Nomor_ID, Nomor_HP = :Nomor_HP, Image = :Image where id = :id',
+                :name, Nomor_ID = :Nomor_ID, password=:password, Image = :Image where id = :id',
                 [
                 'id' => auth()->user()->id,
                 'name' => $request->name,
                 'Nomor_ID' => $request->Nomor_ID,
-                'Nomor_HP' => $request->Nomor_HP,
+                'password' => Hash::make($request->password),
                 'Image' => $user,
                 ]
                 );

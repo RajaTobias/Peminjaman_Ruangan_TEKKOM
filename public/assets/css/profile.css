@@ -358,6 +358,16 @@ img,p{
   color: #000000;
 }
 
+.teksps{
+  position: relative;
+  min-width: 100%;
+  font-size: 18px;
+  left: -255px;
+  top:10px;
+  text-align: center;
+  color: #898989;
+}
+
 .teksp1{
   position: relative;
   min-width: 100%;

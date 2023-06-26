@@ -69,6 +69,8 @@ Route::prefix('admin')->group(function () {
 
     Route::get('role user/ubah/{id}', [AdminController::class, 'role_user'])->middleware('is_admin')->name('Admin.ubahroleuser');
 
+    Route::get('role user/changepassword/{id}', [AdminController::class, 'change_password'])->middleware('is_admin')->name('Admin.resetpassword');
+
     Route::get('role admin/ubah/{id}', [AdminController::class, 'role_admin_lab'])->middleware('is_admin')->name('Admin.ubahroleadminlab');
 
     Route::get('role admin TU/ubah/{id}', [AdminController::class, 'role_admin_TU'])->middleware('is_admin')->name('Admin.ubahroleadminTU');
@@ -118,6 +120,8 @@ Route::prefix('admin')->group(function () {
     Route::get('jadwal/export', [JadwalController::class, 'export'])->middleware('is_admin')->name('jadwal.export');
 
     Route::get('jadwal/download', [JadwalController::class, 'download'])->middleware('is_admin')->name('jadwal.download');
+
+    Route::get('jadwal/cetakpdf', [JadwalController::class, 'cetakPDF'])->middleware('is_admin')->name('jadwal.cetakpdf');
 });
 
 Route::prefix('user')->group(function(){

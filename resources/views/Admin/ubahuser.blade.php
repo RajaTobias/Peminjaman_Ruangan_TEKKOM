@@ -62,7 +62,7 @@
                                 </td>
                                 <td>
                                     <div class="pemohon6Btn" >
-                                        <a href="#" type="button" class="btn btn-warning rounded-3">
+                                        <a href="{{ route('Admin.resetpassword', $data->id) }}" type="button" class="btn btn-warning rounded-3">
                                             <i class="bx bx-reset icon" ></i>  Reset Password
                                         </a>
                                     </div>

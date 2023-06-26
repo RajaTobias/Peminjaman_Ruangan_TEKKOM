@@ -24,7 +24,7 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required',
             'Nomor_ID' => 'nullable',
-            'Nomor_HP' => 'nullable',
+            'password' => 'nullable',
             'Image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
         $user = null;
@@ -33,12 +33,12 @@ class AdminController extends Controller
             }
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
         DB::update('UPDATE users SET name =
-                :name, Nomor_ID = :Nomor_ID, Nomor_HP = :Nomor_HP, Image = :Image where id = :id',
+                :name, Nomor_ID = :Nomor_ID, password=:password,Image = :Image where id = :id',
                 [
                 'id' => auth()->user()->id,
                 'name' => $request->name,
                 'Nomor_ID' => $request->Nomor_ID,
-                'Nomor_HP' => $request->Nomor_HP,
+                'password' => Hash::make($request->password),
                 'Image' => $user,
                 ]
                 );
@@ -78,6 +78,13 @@ class AdminController extends Controller
         DB::update('UPDATE peminjaman_ruangans SET is_decline = 1, is_accept = 0  WHERE id = :id', ['id' => $id]);
 
         return redirect()->route('Admin.pemohon')->with('success', 'Peminjaman ditolak');
+    }
+
+    public function change_password($id)
+    {
+        DB::update('UPDATE users SET password = "TEKNIKKOMPUTER123" WHERE id = :id', ['id' => $id]);
+
+        return redirect()->route('Admin.ubahuser')->with('success', 'Password berhasil diganti');
     }
 
     public function index(Request $request)

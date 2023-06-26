@@ -89,4 +89,11 @@ class JadwalController extends Controller
                 abort(404);
             }
         }
+
+        public function cetakPDF(){
+        $datas = DB::select('select * from peminjaman_ruangans INNER JOIN ruangans ON peminjaman_ruangans.ruangan_id = ruangans.id where is_accept = 1');
+        return view('Admin.cetakpdf')
+        
+        ->with('datas', $datas);
+        }
 }
