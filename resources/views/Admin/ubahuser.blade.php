@@ -55,12 +55,10 @@
 
                                 <div class="pemohon5Btn">
                                         <a href="{{ route('Admin.ubahroleadminTU', $data->id) }}" type="button" class="btn btn-primary rounded-3">
-                                            <i class="bx bx-edit-alt icon" ></i>  Admin TU
+                                            <i class="bx bx-edit-alt icon" ></i> Admin TU
                                         </a>
-                                    </div>
+                                </div>
                                 </td>
-
-                
                             </tr>
                             @endforeach
                             

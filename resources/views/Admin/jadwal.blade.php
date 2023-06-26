@@ -40,7 +40,7 @@
                             
                     </div>
 
-                    <a href="#" class="btn btn-success" target="_blank" style="font-weight: bold" >
+                    <a href="{{route ('jadwal.export')}}" class="btn btn-success" target="_blank" style="font-weight: bold" >
                             <span ></span> {{ __('Export') }}
                         </a>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#ModalImport" style="font-weight: bold" >

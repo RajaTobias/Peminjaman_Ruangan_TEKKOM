@@ -115,6 +115,8 @@ Route::prefix('admin')->group(function () {
 
     Route::post('jadwal/import', [JadwalController::class, 'import'])->middleware('is_admin')->name('jadwal.import');
 
+    Route::get('jadwal/export', [JadwalController::class, 'export'])->middleware('is_admin')->name('jadwal.export');
+
     Route::get('jadwal/download', [JadwalController::class, 'download'])->middleware('is_admin')->name('jadwal.download');
 });
 

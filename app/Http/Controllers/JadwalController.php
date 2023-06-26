@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Imports\JadwalImport;
+use App\Exports\PegawaiExport;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
@@ -74,6 +76,10 @@ class JadwalController extends Controller
 
         Excel::import(new JadwalImport, public_path('/DataJadwal/'.$namaFile));
         return redirect()->route('Admin.jadwal');
+        }
+
+        public function export(){
+            return Excel::download(new PegawaiExport, 'jadwal.xlsx');
         }
 
         public function download(){
