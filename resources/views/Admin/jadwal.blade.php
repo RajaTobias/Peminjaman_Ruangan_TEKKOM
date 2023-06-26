@@ -39,7 +39,7 @@
                             <div id='calendar'></div>
                             
                     </div>
-                    <a href="{{route ('jadwal.export')}}" class="btn btn-danger" target="_blank" style="font-weight: bold" >
+                    <a href="{{route ('jadwal.cetakpdf')}}" class="btn btn-danger" target="_blank" style="font-weight: bold" >
                             <span ></span> {{ __('PDF') }}
                         </a>
                     <a href="{{route ('jadwal.export')}}" class="btn btn-success" target="_blank" style="font-weight: bold" >
