@@ -82,9 +82,13 @@ class AdminController extends Controller
 
     public function change_password($id)
     {
-        DB::update('UPDATE users SET password = "TEKNIKKOMPUTER123" WHERE id = :id', ['id' => $id]);
+        DB::update('UPDATE users SET password=:password where id = :id',
+        [
+        'id' => $id,
+        'password' => Hash::make("TEKNIKKOMPUTER123"),
+        ]);
 
-        return redirect()->route('Admin.ubahuser')->with('success', 'Password berhasil diganti');
+        return redirect()->route('Admin.ubahuser');
     }
 
     public function index(Request $request)
