@@ -40,6 +40,7 @@
                         <tbody>
                             <!-- ini cuma contoh ntar isinya dipanggil dari database -->
                             @foreach ($datas as $data)
+                            @if($data->is_accept == 0)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->Nama }}</td>
@@ -64,6 +65,7 @@
                                 </td>
                                 
                             </tr>
+                            @endif
                             @endforeach
                             
                         </tbody>
