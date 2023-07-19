@@ -444,16 +444,14 @@ body .container {
 
   .containerpm2{
     width: 1200px;
-    height: 540;
+    height: 570px;
     margin: auto;
 }
 
   body .containerpm2{
-  
     justify-content: center;
-
+    align-items: center;
     width: 82%;
-    height: 550px;
     margin-top: 11rem;
     margin-left: 21rem;
     margin-right: 20rem;
@@ -1276,11 +1274,12 @@ top: 12px;
 } */
 
 .containerpm2 table {
+  margin-top: 50px;
 }
 
 .containerpm2 .input-group {
   width: 30%;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   float: right;
   color: #000;
 }
@@ -1445,8 +1444,8 @@ select {
   }
 
   .pagint2 {
-    float: right;
-    margin-top: 1rem;
+    float: left;
+    margin-top: 0.6rem;
   }
 
   .paginat2 {
