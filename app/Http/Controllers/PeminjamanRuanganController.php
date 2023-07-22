@@ -56,7 +56,7 @@ class PeminjamanRuanganController extends Controller
             ->join('ruangans','ruangans.id','=','peminjaman_ruangans.ruangan_id')
             ->where('ruangans.Jenis_ruangan', '=', "Ruang Kelas")
             ->where('peminjaman_ruangans.Nama', '!=', NULL)
-            ->paginate(3);
+            ->paginate(5);
         return view('Admin.pemohon')
         
         ->with('datas', $datas);
@@ -68,7 +68,7 @@ class PeminjamanRuanganController extends Controller
             ->join('ruangans','ruangans.id','=','peminjaman_ruangans.ruangan_id')
             ->where('ruangans.Jenis_ruangan', '=', "Ruang Laboratorium")
             ->where('peminjaman_ruangans.Nama', '!=', NULL)
-            ->paginate(3);
+            ->paginate(5);
         return view('Admin.pemohon')
         
         ->with('datas', $datas);

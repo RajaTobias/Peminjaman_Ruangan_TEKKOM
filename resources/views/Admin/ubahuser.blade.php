@@ -30,7 +30,7 @@
                     <form action="/users" method="GET">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                        <i class="bx bx-search-alt-2 icon"></i>   
+                                <i class="bx bx-search-alt-2 icon"></i>
                             </form>
                         </div>
                     </div>
